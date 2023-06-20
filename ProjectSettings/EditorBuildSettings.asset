@@ -4,7 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Scenes/Men\xFAPrincipal.unity"
+    guid: eacca31188b0ee84ca77b825356ff18c
+  - enabled: 1
+    path: Assets/Scenes/Paso A.unity
+    guid: e8883ae947ce3754e857f86022a475b8
+  - enabled: 1
+    path: Assets/Scenes/Paso B.unity
+    guid: 343b722b254e4da47a9053f2df2b8b8d
+  - enabled: 1
+    path: Assets/Scenes/Paso C.unity
+    guid: 8ec8cea2421ae55469089e50bf6bfd3b
+  - enabled: 1
+    path: Assets/Scenes/Paso D.unity
+    guid: bd5db74b6e2514a4daea130c06b0c187
+  - enabled: 1
+    path: Assets/Scenes/Paso E.unity
+    guid: 9294b5b3ca0d8be4394194e040e028ae
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
