@@ -6,13 +6,14 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text narratorText;
+    public Animator businessWomanAnimator;
 
-    private Queue<string> sentences;
+    private Queue<Dialogue.Sentences> sentences;
 
     // Start is called before the first frame update
     void Awake()
     {
-        sentences = new Queue<string>();
+        sentences = new Queue<Dialogue.Sentences>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -21,7 +22,7 @@ public class DialogueManager : MonoBehaviour
 
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (Dialogue.Sentences sentence in dialogue.sentences)
         {
             this.sentences.Enqueue(sentence);
         }
@@ -35,9 +36,16 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        Dialogue.Sentences sentence = sentences.Dequeue();
 
-        narratorText.SetText(sentence);
+        narratorText.SetText(sentence.text);
+
+        if (sentence.triggersAnimation) 
+        {
+            businessWomanAnimator.StopPlayback();
+            businessWomanAnimator.SetTrigger(sentence.triggerName);
+            
+        }
     }
 
     private void EndDialogue()
