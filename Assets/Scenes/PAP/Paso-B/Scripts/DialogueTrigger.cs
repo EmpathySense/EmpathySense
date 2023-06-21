@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    
+
     public Dialogue dialogue;
 
     void Start()
@@ -12,14 +12,11 @@ public class DialogueTrigger : MonoBehaviour
         TriggerDialogue();
     }
 
-    public void TestFunction()
-    {
-        Debug.Log("El boton ha sido presionado");
-    }
 
     public void TriggerDialogue ()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        
     }
 
 }

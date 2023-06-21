@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    public TMP_Text narratorText;
 
     private Queue<string> sentences;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         sentences = new Queue<string>();
     }
@@ -35,11 +37,11 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
 
-        Debug.Log(sentence);
+        narratorText.SetText(sentence);
     }
 
-    public void EndDialogue()
+    private void EndDialogue()
     {
-
+        Debug.Log("dialgogue Ended");
     }
 }
