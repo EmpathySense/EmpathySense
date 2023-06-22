@@ -2,13 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text narratorText;
     public Animator businessWomanAnimator;
+    public GameObject alertCanvas;
+    public GameObject modalPanel;
 
+    [SerializeField]
+    private GameObject continueButton, nextStepButton, returnButton;
+
+    [SerializeField, TextArea(3,5)]
+    private string endOfStepText;
     private Queue<Dialogue.Sentences> sentences;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -26,6 +36,8 @@ public class DialogueManager : MonoBehaviour
         {
             this.sentences.Enqueue(sentence);
         }
+
+        DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
@@ -34,6 +46,11 @@ public class DialogueManager : MonoBehaviour
         {
             EndDialogue();
             return;
+        }
+
+        if (sentences.Count == 1)
+        {
+            
         }
 
         Dialogue.Sentences sentence = sentences.Dequeue();
@@ -50,6 +67,48 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        Debug.Log("dialgogue Ended");
+        StartCoroutine(ShowUnableToOpenCanvas(alertCanvas));
+
+        UnlockNewLevel();
+
+        // Update Modal
+        narratorText.SetText(endOfStepText);
+        returnButton.SetActive(true);
+        continueButton.SetActive(false);
+        nextStepButton.SetActive(true);
     }
+
+    public void GoToMainMenu()
+    {
+        string levelName = "MenúPrincipal";
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void GoToNextScene(string Level)
+    {
+        string levelName = "Paso-" + Level;
+        SceneManager.LoadScene(levelName);
+    }
+
+    IEnumerator ShowUnableToOpenCanvas(GameObject canvas)
+    {
+        canvas.SetActive(true); // Activa el canvas
+
+        yield return new WaitForSeconds(2f); // Espera durante 2 segundos
+
+        canvas.SetActive(false); // Desactiva el canvas
+    }
+
+    void UnlockNewLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+
+            PlayerPrefs.Save();
+        }
+
+    }
+
 }
