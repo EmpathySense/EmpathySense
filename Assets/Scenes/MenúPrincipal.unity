@@ -2273,7 +2273,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1372603833}
-        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -2509,8 +2509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.5, y: -0.99}
-  m_SizeDelta: {x: 100, y: 150}
+  m_AnchoredPosition: {x: -0.5102, y: -0.9698}
+  m_SizeDelta: {x: 99.6291, y: 148.6506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &865757043
 MonoBehaviour:
@@ -4722,15 +4722,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1372603831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f9e212c5f8de643aae09fb80d0c749, type: 3}
+  m_Script: {fileID: 11500000, guid: aa0b220c1fb30a54d87504d417b5696b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botones: []
-  canvasB: {fileID: 0}
-  canvasC: {fileID: 0}
-  canvasD: {fileID: 0}
-  canvasE: {fileID: 0}
-  mensaje: 
 --- !u!1 &1392210747
 GameObject:
   m_ObjectHideFlags: 0

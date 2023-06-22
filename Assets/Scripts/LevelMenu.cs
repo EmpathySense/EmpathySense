@@ -93,12 +93,7 @@ public class LevelMenu : MonoBehaviour
         }
         
     }
-    public void Change()
-    {
-        string levelName = "MenúPrincipal";
-        SceneManager.LoadScene(levelName);
-        
-    }
+    
    public void OpenLevel(string Level)
     {
         
@@ -129,10 +124,7 @@ public class LevelMenu : MonoBehaviour
         canvas.SetActive(false); // Desactiva el canvas
     }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+    
     /*public void Update()
     {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
