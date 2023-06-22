@@ -8,7 +8,10 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text narratorText;
+    public Animator businessManAnimator;
     public Animator businessWomanAnimator;
+
+
     public GameObject alertCanvas;
     public GameObject modalPanel;
 
@@ -48,10 +51,6 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (sentences.Count == 1)
-        {
-            
-        }
 
         Dialogue.Sentences sentence = sentences.Dequeue();
 
@@ -59,9 +58,10 @@ public class DialogueManager : MonoBehaviour
 
         if (sentence.triggersAnimation) 
         {
+            businessManAnimator.StopPlayback();
+            businessManAnimator.SetTrigger(sentence.triggerName);
             businessWomanAnimator.StopPlayback();
             businessWomanAnimator.SetTrigger(sentence.triggerName);
-            
         }
     }
 
