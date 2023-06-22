@@ -105,7 +105,7 @@ public class LevelMenu : MonoBehaviour
 
         if (levelIndexMap.ContainsKey(Level) && mensaje[levelIndexMap[Level]])
         {
-            string levelName = "Paso " + Level;
+            string levelName = "Paso-" + Level;
             SceneManager.LoadScene(levelName);
         }
         else 
@@ -129,6 +129,10 @@ public class LevelMenu : MonoBehaviour
         canvas.SetActive(false); // Desactiva el canvas
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     /*public void Update()
     {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
