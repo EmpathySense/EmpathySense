@@ -46,7 +46,7 @@ public class MenuPausa : MonoBehaviour
     }
     public void Change()
     {
-        string levelName = "MenúPrincipal";
+        string levelName = "MenÃºPrincipal";
         SceneManager.LoadScene(levelName);
 
     }

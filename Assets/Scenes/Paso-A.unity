@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 587950080}
+      - m_Target: {fileID: 824219542}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: Change
         m_Mode: 1
@@ -593,13 +593,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356733423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.0015774597, y: 0.0015774597, z: 0.0015774597}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1468145977}
-  m_Father: {fileID: 587950079}
+  m_Father: {fileID: 824219546}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -785,32 +785,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &587950074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9014170783705847997, guid: 895f6f3c2d334633b5800312285058d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1630331456}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &587950079 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9014170783705847996, guid: 895f6f3c2d334633b5800312285058d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1630331456}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &587950080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587950074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0b220c1fb30a54d87504d417b5696b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wristUI: {fileID: 1468145976}
-  activeWristUI: 1
 --- !u!1 &773368752
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +920,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773368752}
   m_CullTransparentMesh: 1
+--- !u!1 &824219540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9014170785475729474, guid: 895f6f3c2d334633b5800312285058d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630331456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &824219542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824219540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0b220c1fb30a54d87504d417b5696b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wristUI: {fileID: 1468145976}
+  activeWristUI: 1
+--- !u!4 &824219546 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014170785475729501, guid: 895f6f3c2d334633b5800312285058d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630331456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1005724360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 587950080}
+      - m_Target: {fileID: 824219542}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: desPause
         m_Mode: 1
@@ -1482,7 +1482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1468145977
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 587950080}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: PausaButtonPressed
         m_Mode: 0
@@ -1777,6 +1777,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Device Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}

@@ -1,5 +1,5 @@
 {
-    "name": "New Controls",
+    "name": "NewCustomController",
     "maps": [
         {
             "name": "Menu",
@@ -19,7 +19,7 @@
                 {
                     "name": "",
                     "id": "c1c44b89-12e4-4df4-9d6b-e42bde618c57",
-                    "path": "<ViveController>/menu",
+                    "path": "<ViveController>{LeftHand}/menu",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
