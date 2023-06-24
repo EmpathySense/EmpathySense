@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+namespace PasoBDialogue
 {
-
-    public Dialogue dialogue;
-
-    void Start()
+    public class DialogueTrigger : MonoBehaviour
     {
-        TriggerDialogue();
+
+        public Dialogue dialogue;
+
+        void Start()
+        {
+            TriggerDialogue();
+        }
+
+
+        public void TriggerDialogue ()
+        {
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            
+        }
+
     }
-
-
-    public void TriggerDialogue ()
-    {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        
-    }
-
 }

@@ -2,24 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Dialogue
+namespace PasoBDialogue
 {
-    public string characterName;
-    
-
-    public Sentences[] sentences;
-    
-    // public string[] sentences;
-
-    // public string animationTrigger;
-
     [System.Serializable]
-    public class Sentences{
+    public class Dialogue
+    {
+        public string characterName;
+        
 
-        [TextArea(3, 5)]
-        public string text;
-        public bool triggersAnimation;
-        public string triggerName;
+        public Sentences[] sentences;
+        
+        // public string[] sentences;
+
+        // public string animationTrigger;
+
+        [System.Serializable]
+        public class Sentences{
+
+            [TextArea(3, 5)]
+            public string text;
+            public bool triggersAnimation;
+            public string triggerName;
+        }
     }
 }
