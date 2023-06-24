@@ -109,6 +109,7 @@ public class MenuPausa : MonoBehaviour
     {
         wristUI.SetActive(false);
         activeWristUI = false;
+        SetInteractableState(true);
         Time.timeScale = 1;
     }
     public void OpenLevel(string Level)
