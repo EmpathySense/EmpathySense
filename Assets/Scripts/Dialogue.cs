@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+namespace DialogoPasoC
+{
+
 [System.Serializable]
 public class Dialogue
 {
@@ -22,4 +26,6 @@ public class Dialogue
         public bool triggersAnimation;
         public string triggerName;
     }
+}
+
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+namespace DialogoPasoC{
+
+
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text narratorText;
@@ -111,4 +114,5 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+}
 }
