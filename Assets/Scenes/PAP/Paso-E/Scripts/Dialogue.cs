@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace DialogoPasoB{
 [System.Serializable]
 public class Dialogue
 {
@@ -22,4 +22,4 @@ public class Dialogue
         public bool triggersAnimation;
         public string triggerName;
     }
-}
+}}

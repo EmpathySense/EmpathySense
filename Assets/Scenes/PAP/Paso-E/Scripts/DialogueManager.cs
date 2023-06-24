@@ -5,110 +5,114 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
+namespace DialogoPasoB
 {
-    public TMP_Text narratorText;
-    public Animator businessManAnimator;
-    public Animator businessWomanAnimator;
 
-
-    public GameObject alertCanvas;
-    public GameObject modalPanel;
-
-    [SerializeField]
-    private GameObject continueButton, nextStepButton, returnButton;
-
-    [SerializeField, TextArea(3,5)]
-    private string endOfStepText;
-    private Queue<Dialogue.Sentences> sentences;
-    
-
-    // Start is called before the first frame update
-    void Awake()
+    public class DialogueManager : MonoBehaviour
     {
-        sentences = new Queue<Dialogue.Sentences>();
-    }
+        public TMP_Text narratorText;
+        public Animator businessManAnimator;
+        public Animator businessWomanAnimator;
 
-    public void StartDialogue(Dialogue dialogue)
-    {
-        Debug.Log("Starting dialogue...");
 
-        sentences.Clear();
+        public GameObject alertCanvas;
+        public GameObject modalPanel;
 
-        foreach (Dialogue.Sentences sentence in dialogue.sentences)
+        [SerializeField]
+        private GameObject continueButton, nextStepButton, returnButton;
+
+        [SerializeField, TextArea(3, 5)]
+        private string endOfStepText;
+        private Queue<Dialogue.Sentences> sentences;
+
+
+        // Start is called before the first frame update
+        void Awake()
         {
-            this.sentences.Enqueue(sentence);
+            sentences = new Queue<Dialogue.Sentences>();
         }
 
-        DisplayNextSentence();
-    }
-
-    public void DisplayNextSentence()
-    {
-        if (this.sentences.Count == 0)
+        public void StartDialogue(Dialogue dialogue)
         {
-            EndDialogue();
-            return;
+            Debug.Log("Starting dialogue...");
+
+            sentences.Clear();
+
+            foreach (Dialogue.Sentences sentence in dialogue.sentences)
+            {
+                this.sentences.Enqueue(sentence);
+            }
+
+            DisplayNextSentence();
         }
 
-
-        Dialogue.Sentences sentence = sentences.Dequeue();
-
-        narratorText.SetText(sentence.text);
-
-        if (sentence.triggersAnimation) 
+        public void DisplayNextSentence()
         {
-            businessManAnimator.StopPlayback();
-            businessManAnimator.SetTrigger(sentence.triggerName);
-            businessWomanAnimator.StopPlayback();
-            businessWomanAnimator.SetTrigger(sentence.triggerName);
-        }
-    }
+            if (this.sentences.Count == 0)
+            {
+                EndDialogue();
+                return;
+            }
 
-    private void EndDialogue()
-    {
-        StartCoroutine(ShowUnableToOpenCanvas(alertCanvas));
 
-        UnlockNewLevel();
+            Dialogue.Sentences sentence = sentences.Dequeue();
 
-        // Update Modal
-        narratorText.SetText(endOfStepText);
-        returnButton.SetActive(true);
-        continueButton.SetActive(false);
-        nextStepButton.SetActive(true);
-    }
+            narratorText.SetText(sentence.text);
 
-    public void GoToMainMenu()
-    {
-        string levelName = "MenúPrincipal";
-        SceneManager.LoadScene(levelName);
-    }
-
-    public void GoToNextScene(string Level)
-    {
-        string levelName = "Paso-" + Level;
-        SceneManager.LoadScene(levelName);
-    }
-
-    IEnumerator ShowUnableToOpenCanvas(GameObject canvas)
-    {
-        canvas.SetActive(true); // Activa el canvas
-
-        yield return new WaitForSeconds(2f); // Espera durante 2 segundos
-
-        canvas.SetActive(false); // Desactiva el canvas
-    }
-
-    void UnlockNewLevel()
-    {
-        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
-        {
-            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
-
-            PlayerPrefs.Save();
+            if (sentence.triggersAnimation)
+            {
+                businessManAnimator.StopPlayback();
+                businessManAnimator.SetTrigger(sentence.triggerName);
+                businessWomanAnimator.StopPlayback();
+                businessWomanAnimator.SetTrigger(sentence.triggerName);
+            }
         }
 
-    }
+        private void EndDialogue()
+        {
+            StartCoroutine(ShowUnableToOpenCanvas(alertCanvas));
 
+            UnlockNewLevel();
+
+            // Update Modal
+            narratorText.SetText(endOfStepText);
+            returnButton.SetActive(true);
+            continueButton.SetActive(false);
+            nextStepButton.SetActive(true);
+        }
+
+        public void GoToMainMenu()
+        {
+            string levelName = "MenúPrincipal";
+            SceneManager.LoadScene(levelName);
+        }
+
+        public void GoToNextScene(string Level)
+        {
+            string levelName = "Paso-" + Level;
+            SceneManager.LoadScene(levelName);
+        }
+
+        IEnumerator ShowUnableToOpenCanvas(GameObject canvas)
+        {
+            canvas.SetActive(true); // Activa el canvas
+
+            yield return new WaitForSeconds(2f); // Espera durante 2 segundos
+
+            canvas.SetActive(false); // Desactiva el canvas
+        }
+
+        void UnlockNewLevel()
+        {
+            if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+            {
+                PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+                PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+
+                PlayerPrefs.Save();
+            }
+
+        }
+
+    }
 }
