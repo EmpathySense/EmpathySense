@@ -45,10 +45,23 @@ public class MenuPausa : MonoBehaviour
         {
             wristUI.SetActive(true);
             activeWristUI = true;
+            SetInteractableState(false);
             Time.timeScale = 0;
 
         }
 
+    }
+    void SetInteractableState(bool state)
+    {
+        // Obtener todos los botones u otros elementos interactivos en la escena y establecer su estado interactable
+        Button[] buttons = FindObjectsOfType<Button>();
+
+        foreach (Button button in buttons)
+        {
+            button.interactable = state;
+        }
+
+        // Puedes incluir otros tipos de elementos interactivos que desees desactivar durante la pausa
     }
     public void PausaButtonPressed(InputAction.CallbackContext context)
     {
