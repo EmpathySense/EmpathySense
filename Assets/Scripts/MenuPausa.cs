@@ -14,6 +14,7 @@ public class MenuPausa : MonoBehaviour
     public Button[] botones;
     public GameObject levelBotones;
     private float yOffset;
+    public Button[] botonesPausa;
 
     Dictionary<string, int> levelIndexMap = new Dictionary<string, int>()
     {
@@ -39,6 +40,7 @@ public class MenuPausa : MonoBehaviour
         {
             wristUI.SetActive(false);
             activeWristUI = false;
+            SetInteractableState(true);
             Time.timeScale = 1;
 
         }else if (!activeWristUI)
@@ -54,9 +56,8 @@ public class MenuPausa : MonoBehaviour
     void SetInteractableState(bool state)
     {
         // Obtener todos los botones u otros elementos interactivos en la escena y establecer su estado interactable
-        Button[] buttons = FindObjectsOfType<Button>();
 
-        foreach (Button button in buttons)
+        foreach (Button button in botonesPausa)
         {
             button.interactable = state;
         }
