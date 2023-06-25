@@ -84,6 +84,7 @@ public class DialogueManager : MonoBehaviour
         int unlockedLvel = PlayerPrefs.GetInt("UnlockedLevel", 1);
         if (PlayerPrefs.HasKey("UnlockSim") == false)
         {
+            Debug.Log("Tiene alert");
             StartCoroutine(ShowUnableToOpenCanvas(alertCanvas));
         }
 
