@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace DialogoPasoC
-{
+
+
 
 [System.Serializable]
 public class Dialogue
 {
-    public string characterName;
     
 
     public Sentences[] sentences;
@@ -21,6 +20,7 @@ public class Dialogue
     [System.Serializable]
     public class Sentences{
 
+        public string characterName;
         [TextArea(3, 5)]
         public string text;
         public bool triggersAnimation;
@@ -28,4 +28,3 @@ public class Dialogue
     }
 }
 
-}
