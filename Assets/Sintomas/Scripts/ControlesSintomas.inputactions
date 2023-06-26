@@ -1,0 +1,34 @@
+{
+    "name": "ControlesSintomas",
+    "maps": [
+        {
+            "name": "HardReset",
+            "id": "5b8616e6-4907-4d1e-906e-645c953b8886",
+            "actions": [
+                {
+                    "name": "SalirHard",
+                    "type": "Button",
+                    "id": "bddfc828-ef43-4bb6-8324-4e074ba16a1d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "03797a8c-f286-4891-a6ee-c74a7202f457",
+                    "path": "<XRSimulatedController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SalirHard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
