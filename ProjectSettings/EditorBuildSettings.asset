@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PAP/Paso-C/Paso-C.unity
     guid: 0fbd1c4796bb7df4899279642d2f0595
   - enabled: 0
-    path: Assets/Scenes/Paso-C.unity
+    path: 
     guid: 8ec8cea2421ae55469089e50bf6bfd3b
   - enabled: 1
     path: Assets/Scenes/Paso-D.unity
@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Paso-E.unity
     guid: 9294b5b3ca0d8be4394194e040e028ae
+  - enabled: 1
+    path: Assets/TestDB/LoginScene.unity
+    guid: b78b0a2c259ca6c4599457cbe09bb32f
+  - enabled: 1
+    path: Assets/TestDB/MainScene.unity
+    guid: 697749059bf81ab408a94795a5114831
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
