@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Paso-B.unity
     guid: 343b722b254e4da47a9053f2df2b8b8d
   - enabled: 1
-    path: Assets/PAP/Paso-A/Paso-A.unity
+    path: Assets/Scenes/PAP/Paso-A/Paso-A.unity
     guid: 2d4bce613d2d2b34ea1712ca9726c0c8
   - enabled: 1
     path: Assets/Scenes/PAP/Paso-B/Paso-B.unity

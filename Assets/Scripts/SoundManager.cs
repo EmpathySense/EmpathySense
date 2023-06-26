@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] audioClipArray;
 
     public float time;
-    private int cont = 0;
+    private static int cont=0;
 
     AudioClip lastClip;
     AudioClip newClip;
@@ -18,10 +19,20 @@ public class SoundManager : MonoBehaviour
     //Inicializar
     public void start()
     {
+        
         lastClip = null;
     }
 
-
+    void Start()
+    {
+        cont = 0;
+        Invoke("sonidoPorPaso", 1.7f);
+        
+        /*
+        if (SceneManager.GetActiveScene().name == "Paso-A")
+        {
+        }*/
+    }
     public void sonidoPorPaso()
     {
         start();
@@ -32,7 +43,6 @@ public class SoundManager : MonoBehaviour
         audioSource.PlayOneShot(newClip);
         lastClip = newClip;
         cont++;
-
-
+        
     }
 }
