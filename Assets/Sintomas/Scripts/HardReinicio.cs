@@ -28,12 +28,10 @@ public class HardReinicio : MonoBehaviour
         {
             SceneManager.LoadScene("MenúPrincipal");
 
-            if (PlayerPrefs.HasKey("MalaExp")==false)
-            {
-            PlayerPrefs.SetInt("MalaExp", 1);
+            
             //Debug.Log(PlayerPrefs.GetInt("MalaExp"));
 
-            }
+            
         }
     }
 }
