@@ -114,6 +114,7 @@ public class MenuPausa : MonoBehaviour
         activeWristUI = false;
         SetInteractableState(true);
         Time.timeScale = 1;
+        audioSource.UnPause();
     }
     public void OpenLevel(string Level)
     {
