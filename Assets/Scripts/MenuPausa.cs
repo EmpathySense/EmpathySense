@@ -41,7 +41,7 @@ public class MenuPausa : MonoBehaviour
             wristUI.SetActive(false);
             activeWristUI = false;
             SetInteractableState(true);
-            audioSource.Play();
+            audioSource.UnPause();
             Time.timeScale = 1;
 
         }else if (!activeWristUI)
