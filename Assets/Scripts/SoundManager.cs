@@ -38,7 +38,7 @@ public class SoundManager : MonoBehaviour
         start();
 
         audioSource.Stop();
-
+        
         AudioClip newClip = audioClipArray[cont];
         audioSource.PlayOneShot(newClip);
         lastClip = newClip;

@@ -9,7 +9,7 @@ public class MenuPausa : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject wristUI;
-    
+    public AudioSource audioSource;
     public bool activeWristUI=true;
     public Button[] botones;
     public GameObject levelBotones;
@@ -41,6 +41,7 @@ public class MenuPausa : MonoBehaviour
             wristUI.SetActive(false);
             activeWristUI = false;
             SetInteractableState(true);
+            audioSource.Play();
             Time.timeScale = 1;
 
         }else if (!activeWristUI)
@@ -48,7 +49,9 @@ public class MenuPausa : MonoBehaviour
             wristUI.SetActive(true);
             activeWristUI = true;
             SetInteractableState(false);
+            audioSource.Pause();
             Time.timeScale = 0;
+
 
         }
 
