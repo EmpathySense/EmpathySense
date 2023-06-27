@@ -22,18 +22,18 @@ Vienes saliedo de la universidad, vas caminando por la vereda camino a casa cuan
 Está sentado en una banca mirando al piso y con las manos en la cabeza, tratas de llamar su atención pero no se da cuenta de que estás ahí.
 Decides acercarte a él para saludarlo.
 Hola. #title:Tú
-Oh, hola. Ne me había dado cuenta de que estabas ahí #title:Ignacio
+Oh, hola. Ne me había dado cuenta de que estabas ahí #title:Ignacio #animation:TrSittingTalking
 Oye, ¿Estás bien? #title:Tú
 Eh... Bueno... No, la verdad es que no. #title:Ignacio
 Recién tuve una prueba de matemáticas y no me fue muy bien.
-Estuve estudiando mucho tiempo y aun así me quedé bloqueado, ha sido así en todos los ramos que estoy dando, no importa cuánto estudie, nunca es suficiente.
+Estuve estudiando mucho tiempo y aun así me quedé bloqueado, ha sido así en todos los ramos que estoy dando, no importa cuánto estudie, nunca es suficiente. #animation:TrSittingLookDown
  No sé qué debería hacer, creo que he intentado hasta las técnicas de estudio de tiktok y nada sirve para concentrarme.
  ->first_choice
  
  = first_choice
  ¿Qué debería responder? #title:Tú
     * ¿Has Probado la técnica del pomodoro?
-        Sí, ya te dije, lo intenté absolutamente todo #title:Ignacio
+        Sí, ya te dije, lo intenté absolutamente todo #title:Ignacio 
         ~ raise(mistakes)
         ->first_choice
     * Aún te quedan más pruebas, puedes hacerlo
@@ -45,7 +45,7 @@ Estuve estudiando mucho tiempo y aun así me quedé bloqueado, ha sido así en t
         ->cant_concentrate
         
 = cant_concentrate
-Es... porque cada vez que tengo que estudiar... Mi familia pide que haga cosas o me interrumpe en medio de mi estudio... #title:Ignacio
+Es... porque cada vez que tengo que estudiar... Mi familia pide que haga cosas o me interrumpe en medio de mi estudio... #title:Ignacio #animation:TrSittingTalking_2
 Lo peor es que si les digo que no puedo hacer lo que me piden se enojan conmigo. Ni me imagino como irán a reaccionar cuando se enteren que me está yendo mal en la u.
 ->second_choice
 
@@ -53,7 +53,7 @@ Lo peor es que si les digo que no puedo hacer lo que me piden se enojan conmigo.
 ¿Qué debería responder? #title:Tú
     *  Deberías conversarlo con ellos, de más que te van a entender
     ~ raise(mistakes)
-        Ellos jamás me van a escuchar, si intentara hablarles sobre eso creerían que les estoy faltando el respeto o algo así. #title:Ignacio
+        Ellos jamás me van a escuchar, si intentara hablarles sobre eso creerían que les estoy faltando el respeto o algo así. #title:Ignacio 
         -> second_choice
     * ¿Tus papás son muy estrictos?
         ~raise(correctAnswers)
@@ -66,9 +66,9 @@ Lo peor es que si les digo que no puedo hacer lo que me piden se enojan conmigo.
         -> second_choice
 
 = talk_about_parents
-Mis papás en general tienen mal genio, desde el momento en que llegan a la casa no hacen más que pelear entre ellos, con mi hermana y conmigo. #title:Ignacio
+Mis papás en general tienen mal genio, desde el momento en que llegan a la casa no hacen más que pelear entre ellos, con mi hermana y conmigo. #title:Ignacio #animation:TrSittingLookDown_2
 Es como si se esforzaran por asegurarse de que todo el mundo los escuche...
-(Levantando la voz) Por eso tampoco me puedo concentrar, siempre hay un montón de ruido. Y no es como si pudiera quedarme a estudiar en la universidad tampoco, porque si llego muy tarde también es un problema para ellos...
+(Levantando la voz) Por eso tampoco me puedo concentrar, siempre hay un montón de ruido. Y no es como si pudiera quedarme a estudiar en la universidad tampoco, porque si llego muy tarde también es un problema para ellos... #animation:TrSittingDisbelief2
 (Sollozando) Ya no sé qué hacer... Encima que la próxima semana se viene otro montón de evaluaciones y ya pasó el plazo para des inscribir los ramos, no sé por dónde partir estudiando ni dónde estudiar. 
 ¿Qué debería responder? #title:Tú
     * \(No decir nada\)
@@ -107,7 +107,7 @@ Creo que tiene que ver con la cantidad de oxígeno que hay en nuestro cerebro y 
         ~raise(mistakes)
         (Espera, eso no tiene sentido)
         ->fourth_choice
-- \(Se acomoda en la banca, sentándose en una posición recta) #title:Ignacio
+- \(Se acomoda en la banca, sentándose en una posición recta) #title:Ignacio #animation:TrSittingMovingLegs
 ->fifth_choice
 
 = fifth_choice
@@ -137,9 +137,9 @@ Creo que tiene que ver con la cantidad de oxígeno que hay en nuestro cerebro y 
         ~raise(correctAnswers)
     * Bien hecho, sigue así
         ~raise(correctAnswers)
--\(Pasan unos cuantos minutos...) #title:_
+-\(Pasan unos cuantos minutos...) #title:Contexto
 ¿Te sientes mejor? #title:Tú
-Creo que sí. Gracias. #title:Ignacio
+Creo que sí. Gracias. #title:Ignacio #animation:TrSittingTalking_3
 ->sixth_choice
 
 = sixth_choice

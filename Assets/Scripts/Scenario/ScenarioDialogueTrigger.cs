@@ -8,7 +8,7 @@ public class ScenarioDialogueTrigger : MonoBehaviour
 
     void Start()
     {
-        
+        Invoke("DialogueTrigger", 2f);
     }
 
     public void DialogueTrigger()
