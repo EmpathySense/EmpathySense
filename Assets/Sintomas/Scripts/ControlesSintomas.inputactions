@@ -19,7 +19,7 @@
                 {
                     "name": "",
                     "id": "03797a8c-f286-4891-a6ee-c74a7202f457",
-                    "path": "<XRSimulatedController>{RightHand}/primaryButton",
+                    "path": "<XRController>{LeftHand}/menu",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
