@@ -12,6 +12,7 @@ public class LoginController : MonoBehaviour
     public TMP_InputField PasswordInput;
     void Start()
     {
+        //UsernameInput.text = "admin@admin"; //ingresar correo
         UsernameInput.text = "test@admin"; //ingresar correo
         PasswordInput.text = "12345666";  //ingresar password
         LoginButton.onClick.AddListener(Login);
@@ -21,7 +22,7 @@ public class LoginController : MonoBehaviour
     {
         if (await RealmController.Instance.Login(UsernameInput.text, PasswordInput.text) != "")
         {
-            SceneManager.LoadScene("MainScene");
+            RealmController.Instance.IsCreated();
         }
     }
 

@@ -1,13 +1,16 @@
 using Realms;
 using Realms.Sync;
 using System;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 public class History : RealmObject
 {
 
     [PrimaryKey]
+    [BsonRepresentation(BsonType.ObjectId)]
     [MapTo("_id")]
-    public string UserId { get; set; }
+    public string Id { get; set; }
 
     [MapTo("score_a")]
     public int ScoreA { get; set; }
@@ -32,9 +35,9 @@ public class History : RealmObject
 
     public History() { }
 
-    public History(string userId, int a, int b, int c, int d, int e)
+    public History(int a, int b, int c, int d, int e)
     {
-        this.UserId = userId;
+        this.Id = ObjectId.GenerateNewId().ToString();
         this.ScoreA = a;
         this.ScoreB = b;
         this.ScoreC = c;

@@ -1172,32 +1172,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 461645941}
-  - component: {fileID: 461645940}
+  - component: {fileID: 461645942}
   m_Layer: 0
-  m_Name: SceneController
+  m_Name: SignUpController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &461645940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461645939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02466025281bb214994d01a7a4ddcac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 1781029848}
-  FirstNameInput: {fileID: 0}
-  LastNameInput: {fileID: 0}
-  AgeInput: {fileID: 0}
-  RoleInput: {fileID: 0}
-  OrganizationInput: {fileID: 0}
 --- !u!4 &461645941
 Transform:
   m_ObjectHideFlags: 0
@@ -1213,6 +1195,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &461645942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461645939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a462e84a3514746b880ffbb037e2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 1781029848}
+  FirstNameInput: {fileID: 1966202465}
+  LastNameInput: {fileID: 1371188118}
+  AgeInput: {fileID: 1530170279}
+  RoleInput: {fileID: 100987837}
+  OrganizationInput: {fileID: 401025999}
 --- !u!1 &580790647
 GameObject:
   m_ObjectHideFlags: 0
