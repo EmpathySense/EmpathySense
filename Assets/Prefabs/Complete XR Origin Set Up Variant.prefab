@@ -2932,7 +2932,7 @@ PrefabInstance:
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_Name
-      value: Complete XR Origin Set Up
+      value: Complete XR Origin Set Up Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7696548424635294051, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
@@ -3042,6 +3042,7 @@ MonoBehaviour:
   activeWristUI: 1
   botones: []
   levelBotones: {fileID: 1447729695}
+  botonesPausa: []
 --- !u!4 &2140970125671759795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9014170785475729501, guid: 895f6f3c2d334633b5800312285058d2,

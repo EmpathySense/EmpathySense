@@ -1,0 +1,34 @@
+{
+    "name": "PauseSimController",
+    "maps": [
+        {
+            "name": "PauseSim",
+            "id": "cc9d1822-e957-4aa3-b206-beb233175b6c",
+            "actions": [
+                {
+                    "name": "Pausa",
+                    "type": "Button",
+                    "id": "db253ad0-9354-4425-ac23-34ed5bfae526",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bbdf2bb8-f635-41a2-bd72-944a351729b3",
+                    "path": "<XRController>{LeftHand}/menuButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pausa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
