@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
@@ -13,8 +14,9 @@ public class ScenarioDialogueManager : MonoBehaviour
     [SerializeField] private GameObject choicesPanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerName;
-    [SerializeField] private TMP_Text finalScore;
+    // [SerializeField] private TMP_Text finalScore;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject endButtons;
     [SerializeField] private GameObject[] choices;
     private TMP_Text[] choicesText;
 
@@ -42,6 +44,8 @@ public class ScenarioDialogueManager : MonoBehaviour
         choicesPanel.SetActive(false);
         
         dialoguePanel.SetActive(false);
+        correctAnswers = 0;
+        mistakes = 0;
 
         choicesText = new TMP_Text[choices.Length];
         int index = 0;
@@ -57,9 +61,11 @@ public class ScenarioDialogueManager : MonoBehaviour
         currentStory = new Story(inkJson.text);
         currentStory.ObserveVariable("correctAnswers", (variableName, newValue) => {
             correctAnswers = (int)newValue;
+            Debug.Log("Correct answers: " + correctAnswers);
         });
         currentStory.ObserveVariable("mistakes", (variableName, newValue) => {
             mistakes = (int)newValue;
+            Debug.Log("Mistakes: " + mistakes);
         });
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -172,11 +178,38 @@ public class ScenarioDialogueManager : MonoBehaviour
         currentStory.RemoveVariableObserver(null, "mistakes");
         //TODO: Aquí es donde se tienen que manejar los erroes del jugador
         //usando las variables correctAnswers y mistakes
+        
+        int suma = correctAnswers + mistakes;
+        Debug.Log("Suma correctas y errores" + suma);
+
 
         dialogueIsPlaying = false;
         // dialoguePanel.SetActive(false);
         choicesPanel.SetActive(false);
         dialogueText.text = "";
+        speakerName.text = "";
+
+        EndScreen();
+    }
+
+    private void EndScreen()
+    {
+        speakerName.text = "Resultados";
+        dialogueText.alignment = TextAlignmentOptions.Center;
+        dialogueText.text = string.Format("Respuestas correctas: {0}\nRespuestas incorrectas: {1}\nCantidad de intentos: {2}", correctAnswers, mistakes, correctAnswers+mistakes);
+        endButtons.SetActive(true);
+
+        RealmController.Instance.CreateHistory(correctAnswers, mistakes, correctAnswers+mistakes, 0, 0);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MenúPrincipal");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public static ScenarioDialogueManager GetInstance()

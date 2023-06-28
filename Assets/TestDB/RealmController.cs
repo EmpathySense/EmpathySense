@@ -89,7 +89,8 @@ public class RealmController : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("HistoryScene");
+            SceneManager.LoadScene("MenúPrincipal");
+            // SceneManager.LoadScene("EscenarioSimulacion");
         }
     }
 

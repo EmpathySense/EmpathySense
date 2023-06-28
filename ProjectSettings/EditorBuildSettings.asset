@@ -35,6 +35,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TestDB/HistoryScene.unity
     guid: 86f5cd193b2976248a37644803fa58aa
+  - enabled: 1
+    path: Assets/TestDB/LoginVR.unity
+    guid: edca274fd5826d94f930183e296fe1b7
+  - enabled: 1
+    path: Assets/Scenes/EscenariosCrisis/Simulacion_1/EscenarioSimulacion.unity
+    guid: cc6b7a3531911d84d9af87b44f299d6b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

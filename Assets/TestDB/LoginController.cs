@@ -27,7 +27,7 @@ public class LoginController : MonoBehaviour
         if (await RealmController.Instance.Login(Username, Password) != "")
         {
             RealmController.Instance.IsCreated();
-            SceneManager.LoadScene("Men�Principal");
+            // SceneManager.LoadScene("Men�Principal");
         }
     }
 
