@@ -69,11 +69,12 @@ public class MenuSim : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene("MenúPrincipal");
+        SceneManager.LoadScene("Menï¿½Principal");
     }
     public void ResetSim()
     {   
 
+        desPause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

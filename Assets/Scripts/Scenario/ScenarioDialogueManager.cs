@@ -173,9 +173,8 @@ public class ScenarioDialogueManager : MonoBehaviour
         //TODO: Aquí es donde se tienen que manejar los erroes del jugador
         //usando las variables correctAnswers y mistakes
 
-
         dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+        // dialoguePanel.SetActive(false);
         choicesPanel.SetActive(false);
         dialogueText.text = "";
     }
