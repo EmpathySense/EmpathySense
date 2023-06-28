@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class MenuPausa : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public GameObject wristUI;
-    
+    public GameObject pasosUI;
+    public AudioSource audioSource;
     public bool activeWristUI=true;
     public Button[] botones;
     public GameObject levelBotones;
@@ -38,17 +39,17 @@ public class MenuPausa : MonoBehaviour
     {
         if (activeWristUI)
         {
-            wristUI.SetActive(false);
-            activeWristUI = false;
-            SetInteractableState(true);
-            Time.timeScale = 1;
+            desPause();
+            
 
         }else if (!activeWristUI)
         {
             wristUI.SetActive(true);
             activeWristUI = true;
             SetInteractableState(false);
+            audioSource.Pause();
             Time.timeScale = 0;
+
 
         }
 
@@ -111,6 +112,8 @@ public class MenuPausa : MonoBehaviour
         activeWristUI = false;
         SetInteractableState(true);
         Time.timeScale = 1;
+        audioSource.UnPause();
+        pasosUI.SetActive(false);
     }
     public void OpenLevel(string Level)
     {
