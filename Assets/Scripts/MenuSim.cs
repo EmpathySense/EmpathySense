@@ -28,10 +28,7 @@ public class MenuSim : MonoBehaviour
     {
         if (activeWristUI)
         {
-            wristUI.SetActive(false);
-            activeWristUI = false;
-            SetInteractableState(true);
-            Time.timeScale = 1;
+            desPause();
 
         }
         else if (!activeWristUI)
@@ -75,7 +72,8 @@ public class MenuSim : MonoBehaviour
         SceneManager.LoadScene("MenúPrincipal");
     }
     public void ResetSim()
-    {
+    {   
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
