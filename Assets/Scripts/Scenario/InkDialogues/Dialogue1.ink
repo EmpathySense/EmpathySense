@@ -1,5 +1,12 @@
- VAR correctAnswers = 0
- VAR mistakes = 0
+VAR correctAnswers = 0
+
+VAR scoreSectionA = 0
+VAR scoreSectionB = 0
+VAR scoreSectionC = 0
+VAR scoreSectionD = 0
+VAR scoreSectionE = 0
+
+VAR mistakes = 0
  
  
  ->start
@@ -22,7 +29,7 @@ Vienes saliedo de la universidad, vas caminando por la vereda camino a casa cuan
 Está sentado en una banca mirando al piso y con las manos en la cabeza, tratas de llamar su atención pero no se da cuenta de que estás ahí.
 Decides acercarte a él para saludarlo.
 Hola. #title:Tú
-Oh, hola. Ne me había dado cuenta de que estabas ahí #title:Ignacio #animation:TrSittingTalking
+Oh, hola. No me había dado cuenta de que estabas ahí #title:Ignacio #animation:TrSittingTalking
 Oye, ¿Estás bien? #title:Tú
 Eh... Bueno... No, la verdad es que no. #title:Ignacio
 Recién tuve una prueba de matemáticas y no me fue muy bien.
@@ -72,6 +79,7 @@ Es como si se esforzaran por asegurarse de que todo el mundo los escuche...
 (Sollozando) Ya no sé qué hacer... Encima que la próxima semana se viene otro montón de evaluaciones y ya pasó el plazo para des inscribir los ramos, no sé por dónde partir estudiando ni dónde estudiar. 
 ¿Qué debería responder? #title:Tú
     * \(No decir nada\)
+        ~raise(correctAnswers)
     * Podría ser peor...
         ~raise(mistakes)
     * Tranquilo, vas a estar bien
