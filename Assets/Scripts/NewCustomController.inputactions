@@ -1,0 +1,34 @@
+{
+    "name": "NewCustomController",
+    "maps": [
+        {
+            "name": "Menu",
+            "id": "11f2ec5d-84bb-4da9-adf1-88ef64488549",
+            "actions": [
+                {
+                    "name": "MenuP",
+                    "type": "Button",
+                    "id": "d709f7e9-a2c8-4433-8c6a-62552bf2e3bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c1c44b89-12e4-4df4-9d6b-e42bde618c57",
+                    "path": "<XRController>{LeftHand}/menuButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuP",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

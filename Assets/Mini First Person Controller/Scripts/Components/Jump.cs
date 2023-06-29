@@ -3,7 +3,7 @@
 public class Jump : MonoBehaviour
 {
     Rigidbody rigidbody;
-    public float jumpStrength = 2;
+    public float jumpStrength = 20;
     public event System.Action Jumped;
 
     [SerializeField, Tooltip("Prevents jumping when the transform is in mid-air.")]

@@ -7,7 +7,7 @@ public class SceneTrigger : MonoBehaviour
 {
     void OnEnable()
     {
-        SceneManager.LoadScene("EscenaTesting",LoadSceneMode.Single);
+        SceneManager.LoadScene("MenúPrincipal",LoadSceneMode.Single);
     }
 
 }
