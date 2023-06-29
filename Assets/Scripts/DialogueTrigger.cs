@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DialogoPasoC
-{
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -23,4 +21,4 @@ public class DialogueTrigger : MonoBehaviour
     }
 
 }
-}
+
