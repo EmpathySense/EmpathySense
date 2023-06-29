@@ -2223,16 +2223,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 124532248}
-        m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
-        m_MethodName: activeMenu
-        m_Mode: 1
+      - m_Target: {fileID: 2035204570}
+        m_TargetAssemblyTypeName: MenuEmp, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: EscenarioSimulacion
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &325974012
@@ -4816,16 +4816,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2035204570}
+        m_TargetAssemblyTypeName: MenuEmp, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Sintomas
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1090499630
@@ -5511,10 +5511,11 @@ MonoBehaviour:
     se tienen en una crisis de p\xE1nico, te explicaremos lo que sentir\xE1s y el
     por qu\xE9 ocurren estos, podr\xE1s percibir est\xEDmulos visuales y auditivos
     que pueden ser muy intensos por lo que durante toda la simulaci\xF3n si te sientes
-    inc\xF3modo estar\xE1 la opci\xF3n de interrumpir la escena con el bot\xF3n [boton
-    que interrumpe la shet]. En caso de que no quieras simular los s\xEDntomas, est\xE1
-    la opci\xF3n de ver solamente los textos explicativos de estos, para que tengas
-    de igual manera los conocimientos para identificar una crisis de p\xE1nico. "
+    inc\xF3modo estar\xE1 la opci\xF3n de interrumpir la escena con el bot\xF3n de
+    <color=#ff0000>men\xFA de la mano izquierda</color>. En caso de que no quieras
+    simular los s\xEDntomas, est\xE1 la opci\xF3n de ver solamente los textos explicativos
+    de estos, para que tengas de igual manera los conocimientos para identificar
+    una crisis de p\xE1nico. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -6214,6 +6215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wristUI: {fileID: 0}
+  pasosUI: {fileID: 0}
   audioSource: {fileID: 0}
   activeWristUI: 1
   botones: []
