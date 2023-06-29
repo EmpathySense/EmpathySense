@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class MenuPrincipal : MonoBehaviour
             cb.pressedColor = Color.green;
             buttonSim.colors = cb;
 
+           
+
         }
         else if (PlayerPrefs.HasKey("UnlockSim")==false)
         {
@@ -47,6 +50,20 @@ public class MenuPrincipal : MonoBehaviour
             cb.pressedColor = Color.red;
             buttonSim.colors = cb;
             //buttonSim.enabled = false;
+        }
+    }
+
+    public void Change(string name)
+    {
+        if (PlayerPrefs.HasKey("UnlockSim") == false)
+        {
+            StartCoroutine(ShowAlertCanvas(alertSim));
+           
+        }
+
+        else
+        {
+           SceneManager.LoadScene(name);
         }
     }
 

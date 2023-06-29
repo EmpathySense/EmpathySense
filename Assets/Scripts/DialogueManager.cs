@@ -168,7 +168,7 @@ public class DialogueManager : MonoBehaviour
     public void GoToMainMenuSim()
         {
 
-        MenuPrincipal.panelSimulacion = true;
+        // MenuPrincipal.panelSimulacion = true;
             
             string levelName = "MenúPrincipal";
             SceneManager.LoadScene(levelName);

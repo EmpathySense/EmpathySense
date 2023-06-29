@@ -2223,8 +2223,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2035204570}
-        m_TargetAssemblyTypeName: MenuEmp, Assembly-CSharp
+      - m_Target: {fileID: 124532248}
+        m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
         m_MethodName: Change
         m_Mode: 5
         m_Arguments:
