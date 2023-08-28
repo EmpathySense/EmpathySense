@@ -5,7 +5,7 @@ using UnityEngine;
 public class NpcController : MonoBehaviour
 {
     [SerializeField]
-    private Transform playerTransform;
+    private Transform playerCameraTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,16 @@ public class NpcController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(playerTransform);
+
+        if (playerCameraTransform != null)
+        {
+            Vector3 directionToPlayer = playerCameraTransform.position - transform.position;
+
+            
+            Quaternion targetRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0, directionToPlayer.z));
+
+            
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10);
+        }
     }
 }
