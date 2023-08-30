@@ -59,14 +59,17 @@ public class ScenarioDialogueManager : MonoBehaviour
     public void EnterDialogueMode(TextAsset inkJson)
     {
         currentStory = new Story(inkJson.text);
+
         currentStory.ObserveVariable("correctAnswers", (variableName, newValue) => {
             correctAnswers = (int)newValue;
             Debug.Log("Correct answers: " + correctAnswers);
         });
+
         currentStory.ObserveVariable("mistakes", (variableName, newValue) => {
             mistakes = (int)newValue;
             Debug.Log("Mistakes: " + mistakes);
         });
+
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
