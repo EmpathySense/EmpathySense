@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TestDB/LoginVR.unity
     guid: edca274fd5826d94f930183e296fe1b7
-  - enabled: 0
-    path: Assets/Scenes/MenuPrincipal.unity
-    guid: eacca31188b0ee84ca77b825356ff18c
   - enabled: 1
     path: "Assets/Scenes/Men\xFAPrincipal.unity"
     guid: 6fdff5cbc3b42db408f388e7b0ae2086
+  - enabled: 0
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: eacca31188b0ee84ca77b825356ff18c
   - enabled: 1
     path: Assets/Scenes/PAP/Paso-A/Paso-A.unity
     guid: 2d4bce613d2d2b34ea1712ca9726c0c8
