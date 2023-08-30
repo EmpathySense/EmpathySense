@@ -118,10 +118,11 @@ public class DialogueManager : MonoBehaviour
             
             narratorText.SetText(endOfStepText);
             continueButton.SetActive(false);
-            nextStepButton.SetActive(false);
+            // nextStepButton.SetActive(false);
             returnButton.SetActive(true);
-            GetButton();
-            boton.gameObject.SetActive(true);
+            // GetButton();
+            // boton.gameObject.SetActive(true);
+            nextStepButton.SetActive(true);
         }
         else if (unlockedLvel<6)
         {
