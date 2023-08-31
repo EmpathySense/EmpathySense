@@ -89,14 +89,15 @@ public class RealmController : MonoBehaviour
         }
         else
         {   
-            if (PlayerPrefs.HasKey("FirstSesion"))
+            Users _user = RealmController.Instance.GetUser();
+
+            if (_user.Role == "Nuevo")
             {
-            SceneManager.LoadScene("MenúPrincipal");
-                
+                SceneManager.LoadScene("Introduccion"); //nombre escena de introducción
             }
             else
             {
-                SceneManager.LoadScene("Introduccion");
+                SceneManager.LoadScene("MenúPrincipal");
             }
             // SceneManager.LoadScene("EscenarioSimulacion");
         }
@@ -129,5 +130,21 @@ public class RealmController : MonoBehaviour
             Debug.Log("id: " + item.Id);
             Debug.Log(item.TotalScore);
         }
+    }
+
+        public void UpdateIntro()
+    {
+        Users _user = RealmController.Instance.GetUser();
+
+        Users _new = new Users();
+        _new.UserId = _user.UserId;
+        _new.FirstName = _user.FirstName;
+        _new.LastName = _user.LastName;
+        _new.Age = _user.Age;
+        _new.Role = "Antiguo";
+        _new.CreationDate = _user.CreationDate;
+        _new.Organization = _user.Organization;
+
+        RealmController.Instance.UpdateUser(_new);
     }
 }
