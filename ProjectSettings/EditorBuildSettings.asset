@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/TestDB/LoginVR.unity
     guid: edca274fd5826d94f930183e296fe1b7
   - enabled: 1
+    path: "Assets/Scenes/Introducci\xF3n/Introduccion.unity"
+    guid: 311aec6740115ad4fabd19c9ac06431c
+  - enabled: 1
     path: "Assets/Scenes/Men\xFAPrincipal.unity"
     guid: 6fdff5cbc3b42db408f388e7b0ae2086
   - enabled: 0

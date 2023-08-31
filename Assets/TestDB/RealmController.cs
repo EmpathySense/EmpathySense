@@ -88,8 +88,16 @@ public class RealmController : MonoBehaviour
             SceneManager.LoadScene("SignUpScene");
         }
         else
-        {
+        {   
+            if (PlayerPrefs.HasKey("FirstSesion"))
+            {
             SceneManager.LoadScene("MenúPrincipal");
+                
+            }
+            else
+            {
+                SceneManager.LoadScene("Introduccion");
+            }
             // SceneManager.LoadScene("EscenarioSimulacion");
         }
     }
