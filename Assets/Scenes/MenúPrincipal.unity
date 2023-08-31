@@ -202,6 +202,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4260888}
   m_CullTransparentMesh: 1
+--- !u!1 &7700242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7700243}
+  - component: {fileID: 7700245}
+  - component: {fileID: 7700244}
+  m_Layer: 0
+  m_Name: Warning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7700243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7700242}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.3902, y: 0.95550275, z: -45.380264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2070802740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7700244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7700242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22abe20dc1ef6c4b8d81d33f5fe8f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJson: {fileID: 4900000, guid: 168ade95e167ed743a63424d0baf05a7, type: 3}
+--- !u!114 &7700245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7700242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b84cb378afa5449825b81f0862fbf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 467317988}
+  dialogueText: {fileID: 1748072436}
+  continueButton: {fileID: 482011271}
+  finButton: {fileID: 0}
 --- !u!1 &57951421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,6 +2711,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6107bbadb9912145ae2a200afdfb1f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &467317988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6622656678158113540, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+    type: 3}
+  m_PrefabInstance: {fileID: 792101385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &482011271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8243635609140258120, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+    type: 3}
+  m_PrefabInstance: {fileID: 792101385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &494303950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,6 +3754,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 83642175318182653, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1818801009395834778, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3748,15 +3827,7 @@ PrefabInstance:
     - target: {fileID: 3669644438361884078, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
         type: 3}
       propertyPath: m_text
-      value: "En esta funcionalidad podr\xE1s simular algunos de los s\xEDntomas
-        que se tienen en una crisis de p\xE1nico, te explicaremos lo que sentir\xE1s
-        y el por qu\xE9 ocurren estos, podr\xE1s percibir est\xEDmulos visuales y
-        auditivos que pueden ser muy intensos por lo que durante toda la simulaci\xF3n
-        si te sientes inc\xF3modo estar\xE1 la opci\xF3n de interrumpir la escena
-        con el bot\xF3n de men\xFA de la mano izquierda. En caso de que no quieras
-        simular los s\xEDntomas, est\xE1 la opci\xF3n de ver solamente los textos
-        explicativos de estos, para que tengas de igual manera los conocimientos
-        para identificar una crisis de p\xE1nico. "
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3669644438361884078, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
         type: 3}
@@ -3780,6 +3851,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669644438361884078, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
         type: 3}
+      propertyPath: m_fontSizeMax
+      value: 28.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669644438361884078, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 24.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669644438361884078, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+        type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
@@ -3788,6 +3869,26 @@ PrefabInstance:
       propertyPath: playerCameraTransform
       value: 
       objectReference: {fileID: 1673128788}
+    - target: {fileID: 7333765333129564059, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333765333129564059, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7700245}
+    - target: {fileID: 7333765333129564059, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinueDialogueMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333765333129564059, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManagerWarning, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8505,6 +8606,18 @@ RectTransform:
   m_AnchoredPosition: {x: 54.2, y: 15.1}
   m_SizeDelta: {x: 6.7599945, y: 10.76001}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1748072436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3669644438361884078, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
+    type: 3}
+  m_PrefabInstance: {fileID: 792101385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748996228
 GameObject:
   m_ObjectHideFlags: 0
@@ -10504,6 +10617,7 @@ Transform:
   m_Children:
   - {fileID: 2035204571}
   - {fileID: 124532247}
+  - {fileID: 7700243}
   - {fileID: 428414961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10737,6 +10851,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 792101386}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2084382489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10886,6 +11012,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7700244}
+        m_TargetAssemblyTypeName: DialogueTriggerWarning, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
