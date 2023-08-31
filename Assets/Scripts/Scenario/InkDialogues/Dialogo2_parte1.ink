@@ -49,4 +49,5 @@ Le dije que podía esperar un rato en la sala de reuniones, pero es todo lo que 
         ~ raise(mistakes)
         ->first_choice
     
--->END
+- \(La sala de reuniones está a la izquierda) #title:Contexto
+->END
