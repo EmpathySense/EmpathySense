@@ -106,4 +106,7 @@ public class DialogueManagerWarning : MonoBehaviour
     {
         return _instance;
     }
+
+
+    
 }
