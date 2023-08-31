@@ -36,6 +36,7 @@ public class MenuSim : MonoBehaviour
             wristUI.SetActive(true);
             activeWristUI = true;
             SetInteractableState(false);
+            audioFondo.Pause();
             Time.timeScale = 0;
 
         }
@@ -46,6 +47,7 @@ public class MenuSim : MonoBehaviour
         wristUI.SetActive(false);
         activeWristUI = false;
         SetInteractableState(true);
+        audioFondo.UnPause();
         Time.timeScale = 1;
     }
 
