@@ -21,7 +21,7 @@ Notar que los “tiempos” no son segundos, estos son de duración variable y d
 ->second_part
 
 === second_part ===
-Al inicio, se puede acompañar a la persona en la respiración para ayudarla a entender la técnica. Luego, se puede permitir que siga por su propia cuenta, acompañando con afirmaciones positivas. #animation:TrSittingIdle
+Al inicio, se puede acompañar a la persona en la respiración para ayudarla a entender la técnica. Luego, se puede permitir que siga por su propia cuenta, acompañando con afirmaciones positivas. #animation:TrSittingIdle #title:<u color=\#FF0000>Paso <color="red">B</color> - Reentrenamiento de la (<color="red">B</color>)entilación
 
 ->second_quest
 

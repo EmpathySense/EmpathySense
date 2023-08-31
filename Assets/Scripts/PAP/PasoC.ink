@@ -15,7 +15,7 @@ Esto es importante debido a que en una situación de crisis suele producirse una
 ->second_part
 
 === second_part ===
-Lo primero que debes hacer es ayudar a que la persona afectada identifique sus necesidades escuchando su relato, evitando decidirlas tú. #animation:TrTalkingMen
+Lo primero que debes hacer es ayudar a que la persona afectada identifique sus necesidades escuchando su relato, evitando decidirlas tú. #animation:TrTalkingMen #title:<u color=\#FF0000>Paso <color="red">C</color> - <color="red">C</color>ategorización de Necesidades
 Luego acompaña a la persona en el proceso de jerarquización de sus necesidades distinguiendo lo que necesita solucionar inmediatamente y lo que puede esperar. #animation:TrTalkingWomen
 Permite que sea la persona que jerarquice sus necesidades. Evita hacerlo desde tu punto de vista.
 ->second_quest
@@ -28,6 +28,6 @@ Permite que sea la persona que jerarquice sus necesidades. Evita hacerlo desde t
 -Cuando pasamos por momentos de crisis, muchas veces es difícil ordenar nuestros pensamientos, debido a que las emociones y la intensidad con la que sentimos bloquea la organización lógica y se exacerban las respuestas de supervivencia. La facilitación de la jerarquización de necesidades promueve el orden y la disminución de las respuestas de alerta, en tanto se aumentan las certezas. #title:Recuerda que
 ->finish
 === finish ===
-Por último, ayúdala a reconocer los servicios de salud o asistencia social que le podrán ser de ayuda. #animation:TrAnsioso
+Por último, ayúdala a reconocer los servicios de salud o asistencia social que le podrán ser de ayuda. #animation:TrAnsioso #title:<u color=\#FF0000>Paso <color="red">C</color> - <color="red">C</color>ategorización de Necesidades
 Es importante que la persona utilice sus propios recursos o los de sus redes para hacer frente a la crisis que está viviendo, esto favorecerá su independencia y el sostener la calma cuando tú no estés.
 ->END
