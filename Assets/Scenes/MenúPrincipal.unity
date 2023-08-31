@@ -3735,11 +3735,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guia MenuRecrear
       objectReference: {fileID: 0}
-    - target: {fileID: 1818801009396115770, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1818801009405620414, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
         type: 3}
       propertyPath: m_Controller
@@ -3793,12 +3788,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca13a2f8ad4c8a34c82e74ac069ae121, type: 3}
---- !u!1 &792101386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1818801009396115770, guid: ca13a2f8ad4c8a34c82e74ac069ae121,
-    type: 3}
-  m_PrefabInstance: {fileID: 792101385}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804607132
 GameObject:
   m_ObjectHideFlags: 0
@@ -5466,10 +5455,10 @@ RectTransform:
   - {fileID: 1257203986}
   m_Father: {fileID: 1398031302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 47.165, y: -7.5}
-  m_SizeDelta: {x: 94.33, y: 15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090499629
 MonoBehaviour:
@@ -7008,18 +6997,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2118336964}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 792101386}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -10664,10 +10641,10 @@ RectTransform:
   - {fileID: 1284397635}
   m_Father: {fileID: 1398031302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 47.165, y: -37.57}
-  m_SizeDelta: {x: 94.33, y: 15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084382488
 MonoBehaviour:
@@ -10809,10 +10786,10 @@ RectTransform:
   - {fileID: 1748996229}
   m_Father: {fileID: 1398031302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 47.165, y: -67.64}
-  m_SizeDelta: {x: 94.33, y: 15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095406600
 MonoBehaviour:
@@ -10882,18 +10859,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 792101386}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2095406601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10947,7 +10912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2118336965
 RectTransform:
   m_ObjectHideFlags: 0
