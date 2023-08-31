@@ -16,4 +16,9 @@ public class DialogueTriggerWarning : MonoBehaviour
     {
         DialogueManagerWarning.GetInstance().EnterDialogueMode(inkJson);
     }
+
+    public void Restart()
+    {
+        DialogueManagerWarning.GetInstance().EnterDialogueMode(inkJson);
+    }
 }
