@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuPrincipal.unity
     guid: eacca31188b0ee84ca77b825356ff18c
   - enabled: 1
+    path: "Assets/Scenes/Introducci\xF3n/Introduccion.unity"
+    guid: 311aec6740115ad4fabd19c9ac06431c
+  - enabled: 1
     path: "Assets/Scenes/Men\xFAPrincipal.unity"
     guid: 6fdff5cbc3b42db408f388e7b0ae2086
+  - enabled: 0
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: eacca31188b0ee84ca77b825356ff18c
   - enabled: 1
     path: Assets/Scenes/PAP/Paso-A/Paso-A.unity
     guid: 2d4bce613d2d2b34ea1712ca9726c0c8
@@ -32,6 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EscenariosCrisis/Simulacion_1/EscenarioSimulacion.unity
     guid: cc6b7a3531911d84d9af87b44f299d6b
+  - enabled: 1
+    path: Assets/Scenes/EscenariosCrisis/Simulacion_2/Office.unity
+    guid: 5a133948c17de5e43b34c1a82aa786e6
+  - enabled: 0
+    path: Assets/Scenes/EscenariosCrisis/Simulacion_2/Oficina.unity
+    guid: 77c362a7ca0ab1d43aabf4fb36eae977
   - enabled: 1
     path: Assets/Sintomas/Sintomas.unity
     guid: 0697f56b07f25c447920eba09d114eb6

@@ -11,6 +11,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    private static DialogueManager _instance;
+    
     public TMP_Text narratorText;
     public TMP_Text titleText;
     public Animator businessManAnimator;
@@ -35,6 +37,12 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         sentences = new Queue<Dialogue.Sentences>();
+
+        if (_instance != null)
+        {
+            Debug.LogWarning("Hay más de una instancia de DialogueManager en la escena");
+        }
+        _instance = this;
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -55,6 +63,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (this.sentences.Count == 0)
         {
+            
             EndDialogue();
             return;
         }
@@ -77,10 +86,12 @@ public class DialogueManager : MonoBehaviour
             businessWomanAnimator.StopPlayback();
             businessWomanAnimator.SetTrigger(sentence.triggerName);
         }
+        
     }
 
-    private void EndDialogue()
+    public void EndDialogue()
     {
+        Debug.Log("hols");
         int unlockedLvel = PlayerPrefs.GetInt("UnlockedLevel", 1);
         if (PlayerPrefs.HasKey("UnlockSim") == false)
         {
@@ -107,10 +118,11 @@ public class DialogueManager : MonoBehaviour
             
             narratorText.SetText(endOfStepText);
             continueButton.SetActive(false);
-            nextStepButton.SetActive(false);
+            // nextStepButton.SetActive(false);
             returnButton.SetActive(true);
-            GetButton();
-            boton.gameObject.SetActive(true);
+            // GetButton();
+            // boton.gameObject.SetActive(true);
+            nextStepButton.SetActive(true);
         }
         else if (unlockedLvel<6)
         {
@@ -193,6 +205,11 @@ public class DialogueManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
+    }
+
+    public static DialogueManager GetInstance()
+    {
+        return _instance;
     }
 
 }

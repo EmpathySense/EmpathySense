@@ -83,6 +83,12 @@ public class MenuPrincipal : MonoBehaviour
         }
     }
 
+
+    public void ReturnHelp()
+    {
+        SceneManager.LoadScene("Introduccion");
+    }
+
     IEnumerator ShowAlertCanvas(GameObject canvas)
     {
         canvas.SetActive(true); // Activa el canvas
