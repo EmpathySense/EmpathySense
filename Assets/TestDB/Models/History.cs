@@ -52,4 +52,32 @@ public class History : RealmObject
 
     }
 
+      public History(int a, int b, int c, int d, int e, string scene, string feedback)
+    {
+        this.Id = ObjectId.GenerateNewId().ToString();
+        this.ScoreA = a;
+        this.ScoreB = b;
+        this.ScoreC = c;
+        this.ScoreD = d;
+        this.ScoreE = e;
+        this.Scene = scene;
+        this.Feedback = feedback;
+        this.Date = DateTimeOffset.Now;
+
+    }
+
+        public History(string id, int a, int b, int c, int d, int e, string scene, string feedback, DateTimeOffset date)
+    {
+        this.Id = id;
+        this.ScoreA = a;
+        this.ScoreB = b;
+        this.ScoreC = c;
+        this.ScoreD = d;
+        this.ScoreE = e;
+        this.Scene = scene;
+        this.Feedback = feedback;
+        this.Date = date;
+
+    }
+
 }

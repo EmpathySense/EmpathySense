@@ -125,7 +125,7 @@ public class RealmController : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("HistoryScene");
+                SceneManager.LoadScene("MenúPrincipal");
             }
             // SceneManager.LoadScene("EscenarioSimulacion");
         }
@@ -167,4 +167,20 @@ public class RealmController : MonoBehaviour
         if(name == "e") _prefs.InfoE = false;
         RealmController.Instance.UpdatePrefs(_prefs);
     }
+    public History[] GetHistory(){
+        var _history = _realm.All<History>();
+        int j = 0;
+        foreach (var _count in _history)
+        {
+            j++;
+        }
+        History[] _newHistory = new History[j];
+        int i = 0;
+        foreach (var _h in _history)
+        {
+            _newHistory[i] = new History(_h.Id, _h.ScoreA, _h.ScoreB, _h.ScoreC, _h.ScoreD, _h.ScoreE, "scene", "feedback", _h.Date);
+            i++;
+        }
+        return _newHistory;
+    } 
 }
