@@ -27,8 +27,11 @@ public class History : RealmObject
     [MapTo("score_e")]
     public int ScoreE { get; set; }
 
-    [MapTo("total_score")]
-    public int TotalScore { get; set; }
+    [MapTo("scene")]
+    public string Scene { get; set; }
+
+    [MapTo("feedback")]
+    public string Feedback { get; set; }
     
     [MapTo("date")]
     public DateTimeOffset Date { get; set; }
@@ -43,7 +46,8 @@ public class History : RealmObject
         this.ScoreC = c;
         this.ScoreD = d;
         this.ScoreE = e;
-        this.TotalScore = a + b + c + d + e;
+        this.Scene = "scene";
+        this.Feedback = "feedback";
         this.Date = DateTimeOffset.Now;
 
     }

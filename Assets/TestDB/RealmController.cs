@@ -77,6 +77,32 @@ public class RealmController : MonoBehaviour
         return _playerProfile;
     }
 
+    public Prefs GetPrefs(){
+        var _prefs = _realm.All<Prefs>();
+        Prefs _newPrefs = new Prefs();
+        foreach (var _pref in _prefs)
+        {
+            _newPrefs.Id = _pref.Id;
+            _newPrefs.InfoI = _pref.InfoI;
+            _newPrefs.InfoA = _pref.InfoA;
+            _newPrefs.InfoB = _pref.InfoB;
+            _newPrefs.InfoC = _pref.InfoC;
+            _newPrefs.InfoD = _pref.InfoD;
+            _newPrefs.InfoE = _pref.InfoE;
+        }
+        return _newPrefs;
+
+    }
+
+    public Prefs CreatePrefs()
+    {
+        Prefs _prefs = new Prefs();
+        _realm.Write(() => {
+            _realm.Add(_prefs);
+        });
+        return _prefs;
+    }
+
     public void IsCreated()
     {
         Users _playerProfile = _realm.Find<Users>(_realmUser.Id);
@@ -85,19 +111,21 @@ public class RealmController : MonoBehaviour
             _realm.Write(() => {
                 _playerProfile = _realm.Add(new Users(_realmUser.Id));
             });
-            SceneManager.LoadScene("SignUpScene");
+
+            Prefs _prefs = RealmController.Instance.CreatePrefs();
+            SceneManager.LoadScene("MainScene");
         }
         else
         {   
-            Users _user = RealmController.Instance.GetUser();
 
-            if (_user.Role == "Nuevo")
+            Prefs _prefs = GetPrefs();
+            if (_prefs.InfoI)
             {
                 SceneManager.LoadScene("Introduccion"); //nombre escena de introducción
             }
             else
             {
-                SceneManager.LoadScene("MenúPrincipal");
+                SceneManager.LoadScene("HistoryScene");
             }
             // SceneManager.LoadScene("EscenarioSimulacion");
         }
@@ -110,6 +138,14 @@ public class RealmController : MonoBehaviour
         });
     }
 
+    public void UpdatePrefs(Prefs prefs)
+    {
+        _realm.Write(() => {
+            _realm.Add(prefs, true); //this will update an existing user with the same id or create a new one if it doesn't exist
+        });
+    }
+
+
     public History CreateHistory( int a, int b, int c, int d, int e)
     {
         History _history = new History(a, b, c, d, e);
@@ -120,31 +156,15 @@ public class RealmController : MonoBehaviour
     }
 
 
-    //not needed, just for testing
-    public void GetHistory()
+    public void UpdateIntro(string name)
     {
-        var _history = _realm.All<History>();
-        foreach (var item in _history)
-        {
-            Debug.Log("user_id: " + GetUser().UserId);
-            Debug.Log("id: " + item.Id);
-            Debug.Log(item.TotalScore);
-        }
-    }
-
-        public void UpdateIntro()
-    {
-        Users _user = RealmController.Instance.GetUser();
-
-        Users _new = new Users();
-        _new.UserId = _user.UserId;
-        _new.FirstName = _user.FirstName;
-        _new.LastName = _user.LastName;
-        _new.Age = _user.Age;
-        _new.Role = "Antiguo";
-        _new.CreationDate = _user.CreationDate;
-        _new.Organization = _user.Organization;
-
-        RealmController.Instance.UpdateUser(_new);
+        Prefs _prefs = RealmController.Instance.GetPrefs();
+        if(name = "intro") _prefs.InfoI = false;
+        if(name = "a") _prefs.InfoA = false;
+        if(name = "b") _prefs.InfoB = false;
+        if(name = "c") _prefs.InfoC = false;
+        if(name = "d") _prefs.InfoD = false;
+        if(name = "e") _prefs.InfoE = false;
+        RealmController.Instance.UpdatePrefs(_prefs);
     }
 }
