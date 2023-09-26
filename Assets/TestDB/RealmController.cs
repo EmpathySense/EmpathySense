@@ -156,15 +156,16 @@ public class RealmController : MonoBehaviour
     }
 
 
-    public void UpdateIntro(string name)
+    public void UpdateIntro()
     {
+        string name = "intro";
         Prefs _prefs = RealmController.Instance.GetPrefs();
-        if(name = "intro") _prefs.InfoI = false;
-        if(name = "a") _prefs.InfoA = false;
-        if(name = "b") _prefs.InfoB = false;
-        if(name = "c") _prefs.InfoC = false;
-        if(name = "d") _prefs.InfoD = false;
-        if(name = "e") _prefs.InfoE = false;
+        if(name == "intro") _prefs.InfoI = false;
+        if(name == "a") _prefs.InfoA = false;
+        if(name == "b") _prefs.InfoB = false;
+        if(name == "c") _prefs.InfoC = false;
+        if(name == "d") _prefs.InfoD = false;
+        if(name == "e") _prefs.InfoE = false;
         RealmController.Instance.UpdatePrefs(_prefs);
     }
 }
