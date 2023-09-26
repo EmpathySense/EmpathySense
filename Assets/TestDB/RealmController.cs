@@ -156,9 +156,8 @@ public class RealmController : MonoBehaviour
     }
 
 
-    public void UpdateIntro()
+    public void UpdatePrefs(string name)
     {
-        string name = "intro";
         Prefs _prefs = RealmController.Instance.GetPrefs();
         if(name == "intro") _prefs.InfoI = false;
         if(name == "a") _prefs.InfoA = false;
