@@ -113,7 +113,7 @@ public class RealmController : MonoBehaviour
             });
 
             Prefs _prefs = RealmController.Instance.CreatePrefs();
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("SignupScene");
         }
         else
         {   
