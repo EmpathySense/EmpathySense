@@ -39,14 +39,16 @@ Le dije que podía esperar un rato en la sala de reuniones, pero es todo lo que 
 === first_choice ===
 ¿Qué debería responder? #title:Tú
     * Voy, pero no prometo nada.
-        ~ raise(mistakes)
+        ~ mistake_dialogue()
+        //~ raise(mistakes)
+        ->first_choice
         
     * Iré a verlo, para acompañarlo
-        ~ raise(correctAnswers)
+        //~ raise(correctAnswers)
         
     * Deberías ir tú a verlo, cualquier puede hacerlo, aunque no estés preparado/a
         ~ mistake_dialogue()
-        ~ raise(mistakes)
+        //~ raise(mistakes)
         ->first_choice
     
 - \(La sala de reuniones está a la izquierda) #title:Contexto
