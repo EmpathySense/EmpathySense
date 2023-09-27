@@ -72,11 +72,13 @@ VAR mistakes = 0
     * Jorge, veo que no estás pasándolo muy bien[] ahora, entonces si te sientes cómodo y quieres comentarte algo o desahogarte yo tengo la disposición de escucharte.
         ~ raise(scoreSectionA)
         ~ raise(correctAnswers)
-    * ¿Qué te pasó?
+    * ¿Qué te pasó?#dialog:guide 
+        Recuerda que en un proceso de crisis la persona puede no tener claro qué es lo que le ocurre y preguntas como esta pueden generar más angustia.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->five_choice
-    * ¿Por qué estás llorando? 
+    * ¿Por qué estás llorando? #dialog:guide
+        Recuerda evitar preguntas que puedan generar más angustia#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->five_choice
@@ -88,7 +90,8 @@ VAR mistakes = 0
 
  === six_choice === 
  ¿Qué debería responder? #title:Tú
-    * ¿Por qué crees que no eres valorado?
+    * ¿Por qué crees que no eres valorado?#dialog:guide
+        Recuerda evitar preguntas que puedan generar más angustia.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->six_choice
@@ -97,7 +100,8 @@ VAR mistakes = 0
         ~ raise(correctAnswers)
     * Ah mí me pasa igual, de hecho, el otro día fui hablar de esto con el jefe.
         ~ raise(mistakes)
-        -No me interesa tu conversación con el jefe.#title:Jorge
+        -No me interesa tu conversación con el jefe.#title:Jorge#dialog:guide
+        Este comentario resta validación a lo que comenta la otra persona, volviendo el foco hacia ti.#dialog:normal
         ->six_choice
     
 - Si, porque tengo más trabajo del que puedo hacer, aparte cada fecha límite se pisa con la otra, no termino con una cuando ya tengo que empezar con otra tarea. #title:Jorge 
@@ -109,12 +113,14 @@ VAR mistakes = 0
     * Comprendo lo que me cuentas, te refieres a sentirte con sobrecarga laboral
         ~ raise(scoreSectionA)
         ~ raise(correctAnswers)
-    * Todos estamos igual de sobrepasados
-        - Así te veo. #title:Jorge
+    * Todos estamos igual de sobrepasados.
+        - Así te veo. #title:Jorge#dialog:guide
+        Esta respuesta corre el riesgo de invalidar el sentir de la otra persona.#dialog:normal
         ~ raise(mistakes)
         ->seven_choice
     * Yo tengo un método que me funciona muy bien para organizar las tareas
-        - No creo que me sirva ahora tu método.#title:Jorge
+        - No creo que me sirva ahora tu método.#title:Jorge#dialog:guide
+        Recuerda que lo importante aquí es el relato de la otra persona, es importante no protagonizar#dialog:normal
         ~ raise(mistakes)
         ->seven_choice
     
@@ -127,12 +133,14 @@ VAR mistakes = 0
     * ¿Dijiste que soñabas incluso con el trabajo?
         ~ raise(scoreSectionA)
         ~ raise(correctAnswers)
-    * A veces nos tocan momentos difíciles 
+    * A veces nos tocan momentos difíciles#dialog:guide
+        Este mensaje podría relativizar el dolor de la otra persona.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->eight_choice
     * No hay mal que por bien no venga[.], quizá tienes que pasar esto para que pasen otras cosas mejores 
-        - No es nada agradable que te hagan pasar por esto.#title:Jorge
+        - No es nada agradable que te hagan pasar por esto.#title:Jorge #dialog:guide
+        Este mensaje podría relativizar el dolor de la otra persona#dialog:normal
         ~ raise(mistakes)
         ->eight_choice
     
@@ -149,12 +157,14 @@ VAR mistakes = 0
     * ¿Dices que te sientes excluido?
         ~ raise(scoreSectionA)
         ~ raise(correctAnswers)
-    * A mí también me ha pasado que a veces he sentido esa soledad 
+    * A mí también me ha pasado que a veces he sentido esa soledad #dialog:guide
+        Recuerda que lo importante aquí es el relato de la otra persona, es importante no protagonizar.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->nine_choice
     * Pero no te sientas mal[.], si ellos son los que se lo pierden, a mí me caes bien 
-        - Que alentador tu comentario muchas gracias \(tono sarcastico). #title:Jorge
+        - Que alentador tu comentario muchas gracias \(tono sarcastico). #title:Jorge#dialog:guide
+        Recuerda no buscar dar soluciones rápidas, esto puede cerrar el diálogo y no ser lo que requiere la persona#dialog:normal
         ~ raise(mistakes)
         ->nine_choice
 
@@ -167,14 +177,16 @@ VAR mistakes = 0
 
  === ten_choice ===
  ¿Qué debería responder? #title:Tú
-    * Si me dices las cosas que te preocupan, podemos ordenarlas e ir mejorando la situación.
+    * Si me dices las cosas que te preocupan, podemos ordenarlas e ir mejorando la situación.#dialog:guide
+        Recuerda no acelerar el proceso. Esta respuesta podría ser más cercana al tercer paso#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->ten_choice
     * [Conozco un ejercicio de respiración] Mira, percibo que estás algo angustiado, yo conozco un ejercicio de respiración que me ha servido harto en este tipo de situaciones para encontrar calma, ¿te gustaría que lo probemos?  
         ~ raise(scoreSectionB)
         ~ raise(correctAnswers)
-    * Intenta respirar mejor para calmarte, fíjate como lo hago 
+    * Intenta respirar mejor para calmarte, fíjate como lo hago#dialog:guide
+        Recuerda no entrar en un rol directivo #dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->ten_choice
@@ -185,14 +197,16 @@ VAR mistakes = 0
 
  === eleven_choice ===
  ¿Qué debería responder? #title:Tú
-    * Tienes que hacer lo que yo hago, mírame bien 
+    * Tienes que hacer lo que yo hago, mírame bien #dialog:guide
+        Recuerda no entrar en un rol directivo#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->eleven_choice
     * ¿Qué te parece si lo intentamos? Yo te acompaño, y vemos si nos sirve.   
         ~ raise(scoreSectionB)
         ~ raise(correctAnswers)
-    * \(Comenzar a respirar esperando que te siga)  
+    * \(Comenzar a respirar esperando que te siga) #dialog:guide
+        Recuerda que es importante explicitar lo que harán en los siguientes momentos. Anticipar es clave para recuperar la tranquilidad#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->eleven_choice
@@ -206,7 +220,8 @@ VAR mistakes = 0
     * Quizás has escuchado lo de respirar consciente y profundo.[] En realidad, sirve bastante, mira te voy a explicar cómo podemos hacerlo  
         ~ raise(scoreSectionB)
         ~ raise(correctAnswers)
-    * Tienes que hacer la respiración de 4 tiempos, con eso estás listo   
+    * Tienes que hacer la respiración de 4 tiempos, con eso estás listo #dialog:guide 
+        Recuerda que es importante explicitar lo que harán en los siguientes momentos. Anticipar es clave para recuperar la tranquilidad#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->twelve_choice
@@ -220,11 +235,13 @@ VAR mistakes = 0
     * Haremos la técnica de respiración de 4 tiempos[.], primero tomas aire en 4 tiempos, luego botas el aire en 4 tiempos y finalmente hay que mantener los pulmones "vacíos" por 4 tiempos   
         ~ raise(scoreSectionB)
         ~ raise(correctAnswers)
-    * Es fácil, es inhalar, exhalar y mantener sin aire   
+    * Es fácil, es inhalar, exhalar y mantener sin aire. #dialog:guide
+        Recuerda que es importante explicar con calma y paciencia, para que la persona pueda anticiparse.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->thirteen_choice
-    * Mira obsérvame primero, en lo que hago y entenderás mejor  
+    * Mira obsérvame primero, en lo que hago y entenderás mejor. #dialog:guide
+        Recuerda que es importante explicar con calma y paciencia, para que la persona pueda anticiparse#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->thirteen_choice
@@ -237,11 +254,13 @@ VAR mistakes = 0
     * Intentémoslo, hazlo contando a un ritmo que te sea cómodo.[] Inhala 1, 2, 3, 4, exhala 1, 2, 3, 4, ahora mantén 1, 2, 3, 4
         ~ raise(scoreSectionB)
         ~ raise(correctAnswers)
-    * Veamos si te sale a la primera o no
+    * Veamos si te sale a la primera o no.#dialog:guide
+        Recuerda no generar experiencias más angustiantes.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->fourteen_choice
-    * Tienes que hacerlo bien, o si no te vas a agitar más
+    * Tienes que hacerlo bien, o si no te vas a agitar más.#dialog:guide
+        Recuerda que tus palabras deben invitar a la calma.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->fourteen_choice 
@@ -256,11 +275,13 @@ VAR mistakes = 0
     * Lo estás haciendo muy bien, sigamos repitiendo el ejercicio  
         ~ raise(scoreSectionB)
         ~ raise(correctAnswers)
-    * \¡Bien Jorge! No esperaba que te saliera a la primera, pero lo hiciste súper bien.
+    * \¡Bien Jorge! No esperaba que te saliera a la primera, pero lo hiciste súper bien.#dialog:guide
+        Recuerda evitar comentario que sean juicios.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->fiveteen_choice 
-    * Qué bueno que ahora estás mejor, ¿qué te había pasado?  
+    * Qué bueno que ahora estás mejor, ¿qué te había pasado? #dialog:guide 
+        Si has logrado que la persona se pueda calmar es importante promover el mantener ese estado. Esta pregunta podría volver la agitación.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->fiveteen_choice 
@@ -277,10 +298,12 @@ VAR mistakes = 0
         ~ raise(scoreSectionB)
         ~ raise(correctAnswers)
     * Que bien que estás más calmado, pensé que íbamos a estar más tiempo con eso
-        -Perdon por usar tu tiempo.
+        -Perdon por usar tu tiempo.#dialog:guide
+        Recuerda evitar comentario que sean juicios.#dialog:normal
         ~ raise(mistakes)
         ->sixteen_choice 
-    * Viste si era fácil, hasta tú pudiste hacerlo 
+    * Viste si era fácil, hasta tú pudiste hacerlo #dialog:guide
+        Recuerda evitar comentario que sean juicios.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->sixteen_choice 
@@ -295,10 +318,12 @@ VAR mistakes = 0
         ~ raise(scoreSectionC)
         ~ raise(correctAnswers)
     * Menos mal estaba cerca, quizá que hubiese pasado, ¡pudiste desmayarte!
-        -No digas eso que me preocupo.
+        -No digas eso que me preocupo.#dialog:guide
+        Recuerda no generar comentarios que puedan angustiar más a la persona.#dialog:normal
         ~ raise(mistakes)
         ->seventeen_choice
-    * Es bueno este ejercicio, para la otra ya sabes que hacer, ¡no se te vaya a olvidar! 
+    * Es bueno este ejercicio, para la otra ya sabes que hacer, ¡no se te vaya a olvidar! #dialog:guide
+        Recuerda que lo importante es reforzar la tranquilidad actual de la persona.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->seventeen_choice 
@@ -313,11 +338,13 @@ VAR mistakes = 0
 === eighteen_choice ===
  ¿Qué debería responder? #title:Tú
     * Vamos de vuelta a la oficina y vemos si puedes volver a trabajar
-        -De momento dejame solo si estas apurado.
+        -De momento dejame solo si estas apurado te puedes ir.#dialog:guide
+        No olvides que es importante incluir en las decisiones a la persona afectada, no tomar un rol directivo.#dialog:normal
         ~ raise(mistakes)
         ->eighteen_choice
     * Yo creo que podrías hablar con un terapeuta o alguien profesional
-        -No tengo tiempo para esto.
+        -No tengo tiempo para esto.#dialog:guide
+        Recuerda no dar consejos que no han sido solicitados.#dialog:normal
         ~ raise(mistakes)
         ->eighteen_choice
     * [¿Qué sientes que es lo más necesitas resolver ahora?] Jorge, ahora que te sientes más tranquilo y retomando lo que me contaste, ¿Qué sientes que es lo más necesitas resolver ahora? 
@@ -331,11 +358,13 @@ VAR mistakes = 0
 === nineteen_choice ===
  ¿Qué debería responder? #title:Tú
     * Yo creo que tienes que tomar licencia un par de días o semanas y vuelves renovado. 
-        -No le veo beneficioso para todo lo que tengo que hacer.
+        -No le veo beneficioso para todo lo que tengo que hacer.#dialog:guide
+        Recuerda no dar consejos que no han sido solicitados.#dialog:normal
         ~ raise(mistakes)
         ->nineteen_choice
     * Es que te falta organización, quizá dejas mucho tiempo muerto
-        -Perdon sabio de la organización.
+        -Perdon sabio de la organización.#dialog:guide
+        Recuerda no hacer comentarios que se enmarquen en juicios.#dialog:normal
         ~ raise(mistakes)
         ->nineteen_choice
     * Entonces en lo que dices lo más importante de abordar ahora para ti es el trabajo, en relación al tiempo y la sobrecarga 
@@ -352,11 +381,13 @@ VAR mistakes = 0
         ~ raise(scoreSectionC)
         ~ raise(correctAnswers)
     * Pero tómate un día de estos para salir o hacer algo, no creo que pase nada acá, el jefe ni se fija cuando falta alguien.
-        -Claro, suena muy fácil hacerlo no cuando tienes tantas cosas que hacer.
+        -Claro, suena muy fácil hacerlo no cuando tienes tantas cosas que hacer.#dialog:guide
+        Recuerda no dar consejos que no han sido solicitados. Esta respuesta podría generar más angustia al incorporar nuevos escenarios.#dialog:normal
         ~ raise(mistakes)
         ->twenty_choice
     * Ahora estamos mayores, nos toca dejar algunas cosas de lado.
-        -No es tan fácil.
+        -No es tan fácil.#dialog:guide
+        Recuerda no protagonizar ni hacer comentarios teñidos de juicio.#dialog:normal
         ~ raise(mistakes)
         ->twenty_choice
 
@@ -370,10 +401,12 @@ VAR mistakes = 0
         ~ raise(scoreSectionC)
         ~ raise(correctAnswers)
     * Si necesitas plata yo te puedo prestar, ya que tengo casa no pago arriendo.
-        -No es un tema de plata.
+        -No es un tema de plata.#dialog:guide
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona en encontrar su propia estabilidad.#dialog:normal
         ~ raise(mistakes)
         ->twenty_one_choice
-    * Podrías cambiarte a algún lugar que te salga más barato, como vives solo no creo que necesites mucho espacio.
+    * Podrías cambiarte a algún lugar que te salga más barato, como vives solo no creo que necesites mucho espacio.#dialog:guide
+        Recuerda no realizar comentarios juiciosos ni dar consejos no solicitados.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->twenty_one_choice
@@ -385,10 +418,12 @@ VAR mistakes = 0
 === twenty_two_choice ===
  ¿Qué debería responder? #title:Tú
     * Yo te puedo ayudar con eso, voy a hablar con el jefe y que te dé más plazo para entregar lo que te falta. 
-        -Ya sabes como es no le importa nuestra estado.
+        -Ya sabes como es no le importa nuestra estado.#dialog:guide
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona, tomar un rol directivo también puede invalidar a la otra persona.#dialog:normal
         ~ raise(mistakes)
         ->twenty_two_choice
-    * Yo hago lo que te falte, soy rápido con eso, así quedas más libre
+    * Yo hago lo que te falte, soy rápido con eso, así quedas más libre#dialog:guide
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona en encontrar su propia estabilidad.#dialog:normal
         ~ raise(mistakes)
         ~ mistake_dialogue()
         ->twenty_two_choice
@@ -410,11 +445,13 @@ VAR mistakes = 0
         ~ raise(scoreSectionD)
         ~ raise(correctAnswers)
     * Voy a ir a recursos humanos para que pueda hablar con el resto del trabajo y que sepan tu situación
-        -Esos buenos para nada nunca nos han ayudado.
+        -Esos buenos para nada nunca nos han ayudado.#dialog:guide
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona, tomar un rol directivo también puede invalidar a la otra persona.#dialog:normal
         ~ raise(mistakes)
         ->twenty_three_choice
     * Mira pásame tu celular, podemos llamar a algún familiar para que sepa lo que te pasó y ver si te puede ayudar.
-        -No quiero molestar a nadie.
+        -No quiero molestar a nadie.#dialog:guide
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona, tomar un rol directivo también puede invalidar a la otra persona e incluso angustiarla.#dialog:normal
         ~ raise(mistakes)
         ->twenty_three_choice
 
@@ -425,14 +462,16 @@ VAR mistakes = 0
 === twenty_four_choice ===
  ¿Qué debería responder? #title:Tú
     * Yo creo que tienes que ir al psicólogo, podría ser la primera de muchas
-        -No confio mucho.
+        -No confio mucho.#dialog:guide
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona, tomar un rol directivo también puede invalidar a la otra persona e incluso angustiarla.#dialog:normal
         ~ raise(mistakes)
         ->twenty_four_choice
     * Entiendo que quizás desconfíes de ese tipo de apoyo[.], pero si más adelante cambias de opinión, si quieres te puedo entregar algunos datos.
         ~ raise(scoreSectionD)
         ~ raise(correctAnswers)
     * Es importante que vayas sí o sí a ver un profesional.
-        -¿Tan mal crees que estoy?
+        -¿Tan mal crees que estoy?#dialog:guide
+        Recuerda no dar consejos no solicitados.#dialog:normal
         ~ raise(mistakes)
         ->twenty_four_choice
 
@@ -443,13 +482,16 @@ VAR mistakes = 0
 === twenty_five_choice ===
  ¿Qué debería responder? #title:Tú
     * Acá en el trabajo puedes hablar conmigo cuando necesites.
-        -No te preocupes, no te quiero quitar de tu tiempo.
+        -No te preocupes, no te quiero quitar de tu tiempo.#dialog:guide
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona.#dialog:normal
         ~ raise(mistakes)
+        ->twenty_five_choice
     * Sé que la empresa tiene varios convenios[.] con diversos lugares donde puedes ir, entras a intranet y pones convenios, ahí puedes ver la información con más detalle y el contacto de cada uno.
         ~ raise(scoreSectionD)
         ~ raise(correctAnswers)
     * Ahora no me acuerdo bien, pero buscas en Google y te aparecen varios lugares.
-        -Y como sabre cual de todos esos es la mejor decisión para mi situación.
+        -Y como sabre cual de todos esos es la mejor decisión para mi situación.#dialog:guide
+        Recuerda la importancia de entregar información oportuna a la persona para que pueda tomar decisiones.#dialog:normal
         ~ raise(mistakes)
         ->twenty_five_choice
 
@@ -479,11 +521,13 @@ Comprendo, es que nunca me había pasado algo así. #title:Jorge
         ~ raise(scoreSectionE)
         ~ raise(correctAnswers)
     * Si quieres guarda mi número y podemos conversar, generalmente respondo rápido y estoy pendiente.
-        -Bueno, pero no quiero ser molestia constante.
+        -Bueno, pero no quiero ser molestia constante.#dialog:guide
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona.#dialog:normal
         ~ raise(mistakes)
         ->twenty_six_choice
     * Lo hiciste súper hoy, ya está listo para una próxima vez.
-        -¿Tan pronto me puede pasar de nuevo?
+        -¿Tan pronto me puede pasar de nuevo?#dialog:guide
+        Recuerda que por más que quieras dar un refuerzo positivo e importante no entregar con ello un mensaje que pueda generar angustia hacia el futuro.#dialog:normal
         ~ raise(mistakes)
         ->twenty_six_choice
         
@@ -497,10 +541,12 @@ Comprendo, es que nunca me había pasado algo así. #title:Jorge
         ~ raise(scoreSectionE)
         ~ raise(correctAnswers)
     * Claro, si estás estresado recuerda lo que te enseñé y eso te va a servir para todo
-        -Pero en el momento podría estar pensando muchas cosas y no saber que hacer.
+        -Pero en el momento podría estar pensando muchas cosas y no saber que hacer.#dialog:guide
+        Recuerda no protagonizar y reforzar el aprendizaje independiente y regulación autónoma.#dialog:normal
         ~ raise(mistakes)
         ->twenty_seven_choice
-    * Hay muchas más cosas que te pueden ayudar, pero ya tienes que ver tú que te sirve
+    * Hay muchas más cosas que te pueden ayudar, pero ya tienes que ver tú que te sirve#dialog:guide
+        Recuerda que lo importante es reforzar lo aprendido para ir cerrando el acompañamiento.#dialog:normal
         ~ mistake_dialogue()
         ~ raise(mistakes)
         ->twenty_seven_choice
