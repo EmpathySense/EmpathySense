@@ -119,7 +119,8 @@ public class RealmController : MonoBehaviour
         {   
 
             Prefs _prefs = GetPrefs();
-            if (_prefs.InfoI)
+            
+            if (_prefs.InfoI==false)
             {
                 SceneManager.LoadScene("Introduccion"); //nombre escena de introducción
             }
@@ -178,7 +179,7 @@ public class RealmController : MonoBehaviour
         int i = 0;
         foreach (var _h in _history)
         {
-            _newHistory[i] = new History(_h.Id, _h.ScoreA, _h.ScoreB, _h.ScoreC, _h.ScoreD, _h.ScoreE, "scene", "feedback", _h.Date);
+            _newHistory[i] = new History(_h.Id, _h.ScoreA, _h.ScoreB, _h.ScoreC, _h.ScoreD, _h.ScoreE, _h.Scene, _h.Feedback, _h.Date);
             i++;
         }
         return _newHistory;

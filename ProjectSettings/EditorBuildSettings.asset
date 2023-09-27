@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/TestDB/LoginScene.unity
     guid: b78b0a2c259ca6c4599457cbe09bb32f
   - enabled: 1
-    path: Assets/TestDB/MainScene.unity
+    path: Assets/TestDB/SignupScene.unity
     guid: 697749059bf81ab408a94795a5114831
   - enabled: 1
     path: Assets/TestDB/HistoryScene.unity
