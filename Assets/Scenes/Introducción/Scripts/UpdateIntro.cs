@@ -18,6 +18,6 @@ public class UpdateIntro : MonoBehaviour
     // Update is called once per frame
     void UpdateIntroDB()
     {
-        RealmController.Instance.UpdateIntro();
+        RealmController.Instance.UpdatePrefs("intro");
     }
 }

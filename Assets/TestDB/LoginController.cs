@@ -7,27 +7,21 @@ using TMPro;
 
 public class LoginController : MonoBehaviour
 {
+    public TMP_InputField UsernameInput;
+    public TMP_InputField PasswordInput;
     public Button LoginButton;
-    // public TMP_InputField UsernameInput;
-    // public TMP_InputField PasswordInput;
-    private string Username;
-    private string Password;
+
     void Start()
     {
-        //UsernameInput.text = "admin@admin"; //ingresar correo
-        // UsernameInput.text = "test@admin"; //ingresar correo
-        // PasswordInput.text = "12345666";  //ingresar password
-        Username = "test@admin"; //ingresar correo
-        Password = "12345666";  //ingresar password
         LoginButton.onClick.AddListener(Login);
     }
 
+
     async void Login()
     {
-        if (await RealmController.Instance.Login(Username, Password) != "")
+        if (await RealmController.Instance.Login(UsernameInput.text, PasswordInput.text) != "") //agregar excepciones
         {
             RealmController.Instance.IsCreated();
-            // SceneManager.LoadScene("Men�Principal");
         }
     }
 
