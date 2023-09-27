@@ -71,6 +71,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * Jorge, veo que no estás pasándolo muy bien[] ahora, entonces si te sientes cómodo y quieres comentarte algo o desahogarte yo tengo la disposición de escucharte.
         ~ raise(scoreSectionA)
+        ~ raise(correctAnswers)
     * ¿Qué te pasó?
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -93,6 +94,7 @@ VAR mistakes = 0
         ->six_choice
     * Entiendo, debe ser difícil para ti sentir eso.
         ~ raise(scoreSectionA)
+        ~ raise(correctAnswers)
     * Ah mí me pasa igual, de hecho, el otro día fui hablar de esto con el jefe.
         ~ raise(mistakes)
         -No me interesa tu conversación con el jefe.#title:Jorge
@@ -106,6 +108,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * Comprendo lo que me cuentas, te refieres a sentirte con sobrecarga laboral
         ~ raise(scoreSectionA)
+        ~ raise(correctAnswers)
     * Todos estamos igual de sobrepasados
         - Así te veo. #title:Jorge
         ~ raise(mistakes)
@@ -123,6 +126,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * ¿Dijiste que soñabas incluso con el trabajo?
         ~ raise(scoreSectionA)
+        ~ raise(correctAnswers)
     * A veces nos tocan momentos difíciles 
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -144,6 +148,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * ¿Dices que te sientes excluido?
         ~ raise(scoreSectionA)
+        ~ raise(correctAnswers)
     * A mí también me ha pasado que a veces he sentido esa soledad 
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -168,6 +173,7 @@ VAR mistakes = 0
         ->ten_choice
     * [Conozco un ejercicio de respiración] Mira, percibo que estás algo angustiado, yo conozco un ejercicio de respiración que me ha servido harto en este tipo de situaciones para encontrar calma, ¿te gustaría que lo probemos?  
         ~ raise(scoreSectionB)
+        ~ raise(correctAnswers)
     * Intenta respirar mejor para calmarte, fíjate como lo hago 
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -185,6 +191,7 @@ VAR mistakes = 0
         ->eleven_choice
     * ¿Qué te parece si lo intentamos? Yo te acompaño, y vemos si nos sirve.   
         ~ raise(scoreSectionB)
+        ~ raise(correctAnswers)
     * \(Comenzar a respirar esperando que te siga)  
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -198,6 +205,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * Quizás has escuchado lo de respirar consciente y profundo.[] En realidad, sirve bastante, mira te voy a explicar cómo podemos hacerlo  
         ~ raise(scoreSectionB)
+        ~ raise(correctAnswers)
     * Tienes que hacer la respiración de 4 tiempos, con eso estás listo   
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -211,6 +219,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * Haremos la técnica de respiración de 4 tiempos[.], primero tomas aire en 4 tiempos, luego botas el aire en 4 tiempos y finalmente hay que mantener los pulmones "vacíos" por 4 tiempos   
         ~ raise(scoreSectionB)
+        ~ raise(correctAnswers)
     * Es fácil, es inhalar, exhalar y mantener sin aire   
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -227,6 +236,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * Intentémoslo, hazlo contando a un ritmo que te sea cómodo.[] Inhala 1, 2, 3, 4, exhala 1, 2, 3, 4, ahora mantén 1, 2, 3, 4
         ~ raise(scoreSectionB)
+        ~ raise(correctAnswers)
     * Veamos si te sale a la primera o no
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -245,6 +255,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * Lo estás haciendo muy bien, sigamos repitiendo el ejercicio  
         ~ raise(scoreSectionB)
+        ~ raise(correctAnswers)
     * \¡Bien Jorge! No esperaba que te saliera a la primera, pero lo hiciste súper bien.
         ~ raise(mistakes)
         ~ mistake_dialogue()
@@ -264,6 +275,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * ¿Qué tal? ¿Te sientes un poco más calmado?  
         ~ raise(scoreSectionB)
+        ~ raise(correctAnswers)
     * Que bien que estás más calmado, pensé que íbamos a estar más tiempo con eso
         -Perdon por usar tu tiempo.
         ~ raise(mistakes)
@@ -280,6 +292,7 @@ VAR mistakes = 0
 === seventeen_choice ===
  ¿Qué debería responder? #title:Tú
     * Este es un muy buen ejercicio [, puedes aplicarlo en varias situaciones], puedes aplicarlo en esta situación o alguna parecida donde creas perder la calma. También vi que recomiendan practicarlo al despertar o antes de dormir, para mejorar sus resultados.  
+        ~ raise(scoreSectionC)
         ~ raise(correctAnswers)
     * Menos mal estaba cerca, quizá que hubiese pasado, ¡pudiste desmayarte!
         -No digas eso que me preocupo.
@@ -309,6 +322,7 @@ VAR mistakes = 0
         ->eighteen_choice
     * [¿Qué sientes que es lo más necesitas resolver ahora?] Jorge, ahora que te sientes más tranquilo y retomando lo que me contaste, ¿Qué sientes que es lo más necesitas resolver ahora? 
         ~ raise(scoreSectionC)
+        ~ raise(correctAnswers)
 
 -El tema del trabajo, es que últimamente es lo único que hago, tengo tanto que hacer y todo acumulado, que ya ni sé por dónde empezar, solo me estreso de pensarlo. #title:Jorge
 
@@ -326,6 +340,7 @@ VAR mistakes = 0
         ->nineteen_choice
     * Entonces en lo que dices lo más importante de abordar ahora para ti es el trabajo, en relación al tiempo y la sobrecarga 
         ~ raise(scoreSectionC)
+        ~ raise(correctAnswers)
 
 -Si es que antes yo sólo trabajaba media jornada, y tenía un poco más tiempo libre, ahí iba al cine o salía con excompañeros de la universidad, creo que eso me alivianaba un poco la carga que tenía. #title:Jorge
 
@@ -335,6 +350,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * Comprendo, y como decías ahora tienes poco tiempo y te es difícil hacer esas actividades. 
         ~ raise(scoreSectionC)
+        ~ raise(correctAnswers)
     * Pero tómate un día de estos para salir o hacer algo, no creo que pase nada acá, el jefe ni se fija cuando falta alguien.
         -Claro, suena muy fácil hacerlo no cuando tienes tantas cosas que hacer.
         ~ raise(mistakes)
@@ -352,6 +368,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * [Ordenando lo que me comentaste...] Entonces, ordenando lo que me comentaste, me decías que tienes mucho trabajo, poco tiempo, y estás muy justo con el dinero que ganas ¿Y de esto, que crees que es lo que más te aliviaría resolver primero? 
         ~ raise(scoreSectionC)
+        ~ raise(correctAnswers)
     * Si necesitas plata yo te puedo prestar, ya que tengo casa no pago arriendo.
         -No es un tema de plata.
         ~ raise(mistakes)
@@ -377,6 +394,7 @@ VAR mistakes = 0
         ->twenty_two_choice
     * ¿Hay alguna forma en la que sientes que podrías atender eso o recibir ayuda al respecto?
         ~ raise(scoreSectionC)
+        ~ raise(correctAnswers)
 
 -No lo sé, no he pensado en muchas soluciones #title:Jorge
 
@@ -390,6 +408,7 @@ VAR mistakes = 0
  ¿Qué debería responder? #title:Tú
     * Sé que a veces no es fácil lidiar con esto por tu cuenta. ¿Has considerado la posibilidad de hablar con un terapeuta o psicólogo?  
         ~ raise(scoreSectionD)
+        ~ raise(correctAnswers)
     * Voy a ir a recursos humanos para que pueda hablar con el resto del trabajo y que sepan tu situación
         -Esos buenos para nada nunca nos han ayudado.
         ~ raise(mistakes)
@@ -411,6 +430,7 @@ VAR mistakes = 0
         ->twenty_four_choice
     * Entiendo que quizás desconfíes de ese tipo de apoyo[.], pero si más adelante cambias de opinión, si quieres te puedo entregar algunos datos.
         ~ raise(scoreSectionD)
+        ~ raise(correctAnswers)
     * Es importante que vayas sí o sí a ver un profesional.
         -¿Tan mal crees que estoy?
         ~ raise(mistakes)
@@ -427,6 +447,7 @@ VAR mistakes = 0
         ~ raise(mistakes)
     * Sé que la empresa tiene varios convenios[.] con diversos lugares donde puedes ir, entras a intranet y pones convenios, ahí puedes ver la información con más detalle y el contacto de cada uno.
         ~ raise(scoreSectionD)
+        ~ raise(correctAnswers)
     * Ahora no me acuerdo bien, pero buscas en Google y te aparecen varios lugares.
         -Y como sabre cual de todos esos es la mejor decisión para mi situación.
         ~ raise(mistakes)
@@ -456,6 +477,7 @@ Comprendo, es que nunca me había pasado algo así. #title:Jorge
  ¿Qué debería responder? #title:Tú
     * [Si te sientes así de nuevo, recuerda lo que te ayudó a recuperar la calma ahora] Si sientes que vuelves a experimentar algo similar o una situación parecida a lo que experimentaste hoy, puedes recordar lo que te ayudó a recuperar la calma e implementarlo si lo necesitas.  
         ~ raise(scoreSectionE)
+        ~ raise(correctAnswers)
     * Si quieres guarda mi número y podemos conversar, generalmente respondo rápido y estoy pendiente.
         -Bueno, pero no quiero ser molestia constante.
         ~ raise(mistakes)
@@ -473,6 +495,7 @@ Comprendo, es que nunca me había pasado algo así. #title:Jorge
  ¿Qué debería responder? #title:Tú
     * [Sí, ademas hay otras estrategias como...] Exacto, puedes aplicarlo cuando te sientas un poco agitado o estresado, también hay otras estrategias que se ha visto que sirven harto, como mantener horarios de descansos regulares y compartir con amigos o familiares  
         ~ raise(scoreSectionE)
+        ~ raise(correctAnswers)
     * Claro, si estás estresado recuerda lo que te enseñé y eso te va a servir para todo
         -Pero en el momento podría estar pensando muchas cosas y no saber que hacer.
         ~ raise(mistakes)
