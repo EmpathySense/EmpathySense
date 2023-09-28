@@ -46,6 +46,7 @@ public class ScenarioDialogueManager : MonoBehaviour
     private const string SPEAKER_TAG = "title";
     private const string ANIMATION_TRIGGER_TAG = "animation";
     private const string SWITCH_DIALOGUE_TAG = "dialog";
+    private const string END_DIALOGUE_TAG = "EndDialogue";
 
     private Queue<string> feedbackQueue = new Queue<string>();
     private Dictionary<string, string> feedback = new Dictionary<string, string>()
@@ -128,9 +129,9 @@ public class ScenarioDialogueManager : MonoBehaviour
             scoreSectionD = (int)newValue;
             Debug.Log("Score SectionD: " + scoreSectionD);
         });
-        currentStory.ObserveVariable("scoreSectionD", (variableName, newValue) => {
-            scoreSectionD = (int)newValue;
-            Debug.Log("Score SectionD: " + scoreSectionD);
+        currentStory.ObserveVariable("scoreSectionE", (variableName, newValue) => {
+            scoreSectionE = (int)newValue;
+            Debug.Log("Score SectionE: " + scoreSectionE);
         });
 
         currentStory.ObserveVariable("intentoSectionA", (variableName, newValue) => {
@@ -182,12 +183,7 @@ public class ScenarioDialogueManager : MonoBehaviour
 
             HandleTags(currentStory.currentTags);
         }
-        else
-        {
-            ExitDialogueMode();
-        }
-
-        
+                
     }
 
     
@@ -252,6 +248,12 @@ public class ScenarioDialogueManager : MonoBehaviour
 
                     break;
 
+                case END_DIALOGUE_TAG:
+
+                    ExitDialogueMode();
+
+                    break;
+
                 case SWITCH_DIALOGUE_TAG:
 
                     if (tagValue == "guide")
@@ -291,9 +293,10 @@ public class ScenarioDialogueManager : MonoBehaviour
         int suma = correctAnswers + mistakes;
         Debug.Log("Suma correctas y errores" + suma);
 
+        StopCoroutine("IdleReminder");
 
         dialogueIsPlaying = false;
-        // dialoguePanel.SetActive(false);
+        dialoguePanel.SetActive(true);
         choicesPanel.SetActive(false);
         dialogueText.text = "";
         speakerName.text = "";
@@ -303,6 +306,10 @@ public class ScenarioDialogueManager : MonoBehaviour
 
     private void EndScreen()
     {
+        int totalCorrectas = scoreSectionA + scoreSectionB + scoreSectionC + scoreSectionD + scoreSectionE;
+        int totalIntentos = intentoSectionA + intentoSectionB + intentoSectionC + intentoSectionD + intentoSectionE;
+        int porcentaje = (totalCorrectas * 100) / totalIntentos;
+
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionA, intentoSectionA, "a"));
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionB, intentoSectionB, "b"));
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionC, intentoSectionC, "c"));
@@ -311,12 +318,14 @@ public class ScenarioDialogueManager : MonoBehaviour
 
         dialoguePanel.SetActive(false);
         guia.SetActive(true);
-        guiaContinueButton.SetActive(false);
+        // guiaContinueButton.SetActive(false);
 
         guiaText.text = "Felicidades, has completado la simulación. A continuación se mostrarán tus resultados";
 
 
         feedbackMode = true;
+
+        RealmController.Instance.CreateHistory(scoreSectionA, scoreSectionB, scoreSectionC, scoreSectionD, scoreSectionE, intentoSectionA, intentoSectionB, intentoSectionC, intentoSectionD, intentoSectionE, porcentaje, "Lugar Público", GeneralFeedback());
     }
 
     private string GeneralFeedback()
@@ -341,6 +350,7 @@ public class ScenarioDialogueManager : MonoBehaviour
 
     public void ContinueFeedbackMode()
     {
+        Debug.Log("feeeeeeedbaaaaaaaaaaaaaaaaaaack");
         if (feedbackMode)
         {
             Debug.Log("BOTON FEEEDBACK");
@@ -351,7 +361,7 @@ public class ScenarioDialogueManager : MonoBehaviour
             else
             {
                 endButtons.SetActive(true);
-                continueButton.gameObject.SetActive(false);
+                guiaContinueButton.SetActive(false);
             }
         }
             

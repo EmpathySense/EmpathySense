@@ -143,9 +143,9 @@ public class Scenario2DialogueManager : MonoBehaviour
             scoreSectionD = (int)newValue;
             Debug.Log("Score SectionD: " + scoreSectionD);
         });
-        currentStory.ObserveVariable("scoreSectionD", (variableName, newValue) => {
-            scoreSectionD = (int)newValue;
-            Debug.Log("Score SectionD: " + scoreSectionD);
+        currentStory.ObserveVariable("scoreSectionE", (variableName, newValue) => {
+            scoreSectionE = (int)newValue;
+            Debug.Log("Score SectionE: " + scoreSectionE);
         });
 
         currentStory.ObserveVariable("intentoA", (variableName, newValue) => {
@@ -319,6 +319,7 @@ public class Scenario2DialogueManager : MonoBehaviour
         int suma = correctAnswers + mistakes;
         Debug.Log("Suma correctas y errores" + suma);
 
+        StopCoroutine("IdleReminder");
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(true);
@@ -331,6 +332,10 @@ public class Scenario2DialogueManager : MonoBehaviour
 
     private void EndScreen()
     {
+        int totalCorrectas = scoreSectionA + scoreSectionB + scoreSectionC + scoreSectionD + scoreSectionE;
+        int totalIntentos = intentoA + intentoB + intentoC + intentoD + intentoE;
+        int porcentaje = (totalCorrectas * 100) / totalIntentos;
+
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionA, intentoA, "a"));
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionB, intentoB, "b"));
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionC, intentoC, "c"));
@@ -339,11 +344,14 @@ public class Scenario2DialogueManager : MonoBehaviour
 
         dialoguePanel.SetActive(false);
         guia.SetActive(true);
-        guiaContinueButton.SetActive(false);
+        // guiaContinueButton.SetActive(false);
 
         guiaText.text = "Felicidades, has completado la simulación. A continuación se mostrarán tus resultados";
 
         feedbackMode = true;
+
+        RealmController.Instance.CreateHistory(scoreSectionA, scoreSectionB, scoreSectionC, scoreSectionD, scoreSectionE, intentoA, intentoB, intentoC, intentoD, intentoE, porcentaje, "Lugar Cerrado", GeneralFeedback());
+
     }
 
     private string GeneralFeedback()
