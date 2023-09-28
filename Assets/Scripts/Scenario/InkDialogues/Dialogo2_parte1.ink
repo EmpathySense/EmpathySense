@@ -37,21 +37,18 @@ Le dije que podía esperar un rato en la sala de reuniones, pero es todo lo que 
 
 
 === first_choice ===
-¿Qué debería responder? #title:Tú 
-    * Voy, pero no prometo nada. #dialog:guide
-        Recuerda que lo  importante no es tener expectativas previas, sino la intención de acompañar. #dialog:normal
+¿Qué debería responder? #title:Tú
+    * Voy, pero no prometo nada.
         ~ mistake_dialogue()
-        ~ raise(mistakes)
+        //~ raise(mistakes)
         ->first_choice
         
     * Iré a verlo, para acompañarlo
-        ~ raise(correctAnswers)
-        ~ raise(scoreSectionA)
+        //~ raise(correctAnswers)
         
-    * Deberías ir tú a verlo, cualquier puede hacerlo, aunque no estés preparado/a. #dialog:guide
-        Esta respuesta podría generar presión en alguien que no se siente en condiciones de acompañar. Esto no facilita el apoyo a entregar. #dialog:normal
+    * Deberías ir tú a verlo, cualquier puede hacerlo, aunque no estés preparado/a
         ~ mistake_dialogue()
-        ~ raise(mistakes)
+        //~ raise(mistakes)
         ->first_choice
     
 - \(La sala de reuniones está a la izquierda) #title:Contexto

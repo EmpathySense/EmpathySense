@@ -20,14 +20,31 @@ public class Scenario2DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TMP_Text[] choicesText;
 
+    [SerializeField] private GameObject guia;
+    [SerializeField] private TMP_Text guiaText;
+    private bool guiaIsTalking = false;
+
     private int correctAnswers;
     private int mistakes;
+    private int scoreSectionA;
+    private int scoreSectionB;
+    private int scoreSectionC;
+    private int scoreSectionD;
+    private int scoreSectionE;
+
+    private int intentoA;
+    private int intentoB;
+    private int intentoC;
+    private int intentoD;
+    private int intentoE;
+
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
     private const string SPEAKER_TAG = "title";
     private const string ANIMATION_TRIGGER_TAG = "animation";
     private const string END_DIALOGUE_TAG = "EndDialogue";
+    private const string SWITCH_DIALOGUE_TAG = "dialog";
 
     private void Awake()
     {
@@ -59,14 +76,20 @@ public class Scenario2DialogueManager : MonoBehaviour
     public void EnterDialogueMode(TextAsset inkJson)
     {
         currentStory = new Story(inkJson.text);
-        currentStory.ObserveVariable("correctAnswers", (variableName, newValue) => {
-            correctAnswers = (int)newValue;
-            Debug.Log("Correct answers: " + correctAnswers);
-        });
-        currentStory.ObserveVariable("mistakes", (variableName, newValue) => {
-            mistakes = (int)newValue;
-            Debug.Log("Mistakes: " + mistakes);
-        });
+        // currentStory.ObserveVariable("correctAnswers", (variableName, newValue) => {
+        //     correctAnswers = (int)newValue;
+        //     Debug.Log("Correct answers: " + correctAnswers);
+        // });
+        // currentStory.ObserveVariable("mistakes", (variableName, newValue) => {
+        //     mistakes = (int)newValue;
+        //     Debug.Log("Mistakes: " + mistakes);
+        // });
+
+        if (inkJson.name != "Dialogo2_parte1")
+        {
+            ObserveStoryVariables();
+        }
+
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
@@ -75,11 +98,68 @@ public class Scenario2DialogueManager : MonoBehaviour
         ContinueDialogueMode();
     }
 
+    private void ObserveStoryVariables()
+    {
+        currentStory.ObserveVariable("scoreSectionA", (variableName, newValue) => {
+            scoreSectionA = (int)newValue;
+            Debug.Log("Score Section A: " + scoreSectionA);
+        });
+        currentStory.ObserveVariable("scoreSectionB", (variableName, newValue) => {
+            scoreSectionB = (int)newValue;
+            Debug.Log("Score SectionB: " + scoreSectionB);
+        });
+        currentStory.ObserveVariable("scoreSectionC", (variableName, newValue) => {
+            scoreSectionC = (int)newValue;
+            Debug.Log("Score SectionC: " + scoreSectionC);
+        });
+        currentStory.ObserveVariable("scoreSectionD", (variableName, newValue) => {
+            scoreSectionD = (int)newValue;
+            Debug.Log("Score SectionD: " + scoreSectionD);
+        });
+        currentStory.ObserveVariable("scoreSectionD", (variableName, newValue) => {
+            scoreSectionD = (int)newValue;
+            Debug.Log("Score SectionD: " + scoreSectionD);
+        });
+
+        currentStory.ObserveVariable("intentoA", (variableName, newValue) => {
+            intentoA = (int)newValue;
+            Debug.Log("Intento A: " + intentoA);
+        });
+        currentStory.ObserveVariable("intentoB", (variableName, newValue) => {
+            intentoB = (int)newValue;
+            Debug.Log("Intento B: " + intentoB);
+        });
+        currentStory.ObserveVariable("intentoC", (variableName, newValue) => {
+            intentoC = (int)newValue;
+            Debug.Log("Intento C: " + intentoC);
+        });
+        currentStory.ObserveVariable("intentoD", (variableName, newValue) => {
+            intentoD = (int)newValue;
+            Debug.Log("Intento D: " + intentoD);
+        });
+        currentStory.ObserveVariable("intentoE", (variableName, newValue) => {
+            intentoE = (int)newValue;
+            Debug.Log("Intento A: " + intentoE);
+        });
+        
+    }
+
     public void ContinueDialogueMode()
     {
         if (currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue();
+            if (guiaIsTalking)
+            {
+                guia.SetActive(true);
+                continueButton.SetActive(false);
+                guiaText.text = currentStory.Continue();
+            }
+            else
+            {
+                guia.SetActive(false);
+                continueButton.SetActive(true);
+                dialogueText.text = currentStory.Continue();
+            }
 
             // Si hay elecciones disponibles, se mostraran en el panel de elecicones
             DisplayChoices();
@@ -160,6 +240,19 @@ public class Scenario2DialogueManager : MonoBehaviour
                 case END_DIALOGUE_TAG:
 
                     ExitDialogueMode();
+
+                    break;
+
+                case SWITCH_DIALOGUE_TAG:
+
+                    if (tagValue == "guide")
+                    {
+                        guiaIsTalking = true;
+                    }
+                    else if (tagValue == "normal")
+                    {
+                        guiaIsTalking = false;
+                    }
 
                     break;
 
