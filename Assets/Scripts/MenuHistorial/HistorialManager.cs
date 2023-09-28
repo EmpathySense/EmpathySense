@@ -52,7 +52,10 @@ public class HistorialManager : MonoBehaviour
         
         if (RealmController.Instance != null)
         {
+            
+            //History wea = RealmController.Instance.CreateHistory(4,2,5,3,2,12,3,5,8,2,"Lugar Público", "Muy mas o menos");
             allHistory = RealmController.Instance.GetHistory();
+            Debug.Log(allHistory.Length);
         }
         else
         {
@@ -116,14 +119,25 @@ public class HistorialManager : MonoBehaviour
             Fecha_text.text = fecha_format;
             Lugar_text.text = item.Scene;
             
+            //CLick Stats Especificas:
+
+            
 
             //Poner Intento en el panel
             GameObject intento = Instantiate(prefabIntento);
+            Button boton = intento.GetComponent<Button>();
+            boton.onClick.AddListener(() => MostrarStats(item.Id));
+
             intento.transform.SetParent(groupTransform, false); // Establece el panel como hijo del "Group"
 
 
             //panel.GetComponent<TuPanelScript>().Configurar(dato);
         }
+    }
+
+    private void MostrarStats(string id)
+    {
+        Debug.Log("ID:"+id);
     }
     void DropdownItemSelectedFilter( TMP_Dropdown dropdown)
     {

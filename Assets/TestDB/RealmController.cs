@@ -120,7 +120,7 @@ public class RealmController : MonoBehaviour
 
             Prefs _prefs = GetPrefs();
             
-            if (_prefs.InfoI==false)
+            if (_prefs.InfoI==true)
             {
                 SceneManager.LoadScene("Introduccion"); //nombre escena de introducción
             }
@@ -147,9 +147,9 @@ public class RealmController : MonoBehaviour
     }
 
 
-    public History CreateHistory( int a, int b, int c, int d, int e)
+      public History CreateHistory( int a, int b, int c, int d, int e, int a2, int b2, int c2, int d2, int e2, string scene, string feedback)
     {
-        History _history = new History(a, b, c, d, e);
+        History _history = new History(a, b, c, d, e, a2, b2, c2, d2, e2, scene, feedback);
         _realm.Write(() => {
             _realm.Add(_history);
         });
@@ -179,9 +179,17 @@ public class RealmController : MonoBehaviour
         int i = 0;
         foreach (var _h in _history)
         {
-            _newHistory[i] = new History(_h.Id, _h.ScoreA, _h.ScoreB, _h.ScoreC, _h.ScoreD, _h.ScoreE, _h.Scene, _h.Feedback, _h.Date);
+            _newHistory[i] = new History(_h.Id, _h.ScoreA, _h.ScoreB, _h.ScoreC, _h.ScoreD, _h.ScoreE,_h.TotalA, _h.TotalB,  _h.TotalC,  _h.TotalD,  _h.TotalE, _h.Scene, _h.Feedback, _h.Date);
             i++;
         }
         return _newHistory;
     } 
+    public History HistoryById(string id){
+        History _history = _realm.Find<History>(id);
+        if (_history == null)
+        {
+            return null;
+        }
+        return _history;
+    }
 }

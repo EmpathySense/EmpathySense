@@ -202,7 +202,7 @@ public class ScenarioDialogueManager : MonoBehaviour
         dialogueText.text = string.Format("Respuestas correctas: {0}\nRespuestas incorrectas: {1}\nCantidad de intentos: {2}", correctAnswers, mistakes, correctAnswers+mistakes);
         endButtons.SetActive(true);
 
-        RealmController.Instance.CreateHistory(correctAnswers, mistakes, correctAnswers+mistakes, 0, 0);
+        //RealmController.Instance.CreateHistory(correctAnswers, mistakes, correctAnswers+mistakes, 0, 0);
     }
 
     public void ReturnToMenu()
