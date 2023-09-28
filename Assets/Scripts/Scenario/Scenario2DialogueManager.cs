@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Ink.Runtime;
+using System;
+using UnityEngine.UI;
 
 public class Scenario2DialogueManager : MonoBehaviour
 {
@@ -22,7 +24,8 @@ public class Scenario2DialogueManager : MonoBehaviour
 
     [SerializeField] private GameObject guia;
     [SerializeField] private TMP_Text guiaText;
-    private bool guiaIsTalking = false;
+    [SerializeField] private GameObject guiaContinueButton;
+    private bool guiaIsTalking = true;
 
     private int correctAnswers;
     private int mistakes;
@@ -45,6 +48,29 @@ public class Scenario2DialogueManager : MonoBehaviour
     private const string ANIMATION_TRIGGER_TAG = "animation";
     private const string END_DIALOGUE_TAG = "EndDialogue";
     private const string SWITCH_DIALOGUE_TAG = "dialog";
+
+    private Queue<string> feedbackQueue = new Queue<string>();
+    private Dictionary<string, string> feedback = new Dictionary<string, string>()
+    {
+        {"40a", "Parece que tuviste un pequeño desafío en el Paso A, ¡pero eso es completamente normal! Todos aprendemos a nuestro propio ritmo. Intenta de nuevo y ten en cuenta que cada intento es una oportunidad para mejorar. Puedes volver a revisar este paso desde el menú principal."},
+        {"40b", "No te desanimes por el Paso B. A veces, las cosas pueden ser un poco complicadas al principio. Toma un respiro y vuelve a intentarlo cuando te sientas listo. ¡Estoy seguro de que puedes hacerlo! Puedes volver a revisar este paso desde el menú principal."},
+        {"40c", "No te preocupes por el Paso C. A veces, las cosas pueden ponerse un poco difíciles, pero eso no significa que no puedas hacerlo. Tómate tu tiempo y sigue intentándolo. Puedes volver a revisar este paso desde el menú principal."},
+        {"40d", "El Paso D puede ser un poco complicado, pero eso no te impide aprender. Tómatelo con calma, repasa las instrucciones y da otro intento cuando te sientas listo."},
+        {"40e", "No te preocupes si el Paso E te resulta difícil en este momento. Todos enfrentamos obstáculos en nuestro camino. Tómatelo con calma, repasa y sigue practicando. ¡Estoy aquí para apoyarte en cada paso del camino! Puede volver a revisar este paso desde el menú principal."},
+
+        {"4080a", "En el Paso A tu desempeño fue bueno, y sé que puedes hacerlo aún mejor. No te preocupes si necesitas repetirlo, la práctica te llevará a la excelencia."},
+        {"4080b", "Tu desempeño en el Paso B fue bueno. Si sientes la necesidad de repasarlo, adelante. La práctica te llevará a la perfección, y estoy aquí para apoyarte."},
+        {"4080c", "Tu desempeño en el Paso C fue bastante bueno. Si decides repasar o practicar más, estaré aquí para apoyarte en el camino."},
+        {"4080d", "Tuviste un desempeño bueno en el Paso D. Si sientes que necesitas mejorar aún más, estoy seguro de que puedes hacerlo con un poco de práctica adicional."},
+        {"4080e", "Tuviste un buen desempeño en el Paso E. Si sientes que necesitas repasarlo o practicar un poco más, no dudes en hacerlo. Estoy seguro de que mejorarás."},
+
+        {"80a", "¡Maravilloso! Has superado el Paso A con éxito. Continúa avanzando con confianza y entusiasmo."},
+        {"80b", "¡Fantástico trabajo en el Paso B! Has superado otro obstáculo. ¡Sigue así y verás cuánto progresas!"},
+        {"80c", "¡Increíble! Has superado el Paso C sin problemas. ¡Estás demostrando una gran habilidad en esto!"},
+        {"80d", "¡Excelente trabajo en el Paso D! Has superado este desafío con éxito. ¡Estás haciendo un progreso asombroso!"},
+        {"80e", "¡Bravo! Dominaste el Paso E con gran habilidad. Tu perseverancia está dando sus frutos. ¡Sigue adelante con confianza!"},
+    };
+    private bool feedbackMode = false;
 
     private void Awake()
     {
@@ -88,10 +114,10 @@ public class Scenario2DialogueManager : MonoBehaviour
         if (inkJson.name != "Dialogo2_parte1")
         {
             ObserveStoryVariables();
+            dialoguePanel.SetActive(true);
         }
 
         dialogueIsPlaying = true;
-        dialoguePanel.SetActive(true);
 
         
 
@@ -158,6 +184,7 @@ public class Scenario2DialogueManager : MonoBehaviour
             {
                 guia.SetActive(false);
                 continueButton.SetActive(true);
+                dialoguePanel.SetActive(true);
                 dialogueText.text = currentStory.Continue();
             }
 
@@ -300,13 +327,99 @@ public class Scenario2DialogueManager : MonoBehaviour
 
     private void EndScreen()
     {
-        speakerName.text = "Resultados";
-        dialogueText.alignment = TextAlignmentOptions.Center;
-        dialogueText.text = string.Format("Respuestas correctas: {0}\nRespuestas incorrectas: {1}\nCantidad de intentos: {2}", correctAnswers, mistakes, correctAnswers+mistakes);
-        endButtons.SetActive(true);
-        continueButton.SetActive(false);
+        feedbackQueue.Enqueue(GetFeedbackString(scoreSectionA, intentoA, "a"));
+        feedbackQueue.Enqueue(GetFeedbackString(scoreSectionB, intentoB, "b"));
+        feedbackQueue.Enqueue(GetFeedbackString(scoreSectionC, intentoC, "c"));
+        feedbackQueue.Enqueue(GetFeedbackString(scoreSectionD, intentoD, "d"));
+        feedbackQueue.Enqueue(GetFeedbackString(scoreSectionE, intentoE, "e"));
 
-        RealmController.Instance.CreateHistory(correctAnswers, mistakes, correctAnswers+mistakes, 0, 0);
+        dialoguePanel.SetActive(false);
+        guia.SetActive(true);
+        guiaContinueButton.SetActive(false);
+
+        guiaText.text = "Felicidades, has completado la simulación. A continuación se mostrarán tus resultados";
+
+        feedbackMode = true;
+    }
+
+    public void ContinueFeedbackMode()
+    {
+        if (feedbackMode)
+        {
+            Debug.Log("BOTON FEEEDBACK");
+            if (feedbackQueue.Count > 0)
+            {
+                guiaText.text = feedbackQueue.Dequeue();
+            }
+            else
+            {
+                endButtons.SetActive(true);
+                continueButton.gameObject.SetActive(false);
+            }
+        }
+            
+    }
+
+    private string GetFeedbackString(int scoreSection, int intentos, string paso)
+    {
+        int percentageScore = (scoreSection / intentos) * 100;
+
+        if (percentageScore <= 40)
+        {
+            if(paso == "a"){
+                return feedback["40a"];
+            }
+            else if(paso == "b"){
+                return feedback["40b"];
+            }
+            else if(paso == "c"){
+                return feedback["40c"];
+            }
+            else if(paso == "d"){
+                return feedback["40d"];
+            }
+            else if(paso == "e"){
+                return feedback["40e"];
+            }
+        }
+        else if (percentageScore <= 80)
+        {
+            if(paso == "a"){
+                return feedback["4080a"];
+            }
+            else if(paso == "b"){
+                return feedback["4080b"];
+            }
+            else if(paso == "c"){
+                return feedback["4080c"];
+            }
+            else if(paso == "d"){
+                return feedback["4080d"];
+            }
+            else if(paso == "e"){
+                return feedback["4080e"];
+            }
+        }
+        else
+        {
+            if(paso == "a"){
+                return feedback["80a"];
+            }
+            else if(paso == "b"){
+                return feedback["80b"];
+            }
+            else if(paso == "c"){
+                return feedback["80c"];
+            }
+            else if(paso == "d"){
+                return feedback["80d"];
+            }
+            else if(paso == "e"){
+                return feedback["80e"];
+            }
+        }
+
+        return "";
     }
 
     public void ReturnToMenu()
