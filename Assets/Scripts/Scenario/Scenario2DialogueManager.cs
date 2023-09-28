@@ -213,7 +213,7 @@ public class Scenario2DialogueManager : MonoBehaviour
         endButtons.SetActive(true);
         continueButton.SetActive(false);
 
-        RealmController.Instance.CreateHistory(correctAnswers, mistakes, correctAnswers+mistakes, 0, 0);
+        //RealmController.Instance.CreateHistory(correctAnswers, mistakes, correctAnswers+mistakes, 0, 0);
     }
 
     public void ReturnToMenu()
