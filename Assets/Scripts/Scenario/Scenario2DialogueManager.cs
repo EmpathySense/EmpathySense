@@ -6,6 +6,7 @@ using TMPro;
 using Ink.Runtime;
 using System;
 using UnityEngine.UI;
+using System.Net.NetworkInformation;
 
 public class Scenario2DialogueManager : MonoBehaviour
 {
@@ -187,6 +188,9 @@ public class Scenario2DialogueManager : MonoBehaviour
                 dialoguePanel.SetActive(true);
                 dialogueText.text = currentStory.Continue();
             }
+            
+            StopCoroutine("IdleReminder");
+            StartCoroutine("IdleReminder");
 
             // Si hay elecciones disponibles, se mostraran en el panel de elecicones
             DisplayChoices();
@@ -420,6 +424,29 @@ public class Scenario2DialogueManager : MonoBehaviour
         }
 
         return "";
+    }
+
+    private IEnumerator IdleReminder()
+    {
+        yield return new WaitForSeconds(30.0f);
+        Debug.Log("Despierta woms");
+
+        string tmpText = guiaText.text;
+        bool shouldDeactivateGuide = true;
+        if (guia.activeInHierarchy)
+        {
+            shouldDeactivateGuide = false;
+        }
+        guia.SetActive(true);
+        guiaText.text = "¿Estas ahí? Recuerda que estás tratnado de ayudar a una persona en crisis de pánico";
+
+        yield return new WaitForSeconds(5.0f);
+
+        if (shouldDeactivateGuide)
+        {
+            guia.SetActive(false);
+        }
+        guiaText.text = tmpText;
     }
 
     public void ReturnToMenu()
