@@ -346,6 +346,26 @@ public class Scenario2DialogueManager : MonoBehaviour
         feedbackMode = true;
     }
 
+    private string GeneralFeedback()
+    {
+        int totalCorrectas = scoreSectionA + scoreSectionB + scoreSectionC + scoreSectionD + scoreSectionE;
+        int totalIntentos = intentoA + intentoB + intentoC + intentoD + intentoE;
+        int porcentaje = (totalCorrectas * 100) / totalIntentos;
+
+        if(porcentaje<=40)
+        {
+            return "¡No te desanimes! Las crisis de pánico son un tema complejo, pero esta es una oportunidad para aprender y crecer. Aprovecha esta instancia para identificar las áreas en las que necesitas trabajar más.";
+        }
+        else if (porcentaje <= 80)  
+        {
+            return "¡Estás en el camino correcto! Tu puntuación muestra que tienes una comprensión sólida del tema, pero siempre hay espacio para mejorar. Continúa estudiando y profundizando en los conceptos clave.";
+        }
+        else 
+        {
+            return "¡Felicidades! Tener una calificación tan alta muestra que ya tienes un dominio sobre los primeros auxilios psicológicos, tu dedicación y habilidades son clave para marcar una diferencia significativa en la vida de quienes enfrentan estas situaciones difíciles. ¡Sigue así!";
+        }
+    }
+
     public void ContinueFeedbackMode()
     {
         if (feedbackMode)
