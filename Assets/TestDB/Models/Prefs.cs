@@ -30,15 +30,19 @@ public class Prefs : RealmObject
     [MapTo("info_e")]
     public bool InfoE { get; set; }
 
+    [MapTo("info_sim")]
+    public bool InfoSim { get; set; }
+
     public Prefs()
     {
         this.Id = ObjectId.GenerateNewId().ToString();
         this.InfoI = true;
-        this.InfoA = true;
+        this.InfoA = false;
         this.InfoB = true;
         this.InfoC = true;
         this.InfoD = true;
         this.InfoE = true;
+        this.InfoSim =true;
 
     }
 

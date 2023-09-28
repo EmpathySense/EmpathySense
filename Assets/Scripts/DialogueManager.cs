@@ -28,14 +28,33 @@ public class DialogueManager : MonoBehaviour
     [SerializeField, TextArea(3,5)]
     private string endOfStepText;
     private Queue<Dialogue.Sentences> sentences;
+
     
     
+    private Dictionary<string, string> prefsUpdates = new Dictionary<string, string>
+    {   
+        {"Paso-A", "b"},
+        {"Paso-B", "c"},
+        {"Paso-C", "d"},
+        {"Paso-D", "e"},
+        {"Paso-E", "s"}
+        
+    };
     
     private Button boton;
 
+    
+    void Start()
+    {
+        Prefs prefs_User = RealmController.Instance.GetPrefs();
+    }
+    
     // Start is called before the first frame update
+    
+    
     void Awake()
     {
+        
         sentences = new Queue<Dialogue.Sentences>();
 
         if (_instance != null)
@@ -90,19 +109,32 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void EndDialogue()
-    {
+    {   
+        Prefs prefs_User = RealmController.Instance.GetPrefs();
         Debug.Log("hols");
         int unlockedLvel = PlayerPrefs.GetInt("UnlockedLevel", 1);
-        if (PlayerPrefs.HasKey("UnlockSim") == false)
+
+        Dictionary<string, bool> prefsCheck = new Dictionary<string, bool>
+    {   
+        {"Paso-A", prefs_User.InfoB},
+        {"Paso-B", prefs_User.InfoC},
+        {"Paso-C", prefs_User.InfoD},
+        {"Paso-D", prefs_User.InfoE},
+        {"Paso-E", prefs_User.InfoSim}
+        
+    };
+
+        Debug.Log("BOOL: "+prefsCheck[SceneManager.GetActiveScene().name]);
+        if (prefsCheck[SceneManager.GetActiveScene().name])
         {
             Debug.Log("Tiene alert");
             StartCoroutine(ShowUnableToOpenCanvas(alertCanvas));
         }
 
-        if (PlayerPrefs.HasKey("UnlockSim") == false && SceneManager.GetActiveScene().name == "Paso-E")
+        if (prefs_User.InfoSim==true && SceneManager.GetActiveScene().name == "Paso-E")
         {
-            
-            PlayerPrefs.SetInt("UnlockSim", 1);
+            RealmController.Instance.UpdatePrefs("s");
+            //PlayerPrefs.SetInt("UnlockSim", 1);
             /*Debug.Log(PlayerPrefs.GetInt("UnlockSim", 1));
             GetButton();
             Debug.Log("NOMBRE DEL BTON: "+ boton.name);
@@ -188,6 +220,8 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator ShowUnableToOpenCanvas(GameObject canvas)
     {
+        Debug.Log("Saliendo Canva...");
+        
         canvas.SetActive(true); // Activa el canvas
 
         yield return new WaitForSeconds(2f); // Espera durante 2 segundos
@@ -196,14 +230,21 @@ public class DialogueManager : MonoBehaviour
     }
 
     void UnlockNewLevel()
-    {
-        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+    {   
+        Prefs prefs_User = RealmController.Instance.GetPrefs();
+        string nameScene = SceneManager.GetActiveScene().name;
+        //Debug.Log("Nombre SCENE: "+nameScene);
+        //Debug.Log("Key: "+prefsUpdates[nameScene]);
+        RealmController.Instance.UpdatePrefs(prefsUpdates[nameScene]);
+
+        
+        /* if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
         {
             PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
             PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
 
             PlayerPrefs.Save();
-        }
+        } */
 
     }
 
