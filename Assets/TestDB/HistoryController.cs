@@ -19,19 +19,18 @@ public class HistoryController : MonoBehaviour
 
     void Start()
     {
-        Button.onClick.AddListener(AddHistory);
+        /* Button.onClick.AddListener(AddHistory); */
         SecondButton.onClick.AddListener(GetAll);
     }
 
-    void AddHistory()
+    /* void AddHistory()
     {
-        Users _user = RealmController.Instance.GetUser();
         RealmController.Instance.CreateHistory( int.Parse(a.text), int.Parse(b.text), int.Parse(c.text), int.Parse(d.text), int.Parse(e.text));
-    }
+    } */
 
     void GetAll()
     {
-        RealmController.Instance.GetHistory();
+        History[] _all = RealmController.Instance.GetHistory();
     }
     
 

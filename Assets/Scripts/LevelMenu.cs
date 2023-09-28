@@ -13,50 +13,165 @@ public class LevelMenu : MonoBehaviour
     public GameObject canvasD;
     public GameObject canvasE;
 
-    public Dictionary<string, GameObject> unableToOpenCanvases;
-
-
-
-
+    public Dictionary<int, GameObject> unableToOpenCanvases;
 
     public bool[] mensaje;
     
-    Dictionary<string, int> levelIndexMap = new Dictionary<string, int>()
+    //
+    Dictionary<int, string> levelIndexMap = new Dictionary<int, string>()
     {
-        { "A", 0 },
-        { "B", 1 },
-        { "C", 2 },
-        { "D", 3 },
-        { "E", 4 }
+        { 0, "Paso-A" },
+        { 1, "Paso-B" },
+        { 2, "Paso-C" },
+        { 3, "Paso-D" },
+        { 4, "Paso-E" }
+    };
+
+    Dictionary<int, string> IndexMap = new Dictionary<int, string>()
+    {
+        { 0, "InfoA"},
+        { 1, "InfoB"},
+        { 2, "InfoC"},
+        { 3, "InfoD"},
+        { 4, "InfoE"}
     };
 
 
-    private void Awake()
-    {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+    void Start()
+    {   
 
-        unableToOpenCanvases = new Dictionary<string, GameObject>()
+        Prefs prefs_User = RealmController.Instance.GetPrefs();
+        //Debug.Log(nameof(prefs_User.InfoA));
+        //int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+        unableToOpenCanvases = new Dictionary<int, GameObject>()
     {
-        { "B", canvasB },
-        { "C", canvasC },
-        { "D", canvasD },
-        { "E", canvasE }
+        { 1, canvasB },
+        { 2, canvasC },
+        { 3, canvasD },
+        { 4, canvasE }
         // Agrega las asignaciones para cada nivel y su respectivo canvas
     };
 
 
-        for (int i = 0; i < unlockedLevel; i++)
-        {
-
-            mensaje[i] = true;
-
-        }
 
 
         for (int i = 0; i < botones.Length; i++)
         {
-            
-            if (mensaje[i] == false)
+            Debug.Log("index: "+i);
+            switch(i)
+            {
+                case 0:
+                    if (prefs_User.InfoA)
+                    {   
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.grey;
+                        cb.highlightedColor = Color.grey;
+                        cb.selectedColor = Color.grey;
+                        cb.pressedColor = Color.red;
+                        b.colors = cb;
+                        
+                    }else
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.white;
+                        cb.highlightedColor = Color.yellow;
+                        b.colors = cb;
+                        b.onClick.AddListener(()=> newOpenLevel(0));
+                    }break;
+                case 1:
+                    if (prefs_User.InfoB)
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.grey;
+                        cb.highlightedColor = Color.grey;
+                        cb.selectedColor = Color.grey;
+                        cb.pressedColor = Color.red;
+                        b.colors = cb;
+                        b.onClick.AddListener(() => StartCoroutine(ShowUnableToOpenCanvas(unableToOpenCanvases[1])));
+                        //b.onClick.AddListener(() => pico(unableToOpenCanvases[1]));
+
+                        
+                    }else
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.white;
+                        cb.highlightedColor = Color.yellow;
+                        b.colors = cb;
+                        b.onClick.AddListener(()=> newOpenLevel(1));
+                    }
+                    break;
+                case 2:
+                    if (prefs_User.InfoC)
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.grey;
+                        cb.highlightedColor = Color.grey;
+                        cb.selectedColor = Color.grey;
+                        cb.pressedColor = Color.red;
+                        b.colors = cb;
+                        b.onClick.AddListener(()=> StartCoroutine(ShowUnableToOpenCanvas(unableToOpenCanvases[2])));
+                        
+                    }else
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.white;
+                        cb.highlightedColor = Color.yellow;
+                        b.colors = cb;
+                        b.onClick.AddListener(()=> newOpenLevel(2));
+                    }
+                    break;
+                case 3:
+                    if (prefs_User.InfoD)
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.grey;
+                        cb.highlightedColor = Color.grey;
+                        cb.selectedColor = Color.grey;
+                        cb.pressedColor = Color.red;
+                        b.colors = cb;
+                        b.onClick.AddListener(()=> StartCoroutine(ShowUnableToOpenCanvas(unableToOpenCanvases[3])));
+                        
+                    }else
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.white;
+                        cb.highlightedColor = Color.yellow;
+                        b.colors = cb;
+                        b.onClick.AddListener(()=> newOpenLevel(3));
+                    }
+                    break;
+                case 4:
+                    if (prefs_User.InfoE)
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.grey;
+                        cb.highlightedColor = Color.grey;
+                        cb.selectedColor = Color.grey;
+                        cb.pressedColor = Color.red;
+                        b.colors = cb;
+                        b.onClick.AddListener(()=> StartCoroutine(ShowUnableToOpenCanvas(unableToOpenCanvases[4])));
+                    }else
+                    {
+                        Button b = botones[i].GetComponent<Button>();
+                        ColorBlock cb = b.colors;
+                        cb.normalColor = Color.white;
+                        cb.highlightedColor = Color.yellow;
+                        b.colors = cb;
+                        b.onClick.AddListener(()=> newOpenLevel(4));
+                    }
+                    break;
+            }
+            /* if (mensaje[i] == false)
             {
                 Button b = botones[i].GetComponent<Button>();
                 ColorBlock cb = b.colors;
@@ -78,11 +193,29 @@ public class LevelMenu : MonoBehaviour
             cb.highlightedColor = Color.yellow;
             b.colors = cb;
 
-        }
+        } */
 
     }
 
-    void UnlockNewLevel()
+    
+    IEnumerator ShowUnableToOpenCanvas(GameObject canvas)
+    {   
+        Debug.Log("ALOOOO");
+        canvas.SetActive(true); // Activa el canvas
+
+        yield return new WaitForSeconds(2f); // Espera durante 2 segundos
+
+        canvas.SetActive(false); // Desactiva el canvas
+    } 
+
+    void newOpenLevel(int num)
+    {
+        
+        SceneManager.LoadScene(levelIndexMap[num]);
+    }
+
+
+    /* void UnlockNewLevel()
     {
         if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
         {
@@ -93,6 +226,8 @@ public class LevelMenu : MonoBehaviour
         }
         
     }
+
+    
     
    public void OpenLevel(string Level)
     {
@@ -115,15 +250,8 @@ public class LevelMenu : MonoBehaviour
         
 
     }
-    IEnumerator ShowUnableToOpenCanvas(GameObject canvas)
-    {
-        canvas.SetActive(true); // Activa el canvas
 
-        yield return new WaitForSeconds(2f); // Espera durante 2 segundos
-
-        canvas.SetActive(false); // Desactiva el canvas
-    }
-
+    */
     
     /*public void Update()
     {
@@ -142,4 +270,5 @@ public class LevelMenu : MonoBehaviour
 
 
 
+}
 }

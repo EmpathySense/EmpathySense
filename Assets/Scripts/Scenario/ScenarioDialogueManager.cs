@@ -315,6 +315,7 @@ public class ScenarioDialogueManager : MonoBehaviour
 
         guiaText.text = "Felicidades, has completado la simulación. A continuación se mostrarán tus resultados";
 
+
         feedbackMode = true;
     }
 
@@ -439,6 +440,7 @@ public class ScenarioDialogueManager : MonoBehaviour
             guia.SetActive(false);
         }
         guiaText.text = tmpText;
+
     }
 
     public void ReturnToMenu()

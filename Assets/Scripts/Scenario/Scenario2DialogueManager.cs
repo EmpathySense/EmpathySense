@@ -352,6 +352,7 @@ public class Scenario2DialogueManager : MonoBehaviour
         int totalIntentos = intentoA + intentoB + intentoC + intentoD + intentoE;
         int porcentaje = (totalCorrectas * 100) / totalIntentos;
 
+
         if(porcentaje<=40)
         {
             return "¡No te desanimes! Las crisis de pánico son un tema complejo, pero esta es una oportunidad para aprender y crecer. Aprovecha esta instancia para identificar las áreas en las que necesitas trabajar más.";

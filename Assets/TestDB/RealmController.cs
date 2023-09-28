@@ -77,6 +77,33 @@ public class RealmController : MonoBehaviour
         return _playerProfile;
     }
 
+    public Prefs GetPrefs(){
+        var _prefs = _realm.All<Prefs>();
+        Prefs _newPrefs = new Prefs();
+        foreach (var _pref in _prefs)
+        {
+            _newPrefs.Id = _pref.Id;
+            _newPrefs.InfoI = _pref.InfoI;
+            _newPrefs.InfoA = _pref.InfoA;
+            _newPrefs.InfoB = _pref.InfoB;
+            _newPrefs.InfoC = _pref.InfoC;
+            _newPrefs.InfoD = _pref.InfoD;
+            _newPrefs.InfoE = _pref.InfoE;
+            _newPrefs.InfoSim = _pref.InfoSim;
+        }
+        return _newPrefs;
+
+    }
+
+    public Prefs CreatePrefs()
+    {
+        Prefs _prefs = new Prefs();
+        _realm.Write(() => {
+            _realm.Add(_prefs);
+        });
+        return _prefs;
+    }
+
     public void IsCreated()
     {
         Users _playerProfile = _realm.Find<Users>(_realmUser.Id);
@@ -85,13 +112,16 @@ public class RealmController : MonoBehaviour
             _realm.Write(() => {
                 _playerProfile = _realm.Add(new Users(_realmUser.Id));
             });
-            SceneManager.LoadScene("SignUpScene");
+
+            Prefs _prefs = RealmController.Instance.CreatePrefs();
+            SceneManager.LoadScene("SignupScene");
         }
         else
         {   
-            Users _user = RealmController.Instance.GetUser();
 
-            if (_user.Role == "Nuevo")
+            Prefs _prefs = GetPrefs();
+            
+            if (_prefs.InfoI)
             {
                 SceneManager.LoadScene("Introduccion"); //nombre escena de introducción
             }
@@ -110,9 +140,17 @@ public class RealmController : MonoBehaviour
         });
     }
 
-    public History CreateHistory( int a, int b, int c, int d, int e)
+    public void UpdatePrefs(Prefs prefs)
     {
-        History _history = new History(a, b, c, d, e);
+        _realm.Write(() => {
+            _realm.Add(prefs, true); //this will update an existing user with the same id or create a new one if it doesn't exist
+        });
+    }
+
+
+      public History CreateHistory( int a, int b, int c, int d, int e, int a2, int b2, int c2, int d2, int e2, int porcentaje, string scene, string feedback)
+    {
+        History _history = new History(a, b, c, d, e, a2, b2, c2, d2, e2, porcentaje, scene, feedback);
         _realm.Write(() => {
             _realm.Add(_history);
         });
@@ -120,31 +158,40 @@ public class RealmController : MonoBehaviour
     }
 
 
-    //not needed, just for testing
-    public void GetHistory()
+    public void UpdatePrefs(string name)
     {
-        var _history = _realm.All<History>();
-        foreach (var item in _history)
-        {
-            Debug.Log("user_id: " + GetUser().UserId);
-            Debug.Log("id: " + item.Id);
-            Debug.Log(item.TotalScore);
-        }
+        Prefs _prefs = RealmController.Instance.GetPrefs();
+        if(name == "intro") _prefs.InfoI = false;
+        if(name == "a") _prefs.InfoA = false;
+        if(name == "b") _prefs.InfoB = false;
+        if(name == "c") _prefs.InfoC = false;
+        if(name == "d") _prefs.InfoD = false;
+        if(name == "e") _prefs.InfoE = false;
+        if(name == "s") _prefs.InfoSim = false;
+        RealmController.Instance.UpdatePrefs(_prefs);
     }
-
-        public void UpdateIntro()
-    {
-        Users _user = RealmController.Instance.GetUser();
-
-        Users _new = new Users();
-        _new.UserId = _user.UserId;
-        _new.FirstName = _user.FirstName;
-        _new.LastName = _user.LastName;
-        _new.Age = _user.Age;
-        _new.Role = "Antiguo";
-        _new.CreationDate = _user.CreationDate;
-        _new.Organization = _user.Organization;
-
-        RealmController.Instance.UpdateUser(_new);
+    public History[] GetHistory(){
+        var _history = _realm.All<History>();
+        int j = 0;
+        foreach (var _count in _history)
+        {
+            j++;
+        }
+        History[] _newHistory = new History[j];
+        int i = 0;
+        foreach (var _h in _history)
+        {
+            _newHistory[i] = new History(_h.Id, _h.ScoreA, _h.ScoreB, _h.ScoreC, _h.ScoreD, _h.ScoreE,_h.TotalA, _h.TotalB,  _h.TotalC,  _h.TotalD,  _h.TotalE,_h.TotalScore, _h.Scene, _h.Feedback, _h.Date);
+            i++;
+        }
+        return _newHistory;
+    } 
+    public History HistoryById(string id){
+        History _history = _realm.Find<History>(id);
+        if (_history == null)
+        {
+            return null;
+        }
+        return _history;
     }
 }
