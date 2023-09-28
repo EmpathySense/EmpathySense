@@ -38,7 +38,9 @@ public class DialogueManagerPAP : MonoBehaviour
     }
 
     private void Start()
-    {
+    {   
+
+        Prefs prefs_User = RealmController.Instance.GetPrefs();
         dialogueIsPlaying = false;
         choicesPanel.SetActive(false);
         

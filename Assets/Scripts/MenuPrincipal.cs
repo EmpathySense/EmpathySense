@@ -13,8 +13,52 @@ public class MenuPrincipal : MonoBehaviour
     public GameObject alertSim;
     // Start is called before the first frame update
     void Start()
+    {   
+        Prefs prefs_User = RealmController.Instance.GetPrefs();
+
+        if (prefs_User.InfoSim)
+        {
+            //Debug.Log("Entro en el Desactivo");
+            ColorBlock cb = buttonSim.colors;
+            cb.normalColor = Color.grey;
+            cb.highlightedColor = Color.grey;
+            cb.selectedColor = Color.grey;
+            cb.pressedColor = Color.red;
+            buttonSim.colors = cb;
+            buttonSim.onClick.AddListener(()=>StartCoroutine(ShowAlertCanvas(alertSim)));
+            //buttonSim.enabled = false;
+            
+        }
+        else
+        {
+            ColorBlock cb = buttonSim.colors;
+            cb.normalColor = Color.white;
+            cb.highlightedColor = Color.yellow;
+            cb.selectedColor = Color.green;
+            cb.pressedColor = Color.green;
+            buttonSim.colors = cb;
+            buttonSim.onClick.AddListener(()=>ActivePanels());
+        }
+    }
+    void ActivePanels()
     {
-        if (panelSimulacion == true)
+        panelMenuPrincipal.SetActive(false);
+        panelSimulacionesDesactivado.SetActive(true);
+    }
+    public void ReturnHelp()
+    {
+        SceneManager.LoadScene("Introduccion");
+    }
+
+    IEnumerator ShowAlertCanvas(GameObject canvas)
+    {
+        canvas.SetActive(true); // Activa el canvas
+
+        yield return new WaitForSeconds(2f); // Espera durante 2 segundos
+
+        canvas.SetActive(false); // Desactiva el canvas
+    }
+        /* if (panelSimulacion == true)
         {
             panelSimulacionesDesactivado.SetActive(true);
             panelMenuPrincipal.SetActive(false);
@@ -81,22 +125,9 @@ public class MenuPrincipal : MonoBehaviour
             panelSimulacionesDesactivado.SetActive(true);
             panelMenuPrincipal.SetActive(false);
         }
-    }
+    } */
 
 
-    public void ReturnHelp()
-    {
-        SceneManager.LoadScene("Introduccion");
-    }
-
-    IEnumerator ShowAlertCanvas(GameObject canvas)
-    {
-        canvas.SetActive(true); // Activa el canvas
-
-        yield return new WaitForSeconds(2f); // Espera durante 2 segundos
-
-        canvas.SetActive(false); // Desactiva el canvas
-    }
     // Update is called once per frame
 
 }
