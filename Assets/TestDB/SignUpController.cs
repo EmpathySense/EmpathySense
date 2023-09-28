@@ -36,7 +36,7 @@ public class SignUpController : MonoBehaviour
         _new.Organization = OrganizationInput.text;
 
         RealmController.Instance.UpdateUser(_new);
-        SceneManager.LoadScene("MenúPrincipal");
+        SceneManager.LoadScene("Introduccion");
     }
 
     void Update()
