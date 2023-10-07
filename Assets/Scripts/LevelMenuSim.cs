@@ -14,7 +14,7 @@ public class LevelMenuSim : MonoBehaviour
     void Start()
     {
         Lvl = ""; 
-    }
+    }  
 
     public void ChangeLvl (string GoLevel)
     {
@@ -28,4 +28,6 @@ public class LevelMenuSim : MonoBehaviour
         SceneManager.LoadScene(Lvl);
 
     }
+
+    
 }

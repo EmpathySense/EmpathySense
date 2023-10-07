@@ -8,10 +8,12 @@ public class MenuPrincipal : MonoBehaviour
 {
     public static bool panelSimulacion;
     public Button buttonSim;
-    public GameObject panelSimulacionesDesactivado;
+    public GameObject panelSimulaciones;
     public GameObject panelMenuPrincipal;
     public GameObject alertSim;
     // Start is called before the first frame update
+
+    
     void Start()
     {   
         Prefs prefs_User = RealmController.Instance.GetPrefs();
@@ -39,11 +41,18 @@ public class MenuPrincipal : MonoBehaviour
             buttonSim.colors = cb;
             buttonSim.onClick.AddListener(()=>ActivePanels());
         }
+
+        if (PanelState.instance.activarMenuSIM)
+        {
+            panelSimulaciones.SetActive(true);
+            // Restablecer el estado si es necesario
+            PanelState.instance.activarMenuSIM = false;
+        }
     }
     void ActivePanels()
     {
         panelMenuPrincipal.SetActive(false);
-        panelSimulacionesDesactivado.SetActive(true);
+        panelSimulaciones.SetActive(true);
     }
     public void ReturnHelp()
     {

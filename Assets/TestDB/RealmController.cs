@@ -6,6 +6,8 @@ using Realms.Sync;
 using Realms.Sync.Exceptions;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
+using System.Linq;
+
 
 public class RealmController : MonoBehaviour
 {
@@ -77,23 +79,33 @@ public class RealmController : MonoBehaviour
         return _playerProfile;
     }
 
-    public Prefs GetPrefs(){
-        var _prefs = _realm.All<Prefs>();
-        Prefs _newPrefs = new Prefs();
-        foreach (var _pref in _prefs)
-        {
-            _newPrefs.Id = _pref.Id;
-            _newPrefs.InfoI = _pref.InfoI;
-            _newPrefs.InfoA = _pref.InfoA;
-            _newPrefs.InfoB = _pref.InfoB;
-            _newPrefs.InfoC = _pref.InfoC;
-            _newPrefs.InfoD = _pref.InfoD;
-            _newPrefs.InfoE = _pref.InfoE;
-            _newPrefs.InfoSim = _pref.InfoSim;
-        }
-        return _newPrefs;
+    public Prefs GetPrefs()
+    {
+    // Obtén el primer documento de la colección (o el que necesites)
+    var _pref = _realm.All<Prefs>().FirstOrDefault();
 
+    if (_pref != null)
+    {
+        return new Prefs
+        {
+            Id = _pref.Id,
+            InfoI = _pref.InfoI,
+            InfoA = _pref.InfoA,
+            InfoB = _pref.InfoB,
+            InfoC = _pref.InfoC,
+            InfoD = _pref.InfoD,
+            InfoE = _pref.InfoE,
+            InfoSim = _pref.InfoSim
+        };
     }
+    else
+    {
+        // Manejar el caso en el que no se encuentra ningún documento
+        Debug.LogError("No se encontró ningún documento Prefs en la base de datos.");
+        return null;
+    }
+}
+
 
     public Prefs CreatePrefs()
     {
