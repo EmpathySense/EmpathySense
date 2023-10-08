@@ -7,6 +7,7 @@ using Ink.Runtime;
 
 public class ScenarioDialogueManager : MonoBehaviour
 {
+    public AudioSource audioSource;
     private static ScenarioDialogueManager _instance;
 
     [SerializeField] private Animator igancioAnimator;
@@ -44,6 +45,7 @@ public class ScenarioDialogueManager : MonoBehaviour
     public bool dialogueIsPlaying { get; private set; }
 
     private const string SPEAKER_TAG = "title";
+    private const string AUDIO_TAG = "audio";
     private const string ANIMATION_TRIGGER_TAG = "animation";
     private const string SWITCH_DIALOGUE_TAG = "dialog";
     private const string END_DIALOGUE_TAG = "EndDialogue";
@@ -267,6 +269,14 @@ public class ScenarioDialogueManager : MonoBehaviour
 
                     break;
 
+                case AUDIO_TAG:
+                    // AudioManager.Instance.Play(tagValue);
+                    AudioClip clip = Resources.Load<AudioClip>("AudioFeedback/AudioScene2/" + tagValue);
+                    //reproducir audio clip
+                    audioSource.PlayOneShot(clip);
+                    break;
+
+
                 default:
                     Debug.LogWarning("No se esta manejando el tag: " + tagValue);
                     break;
@@ -432,8 +442,7 @@ public class ScenarioDialogueManager : MonoBehaviour
     private IEnumerator IdleReminder()
     {
         yield return new WaitForSeconds(30.0f);
-        Debug.Log("Despierta woms");
-
+    
         string tmpText = guiaText.text;
         bool shouldDeactivateGuide = true;
         if (guia.activeInHierarchy)
@@ -441,7 +450,7 @@ public class ScenarioDialogueManager : MonoBehaviour
             shouldDeactivateGuide = false;
         }
         guia.SetActive(true);
-        guiaText.text = "¿Estas ahí? Recuerda que estás tratnado de ayudar a una persona en crisis de pánico";
+        guiaText.text = "¿Estas ahí? Recuerda que estás tratando de ayudar a una persona en crisis de pánico";
 
         yield return new WaitForSeconds(5.0f);
 

@@ -10,6 +10,7 @@ using System.Net.NetworkInformation;
 
 public class Scenario2DialogueManager : MonoBehaviour
 {
+    public AudioSource audioSource;
     private static Scenario2DialogueManager _instance;
 
     [SerializeField] private Animator igancioAnimator;
@@ -46,6 +47,7 @@ public class Scenario2DialogueManager : MonoBehaviour
     public bool dialogueIsPlaying { get; private set; }
 
     private const string SPEAKER_TAG = "title";
+    private const string AUDIO_TAG = "audio";
     private const string ANIMATION_TRIGGER_TAG = "animation";
     private const string END_DIALOGUE_TAG = "EndDialogue";
     private const string SWITCH_DIALOGUE_TAG = "dialog";
@@ -285,6 +287,13 @@ public class Scenario2DialogueManager : MonoBehaviour
                         guiaIsTalking = false;
                     }
 
+                    break;
+
+                case AUDIO_TAG:
+                    // AudioManager.Instance.Play(tagValue);
+                    AudioClip clip = Resources.Load<AudioClip>("AudioFeedback/AudioScene2/" + tagValue);
+                    //reproducir audio clip
+                    audioSource.PlayOneShot(clip);
                     break;
 
                 default:
