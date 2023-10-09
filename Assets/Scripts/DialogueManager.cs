@@ -213,7 +213,7 @@ public class DialogueManager : MonoBehaviour
         {
 
         // MenuPrincipal.panelSimulacion = true;
-            
+            PanelState.instance.activarMenuSIM = true;
             string levelName = "MenúPrincipal";
             SceneManager.LoadScene(levelName);
         }

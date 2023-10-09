@@ -26,8 +26,10 @@ public class MenuPausa : MonoBehaviour
         { "E", 4 }
     };
     private void Start()
-    {
+    {   
+        
         DisplayWristUI();
+        
     }
 
     public void ExitGame()
@@ -79,7 +81,7 @@ public class MenuPausa : MonoBehaviour
 
     public void GoToLevel()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int unlockedLevel = CountFalse();
         Debug.Log("Unlock " + unlockedLevel);
         foreach (Button boton in botones)
         {
@@ -136,10 +138,49 @@ public class MenuPausa : MonoBehaviour
         }
     }
 
-    private void Awake()
+    int CountFalse()
     {
+        Prefs prefs_User = RealmController.Instance.GetPrefs();
+    
+        int falseCount = 0; // Inicializamos el contador a 0
+    
+        // Comprobamos cada campo y si es false, incrementamos el contador
+        if (!prefs_User.InfoA)
+        {
+            falseCount++;
+        }
+
+        if (!prefs_User.InfoB)
+        {
+            falseCount++;
+        }
+
+        if (!prefs_User.InfoC)
+        {
+            falseCount++;
+        }
+
+        if (!prefs_User.InfoD)
+        {
+            falseCount++;
+        }
+
+        if (!prefs_User.InfoE)
+        {
+            falseCount++;
+        }
+
+        // Imprimimos el conteo
+        Debug.Log($"Cantidad de campos con 'false': {falseCount}");
+        return falseCount;
+    }
+    private void Awake()
+    {   
+        
+        CountFalse();
         ButtonsToArray();
         GoToLevel();
+
     }
 
 

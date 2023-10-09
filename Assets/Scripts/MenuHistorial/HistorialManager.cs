@@ -66,7 +66,7 @@ public class HistorialManager : MonoBehaviour
             arrayHistory = RealmController.Instance.GetHistory();        
             allHistory = arrayHistory.ToList();
             allHistory = allHistory.OrderByDescending(try_history => try_history.Date).ToList();
-            Debug.Log(allHistory.Count);
+            //Debug.Log(allHistory.Count);
         }
         else
         {
@@ -250,7 +250,7 @@ public class HistorialManager : MonoBehaviour
 
         filter=dropdown.options[index].text;
         itemFilter=filter;
-        Debug.Log("Filtro: "+ itemFilter);
+        //Debug.Log("Filtro: "+ itemFilter);
     }
 
 
@@ -260,7 +260,7 @@ public class HistorialManager : MonoBehaviour
 
         order=dropdown.options[index].text;
         itemOrden=order;
-        Debug.Log("Orden: "+ itemOrden);
+        //Debug.Log("Orden: "+ itemOrden);
     }
 
     void Borrar()
@@ -331,7 +331,7 @@ public class HistorialManager : MonoBehaviour
 
         // Cambia la posición en el eje Y
         posicionActual.y -= Height/2.0f;
-        Debug.Log("pos: "+ posicionActual.y);
+        //Debug.Log("pos: "+ posicionActual.y);
         // Aplica la nueva posición al RectTransform
         contentRectTransform.anchoredPosition = posicionActual;
 

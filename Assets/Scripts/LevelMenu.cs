@@ -58,7 +58,7 @@ public class LevelMenu : MonoBehaviour
 
         for (int i = 0; i < botones.Length; i++)
         {
-            Debug.Log("index: "+i);
+            //Debug.Log("index: "+i);
             switch(i)
             {
                 case 0:
@@ -200,7 +200,7 @@ public class LevelMenu : MonoBehaviour
     
     IEnumerator ShowUnableToOpenCanvas(GameObject canvas)
     {   
-        Debug.Log("ALOOOO");
+        //Debug.Log("ALOOOO");
         canvas.SetActive(true); // Activa el canvas
 
         yield return new WaitForSeconds(2f); // Espera durante 2 segundos

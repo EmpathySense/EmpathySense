@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonSim: {fileID: 325974011}
-  panelSimulacionesDesactivado: {fileID: 1589602501}
+  panelSimulaciones: {fileID: 1589602501}
   panelMenuPrincipal: {fileID: 1372603831}
   alertSim: {fileID: 318805984}
 --- !u!1 &125048848
