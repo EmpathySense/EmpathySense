@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5277928680333457472
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  spectralLut:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  intensity:
+    overrideState: 1
+    value: 0
+  fastMode:
+    overrideState: 0
+    value: 0
 --- !u!114 &-4033158955100848421
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -18,16 +44,16 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 0.69
+    value: 0.1
   aperture:
     overrideState: 1
-    value: 5.6
+    value: 24.3
   focalLength:
     overrideState: 1
-    value: 50
+    value: 1
   kernelSize:
     overrideState: 1
-    value: 1
+    value: 0
 --- !u!114 &-2580413439593215492
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -91,6 +117,7 @@ MonoBehaviour:
   - {fileID: -4033158955100848421}
   - {fileID: -2580413439593215492}
   - {fileID: 4184005509231873221}
+  - {fileID: -5277928680333457472}
 --- !u!114 &4184005509231873221
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -109,7 +136,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0
+    value: 100
   intensityX:
     overrideState: 1
     value: 1
