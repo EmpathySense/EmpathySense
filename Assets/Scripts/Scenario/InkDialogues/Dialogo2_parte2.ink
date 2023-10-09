@@ -204,7 +204,7 @@ VAR mistakes = 0
  === eleven_choice ===
  ¿Qué debería responder? #title:Tú
     * Tienes que hacer lo que yo hago, mírame bien #dialog:guide
-        Recuerda no entrar en un rol directivo#dialog:normal #audio:feedback2_23
+        Recuerda no entrar en un rol directivo#dialog:normal #audio:feedback2_22
         ~ raise(intentoB)
         ~ mistake_dialogue()
         ->eleven_choice
@@ -227,7 +227,7 @@ VAR mistakes = 0
         ~ raise(scoreSectionB)
         ~ raise(intentoB)
     * Tienes que hacer la respiración de 4 tiempos, con eso estás listo #dialog:guide 
-        Recuerda que es importante explicitar lo que harán en los siguientes momentos. Anticipar es clave para recuperar la tranquilidad#dialog:normal #audio:feedback2_25
+        Recuerda que es importante explicitar lo que harán en los siguientes momentos. Anticipar es clave para recuperar la tranquilidad#dialog:normal #audio:feedback2_24 
         ~ raise(intentoB)
         ~ mistake_dialogue()
         ->twelve_choice
@@ -247,7 +247,7 @@ VAR mistakes = 0
         ~ mistake_dialogue()
         ->thirteen_choice
     * Mira obsérvame primero, en lo que hago y entenderás mejor. #dialog:guide
-        Recuerda que es importante explicar con calma y paciencia, para que la persona pueda anticiparse#dialog:normal #audio:feedback2_27
+        Recuerda que es importante explicar con calma y paciencia, para que la persona pueda anticiparse#dialog:normal #audio:feedback2_26
         ~ raise(intentoB)
         ~ mistake_dialogue()
         ->thirteen_choice
@@ -261,12 +261,12 @@ VAR mistakes = 0
         ~ raise(scoreSectionB)
         ~ raise(intentoB)
     * Veamos si te sale a la primera o no.#dialog:guide
-        Recuerda no generar experiencias más angustiantes.#dialog:normal #audio:feedback2_28
+        Recuerda no generar experiencias más angustiantes.#dialog:normal #audio:feedback2_27
         ~ raise(intentoB)
         ~ mistake_dialogue()
         ->fourteen_choice
     * Tienes que hacerlo bien, o si no te vas a agitar más.#dialog:guide
-        Recuerda que tus palabras deben invitar a la calma.#dialog:normal #audio:feedback2_29
+        Recuerda que tus palabras deben invitar a la calma.#dialog:normal #audio:feedback2_28
         ~ raise(intentoB)
         ~ mistake_dialogue()
         ->fourteen_choice 
@@ -282,7 +282,7 @@ VAR mistakes = 0
         ~ raise(intentoB)
         ~ raise(correctAnswers)
     * \¡Bien Jorge! No esperaba que te saliera a la primera, pero lo hiciste súper bien.#dialog:guide
-        Recuerda evitar comentario que sean juicios.#dialog:normal #audio:feedback2_30
+        Recuerda evitar comentario que sean juicios.#dialog:normal #audio:feedback2_29
         ~ raise(intentoB)
         ~ mistake_dialogue()
         ->fiveteen_choice 
@@ -455,7 +455,7 @@ VAR mistakes = 0
         ->twenty_three_choice
     * Mira pásame tu celular, podemos llamar a algún familiar para que sepa lo que te pasó y ver si te puede ayudar.
         No quiero molestar a nadie.#dialog:guide
-        Recuerda que tu labor no es dar una solución sino acompañar a la persona, tomar un rol directivo también puede invalidar a la otra persona e incluso angustiarla.#dialog:normal #audio:feedback2_46
+        Recuerda que tu labor no es dar una solución sino acompañar a la persona, tomar un rol directivo también puede invalidar a la otra persona e incluso angustiarla.#dialog:normal #audio:feedback2_46 
         ~ raise(intentoD)
         ->twenty_three_choice
 

@@ -23,5 +23,7 @@ public class DialoguePart2Trigger : MonoBehaviour
 
         Scenario2DialogueManager.GetInstance().EnterDialogueMode(inkJson);
 
+        gameObject.SetActive(false);
+
     }
 }
