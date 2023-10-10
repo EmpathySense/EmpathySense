@@ -87,6 +87,7 @@ public class MenuPausa : MonoBehaviour
         {
             boton.gameObject.SetActive(false);
         }
+        
         for (int i = 0; i < unlockedLevel; i++)
         {
             if (i < botones.Length)
@@ -125,12 +126,13 @@ public class MenuPausa : MonoBehaviour
         {
             string levelName = "Paso-" + Level;
             SceneManager.LoadScene(levelName);
+            desPause();
         }
     }
 
     void ButtonsToArray()
     {
-        int childCount = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int childCount = CountFalse();
         botones = new Button[childCount];
         for (int i=0; i< childCount; i++)
         {

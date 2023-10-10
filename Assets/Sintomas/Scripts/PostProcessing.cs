@@ -66,13 +66,13 @@ public class PostProcessing : MonoBehaviour
             
                 _chromaticAberration.intensity.value = intensity;
             }
-            else
-            {
-                timerChromaticOff += Time.deltaTime;
-                float t = Mathf.Clamp01(timerChromaticOff / transitionDurationChromatic);
-                float intensity = maxIntensityChromatic * (1.0f - t);
-                _chromaticAberration.intensity.value = intensity;
-            }
+            // else
+            // {
+            //     timerChromaticOff += Time.deltaTime;
+            //     float t = Mathf.Clamp01(timerChromaticOff / transitionDurationChromatic);
+            //     float intensity = maxIntensityChromatic * (1.0f - t);
+            //     _chromaticAberration.intensity.value = intensity;
+            // }
         }
 
         if(flagBloom)
