@@ -126,7 +126,7 @@ public class DialogueManager : MonoBehaviour
     };
 
         Debug.Log("BOOL: "+prefsCheck[SceneManager.GetActiveScene().name]);
-        if (prefsCheck[SceneManager.GetActiveScene().name])
+        if (prefsCheck[SceneManager.GetActiveScene().name] && SceneManager.GetActiveScene().name != "Paso-E")
         {
             Debug.Log("Tiene alert");
             StartCoroutine(ShowUnableToOpenCanvas(alertCanvas));

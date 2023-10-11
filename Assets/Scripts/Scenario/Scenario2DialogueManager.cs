@@ -353,7 +353,7 @@ public class Scenario2DialogueManager : MonoBehaviour
 
         dialoguePanel.SetActive(false);
         guia.SetActive(true);
-        // guiaContinueButton.SetActive(false);
+        //guiaContinueButton.SetActive(false);
 
         guiaText.text = "Felicidades, has completado la simulación. A continuación se mostrarán tus resultados";
 
@@ -396,7 +396,8 @@ public class Scenario2DialogueManager : MonoBehaviour
             else
             {
                 endButtons.SetActive(true);
-                continueButton.gameObject.SetActive(false);
+                continueButton.SetActive(false);
+                guiaContinueButton.SetActive(false);
             }
         }
             

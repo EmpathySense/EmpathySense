@@ -90,14 +90,14 @@ VAR mistakes = 0
         ->five_choice
     
 - Bueno, estos últimos días he tenido muchas cosas en mente. #title:Jorge #dialog:guide 
-- Recuerda que la persona que está en una crisis de pánico puede estar cerrada al diálogo, debes respetar lo que decida. #title:Consejo #dialog:normal
+- Recuerda que la persona que está en una crisis de pánico puede estar cerrada al diálogo, debes respetar lo que decida. #title:Consejo #dialog:normal #audio:feedback2_13
 ->six_choice
 
 
  === six_choice === 
  ¿Qué debería responder? #title:Tú
     * ¿Por qué crees que no eres valorado?#dialog:guide
-        Recuerda evitar preguntas que puedan generar más angustia.#dialog:normal #audio:feedback2_13
+        Recuerda evitar preguntas que puedan generar más angustia.#dialog:normal #audio:feedback2_12
         ~ raise(intentoA)
         ~ mistake_dialogue()
         ->six_choice
