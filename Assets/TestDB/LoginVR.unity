@@ -561,10 +561,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1430782339443002881, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_UIScrollAction.m_Action.m_Id
+      value: b1067620-f3dd-462a-b7b1-cd8fe8bd5ba8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430782339443002881, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_IsTrackedAction.m_Action.m_Id
+      value: d5189c93-89ae-4de0-b127-2d080644bbff
+      objectReference: {fileID: 0}
     - target: {fileID: 3415145736139425353, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
