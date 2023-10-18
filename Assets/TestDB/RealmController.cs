@@ -152,7 +152,7 @@ public class RealmController : MonoBehaviour
         });
     }
 
-    public void UpdatePrefs(Prefs prefs)
+    public void UpdatePref(Prefs prefs)
     {
         _realm.Write(() => {
             _realm.Add(prefs, true); //this will update an existing user with the same id or create a new one if it doesn't exist
@@ -180,7 +180,8 @@ public class RealmController : MonoBehaviour
         if(name == "d") _prefs.InfoD = false;
         if(name == "e") _prefs.InfoE = false;
         if(name == "s") _prefs.InfoSim = false;
-        RealmController.Instance.UpdatePrefs(_prefs);
+        RealmController.Instance.UpdatePref(_prefs);
+        Debug.Log("PREFS: actualizadas");
     }
     public History[] GetHistory(){
         var _history = _realm.All<History>();

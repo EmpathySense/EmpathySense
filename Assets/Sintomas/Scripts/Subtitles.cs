@@ -23,15 +23,15 @@ public class Subtitles : MonoBehaviour
         textBox.text = "y que puedas identificar con rapidez cuando una persona esté pasando por esta.";
         yield return new WaitForSecondsRealtime(4.2f);
         textBox.text = "";
-        yield return new WaitForSecondsRealtime(1f); //ACTUALIZAR TIEMPO   
+        yield return new WaitForSecondsRealtime(0.7f); //ACTUALIZAR TIEMPO   
         textBox.text = "El cuerpo tiene una respuesta natural ante el peligro,";
-        yield return new WaitForSecondsRealtime(3.3f);
+        yield return new WaitForSecondsRealtime(3.6f);
         textBox.text = "preparándolo para defenderse o huir de él.";
         yield return new WaitForSecondsRealtime(3.4f);
         textBox.text = "Una crisis  de pánico se produce cuando se presenta esta respuesta en situaciones donde no hay peligro.";
         yield return new WaitForSecondsRealtime(6.9f);
         textBox.text = "";
-        yield return new WaitForSecondsRealtime(3f);//ACTUALIZAR TIEMPO 
+        yield return new WaitForSecondsRealtime(3.3f);//ACTUALIZAR TIEMPO 
         textBox.text = "Uno de los síntomas más frecuente es tener una respiración alterada";
          yield return new WaitForSecondsRealtime(4.8f);
         textBox.text = "Es común experimentar respiración rápida y superficial, lo que se conoce como hiperventilación.";

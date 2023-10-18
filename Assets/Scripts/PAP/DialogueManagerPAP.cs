@@ -65,7 +65,7 @@ public class DialogueManagerPAP : MonoBehaviour
         dialoguePanel.SetActive(true);
 
         
-
+        
         ContinueDialogueMode();
     }
 

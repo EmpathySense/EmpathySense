@@ -271,7 +271,7 @@ public class ScenarioDialogueManager : MonoBehaviour
 
                 case AUDIO_TAG:
                     // AudioManager.Instance.Play(tagValue);
-                    AudioClip clip = Resources.Load<AudioClip>("AudioFeedback/AudioScene2/" + tagValue);
+                    AudioClip clip = Resources.Load<AudioClip>("AudioFeedback/AudioScene1/" + tagValue);
                     //reproducir audio clip
                     audioSource.PlayOneShot(clip);
                     break;

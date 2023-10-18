@@ -33,9 +33,9 @@ VAR mistakes = 0
 */
 
 === start ===
-Vienes saliendo de la universidad, vas caminando por la vereda camino a casa cuando notas que en una plaza está uno de tus amigos. #title:Contexto
+Vienes saliendo de la universidad, vas caminando por la vereda camino a casa cuando notas que en una plaza está uno de tus amigos. #title:Contexto #audio:feedback1_contexto
 Está sentado en una banca mirando al piso, con las manos en la cabeza y llorando efusivamente. Tratas de llamar su atención, pero no se da cuenta de que estás ahí.
-Decides acercarte a él para saludarlo. #dialog:normal #audio:feedback1_contexto
+Decides acercarte a él para saludarlo. #dialog:normal 
 Hola #title:Tú
 Oh, hola. No me había dado cuenta de que estabas ahí. #title:Ignacio
 No quiero ser invasivo, pero veo que no te sientes muy bien ¿Me puedo sentar aquí al lado? #title:Tú

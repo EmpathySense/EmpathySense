@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         Prefs prefs_User = RealmController.Instance.GetPrefs();
+
     }
     
     // Start is called before the first frame update
@@ -82,7 +83,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (this.sentences.Count == 0)
         {
-            
+            Debug.Log("End of conversation");
             EndDialogue();
             return;
         }
@@ -125,10 +126,19 @@ public class DialogueManager : MonoBehaviour
     };
 
         Debug.Log("BOOL: "+prefsCheck[SceneManager.GetActiveScene().name]);
-        if (prefsCheck[SceneManager.GetActiveScene().name])
+        if (prefsCheck[SceneManager.GetActiveScene().name] && SceneManager.GetActiveScene().name != "Paso-E")
         {
             Debug.Log("Tiene alert");
             StartCoroutine(ShowUnableToOpenCanvas(alertCanvas));
+            if (SceneManager.GetActiveScene().name == "Paso-A") RealmController.Instance.UpdatePrefs("b");
+            if (SceneManager.GetActiveScene().name == "Paso-B") RealmController.Instance.UpdatePrefs("c");
+            if (SceneManager.GetActiveScene().name == "Paso-C") RealmController.Instance.UpdatePrefs("d");
+            if (SceneManager.GetActiveScene().name == "Paso-D") RealmController.Instance.UpdatePrefs("e");
+            narratorText.SetText(endOfStepText);
+            boton.gameObject.SetActive(true);
+            continueButton.SetActive(false);
+            returnButton.SetActive(true);
+            
         }
 
         if (prefs_User.InfoSim==true && SceneManager.GetActiveScene().name == "Paso-E")
@@ -143,6 +153,10 @@ public class DialogueManager : MonoBehaviour
             boton.gameObject.SetActive(true);
             continueButton.SetActive(false);
             returnButton.SetActive(true);*/
+            narratorText.SetText(endOfStepText);
+            boton.gameObject.SetActive(true);
+            continueButton.SetActive(false);
+            returnButton.SetActive(true);
         }
 
         if (SceneManager.GetActiveScene().name == "Paso-E" )
@@ -156,24 +170,19 @@ public class DialogueManager : MonoBehaviour
             // boton.gameObject.SetActive(true);
             nextStepButton.SetActive(true);
         }
-        else if (unlockedLvel<6)
+        else
         {
-            UnlockNewLevel();
-            
             // Update Modal
             narratorText.SetText(endOfStepText);
             returnButton.SetActive(true);
             continueButton.SetActive(false);
             nextStepButton.SetActive(true);
         }
-        
-
-
+    
 
 
         //Debug.Log("Desbloqueo: "+ PlayerPrefs.GetInt("UnlockedLevel", 1));
 
-        // Update Modal
 
     }
 
@@ -233,8 +242,8 @@ public class DialogueManager : MonoBehaviour
     {   
         Prefs prefs_User = RealmController.Instance.GetPrefs();
         string nameScene = SceneManager.GetActiveScene().name;
-        //Debug.Log("Nombre SCENE: "+nameScene);
-        //Debug.Log("Key: "+prefsUpdates[nameScene]);
+        Debug.Log("Nombre SCENE: "+nameScene);
+        Debug.Log("Key: "+prefsUpdates[nameScene]);
         RealmController.Instance.UpdatePrefs(prefsUpdates[nameScene]);
 
         
