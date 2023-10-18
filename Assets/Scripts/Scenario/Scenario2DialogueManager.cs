@@ -467,7 +467,7 @@ public class Scenario2DialogueManager : MonoBehaviour
 
     private IEnumerator IdleReminder()
     {
-        yield return new WaitForSeconds(30.0f);
+        yield return new WaitForSeconds(60.0f);
         Debug.Log("Despierta woms");
 
         string tmpText = guiaText.text;
