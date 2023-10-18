@@ -441,7 +441,7 @@ public class ScenarioDialogueManager : MonoBehaviour
 
     private IEnumerator IdleReminder()
     {
-        yield return new WaitForSeconds(30.0f);
+        yield return new WaitForSeconds(60.0f);
     
         string tmpText = guiaText.text;
         bool shouldDeactivateGuide = true;
