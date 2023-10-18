@@ -17,16 +17,13 @@ public class LoginController : MonoBehaviour
     }
 
 
-    async void Login()
+    public void Login()
     {
         // if (await RealmController.Instance.Login(UsernameInput.text, PasswordInput.text) != "") //agregar excepciones
         // {
         //     RealmController.Instance.IsCreated();
         // }
-        if (await RealmController.Instance.Login("test@test", "12345666") != "") //agregar excepciones
-        {
-            RealmController.Instance.IsCreated();
-        }
+        SceneManager.LoadScene("IntroRecrear");
     }
 
     void Update()

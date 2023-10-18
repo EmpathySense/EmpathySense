@@ -7,7 +7,7 @@ public class SceneTrigger : MonoBehaviour
 {
     void OnEnable()
     {
-        SceneManager.LoadScene("MenúPrincipal",LoadSceneMode.Single);
+        SceneManager.LoadScene("IntroRecrear",LoadSceneMode.Single);
     }
 
 }
