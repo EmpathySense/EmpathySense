@@ -12,6 +12,7 @@ public class DialogueManagerPAP : MonoBehaviour
     [SerializeField] private Animator businessWomanAnimator;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject choicesPanel;
+    [SerializeField] private GameObject logroPanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerName;
     // [SerializeField] private TMP_Text finalScore;
@@ -25,6 +26,7 @@ public class DialogueManagerPAP : MonoBehaviour
 
     private const string SPEAKER_TAG = "title";
     private const string ANIMATION_TRIGGER_TAG = "animation";
+    private const string ACHIEVEMENT_TAG = "achievement";
     private const string HIGHLIGHT_TAG = "highlight";
 
 
@@ -154,7 +156,13 @@ public class DialogueManagerPAP : MonoBehaviour
 
                 case HIGHLIGHT_TAG:
 
-                    // TODO: HANDLE HIGHLIGHT
+                // TODO: HANDLE HIGHLIGHT
+
+                case ACHIEVEMENT_TAG:
+
+                    logroPanel.SetActive(true);
+
+                    break;
 
                 default:
                     Debug.LogWarning("No se esta manejando el tag: " + tagValue);
