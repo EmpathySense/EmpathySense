@@ -18,6 +18,7 @@ public class DialogueManagerWarning : MonoBehaviour
     [SerializeField] private GameObject continueButton;
     
     [SerializeField] private GameObject finButton;
+    [SerializeField] private GameObject guia;
     
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
@@ -69,6 +70,10 @@ public class DialogueManagerWarning : MonoBehaviour
 
             HandleTags(currentStory.currentTags);
         }
+        else
+        {
+            guia.SetActive(false);
+        }
         
         
     }
@@ -91,6 +96,7 @@ public class DialogueManagerWarning : MonoBehaviour
                 case SPEAKER_TAG:
 
                     dialoguePanel.SetActive(false);
+                    guia.SetActive(false);
 
                     break;
 
