@@ -13,6 +13,7 @@ public class ScenarioDialogueManager : MonoBehaviour
     [SerializeField] private Animator igancioAnimator;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject choicesPanel;
+    [SerializeField] private GameObject logoPanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerName;
     // [SerializeField] private TMP_Text finalScore;
@@ -325,6 +326,12 @@ public class ScenarioDialogueManager : MonoBehaviour
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionC, intentoSectionC, "c"));
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionD, intentoSectionD, "d"));
         feedbackQueue.Enqueue(GetFeedbackString(scoreSectionE, intentoSectionE, "e"));
+
+        if (porcentaje == 100)
+        {
+            logoPanel.SetActive(true);
+        }
+
 
         dialoguePanel.SetActive(false);
         guia.SetActive(true);

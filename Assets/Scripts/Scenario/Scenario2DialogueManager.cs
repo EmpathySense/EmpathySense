@@ -16,6 +16,7 @@ public class Scenario2DialogueManager : MonoBehaviour
     [SerializeField] private Animator igancioAnimator;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject choicesPanel;
+    [SerializeField] private GameObject logoPanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerName;
     // [SerializeField] private TMP_Text finalScore;
@@ -354,6 +355,11 @@ public class Scenario2DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         guia.SetActive(true);
         //guiaContinueButton.SetActive(false);
+
+        if (porcentaje == 100)
+        {
+            logoPanel.SetActive(true);
+        }
 
         guiaText.text = "Felicidades, has completado la simulación. A continuación se mostrarán tus resultados";
 
