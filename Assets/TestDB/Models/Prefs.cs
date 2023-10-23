@@ -36,6 +36,9 @@ public class Prefs : RealmObject
     [MapTo("volume")]
     public int Volumen { get; set; }
 
+    [MapTo("achievement")]
+    public string[] Logros { get; set; }
+
     public Prefs()
     {
         this.Id = ObjectId.GenerateNewId().ToString();
@@ -47,6 +50,7 @@ public class Prefs : RealmObject
         this.InfoE = true;
         this.InfoSim =true;
         this.Volumen = 100;
+        this.Logros = new string[];
 
     }
 
