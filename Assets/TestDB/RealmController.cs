@@ -184,7 +184,14 @@ public class RealmController : MonoBehaviour
         Debug.Log("PREFS: actualizadas");
     }
 
-    
+    public void UpdateVolume(int volume)
+    {
+        Prefs _prefs = RealmController.Instance.GetPrefs();
+        _prefs.Volumen = volume;
+        RealmController.Instance.UpdatePref(_prefs);
+        Debug.Log("PREFS: actualizadas");
+    }
+
     public History[] GetHistory(){
         var _history = _realm.All<History>();
         int j = 0;
