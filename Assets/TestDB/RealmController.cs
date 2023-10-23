@@ -183,6 +183,8 @@ public class RealmController : MonoBehaviour
         RealmController.Instance.UpdatePref(_prefs);
         Debug.Log("PREFS: actualizadas");
     }
+
+    
     public History[] GetHistory(){
         var _history = _realm.All<History>();
         int j = 0;
