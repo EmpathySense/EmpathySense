@@ -96,6 +96,8 @@ public class RealmController : MonoBehaviour
             InfoD = _pref.InfoD,
             InfoE = _pref.InfoE,
             InfoSim = _pref.InfoSim
+            Volumen = _pref.Volumen,
+            Logros = _pref.Logros
         };
     }
     else
@@ -183,6 +185,24 @@ public class RealmController : MonoBehaviour
         RealmController.Instance.UpdatePref(_prefs);
         Debug.Log("PREFS: actualizadas");
     }
+
+    public void UpdateVolume(int volume)
+    {
+        Prefs _prefs = RealmController.Instance.GetPrefs();
+        _prefs.Volumen = volume;
+        RealmController.Instance.UpdatePref(_prefs);
+        Debug.Log("PREFS: actualizadas");
+    }
+
+    public void UpdateAchievement(string achievement)
+    {
+        Prefs _prefs = RealmController.Instance.GetPrefs();
+        _prefs.Logros.Append(achievement);
+        RealmController.Instance.UpdatePref(_prefs);
+        Debug.Log("PREFS: actualizadas");
+    }
+
+
     public History[] GetHistory(){
         var _history = _realm.All<History>();
         int j = 0;

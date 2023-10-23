@@ -32,6 +32,12 @@ public class Prefs : RealmObject
 
     [MapTo("info_sim")]
     public bool InfoSim { get; set; }
+    
+    [MapTo("volume")]
+    public int Volumen { get; set; }
+
+    [MapTo("achievement")]
+    public string[] Logros { get; set; }
 
     public Prefs()
     {
@@ -43,6 +49,8 @@ public class Prefs : RealmObject
         this.InfoD = true;
         this.InfoE = true;
         this.InfoSim =true;
+        this.Volumen = 100;
+        this.Logros = new string[];
 
     }
 
