@@ -173,7 +173,6 @@ public class RealmController : MonoBehaviour
             else
             {
                 SceneManager.LoadScene("MenúPrincipal");
-                Achievements _ach = RealmController.Instance.CreateAchievements();
             }
             // SceneManager.LoadScene("EscenarioSimulacion");
         }
