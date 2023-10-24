@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
@@ -160,8 +161,8 @@ public class DialogueManagerPAP : MonoBehaviour
 
                 case ACHIEVEMENT_TAG:
 
-                    logroPanel.SetActive(true);
-
+                    StartCoroutine(ShowAlertCanvas(logroPanel));
+                    //RealmController.Instance.UpdateAchievement("pap");
                     break;
 
                 default:
@@ -178,6 +179,18 @@ public class DialogueManagerPAP : MonoBehaviour
         continueButton.SetActive(true);
         choicesPanel.SetActive(false);
         ContinueDialogueMode();
+    }
+
+
+    IEnumerator ShowAlertCanvas(GameObject canvas)
+    {
+
+        canvas.SetActive(true); // Activa el canvas
+        Debug.Log("Suma correctas y errores");
+
+        yield return new WaitForSeconds(5f); // Espera durante 2 segundos
+
+        canvas.SetActive(false); // Desactiva el canvas
     }
 
     private void ExitDialogueMode()

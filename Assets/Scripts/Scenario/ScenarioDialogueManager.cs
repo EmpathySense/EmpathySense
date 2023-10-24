@@ -13,7 +13,7 @@ public class ScenarioDialogueManager : MonoBehaviour
     [SerializeField] private Animator igancioAnimator;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject choicesPanel;
-    [SerializeField] private GameObject logoPanel;
+    [SerializeField] private GameObject logroPanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerName;
     // [SerializeField] private TMP_Text finalScore;
@@ -329,7 +329,8 @@ public class ScenarioDialogueManager : MonoBehaviour
 
         if (porcentaje == 100)
         {
-            logoPanel.SetActive(true);
+            StartCoroutine(ShowAlertCanvas(logroPanel));
+            //RealmController.Instance.UpdateAchievement("sim_01");
         }
 
 
@@ -482,5 +483,14 @@ public class ScenarioDialogueManager : MonoBehaviour
     public static ScenarioDialogueManager GetInstance()
     {
         return _instance;
+    }
+
+    IEnumerator ShowAlertCanvas(GameObject canvas)
+    {
+        canvas.SetActive(true); // Activa el canvas
+
+        yield return new WaitForSeconds(5f); // Espera durante 2 segundos
+
+        canvas.SetActive(false); // Desactiva el canvas
     }
 }
