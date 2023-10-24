@@ -19,14 +19,14 @@ public class LoginController : MonoBehaviour
 
     async void Login()
     {
-        // if (await RealmController.Instance.Login(UsernameInput.text, PasswordInput.text) != "") //agregar excepciones
-        // {
-        //     RealmController.Instance.IsCreated();
-        // }
-        if (await RealmController.Instance.Login("test@test", "12345666") != "") //agregar excepciones
+         if (await RealmController.Instance.Login(UsernameInput.text, PasswordInput.text) != "") //agregar excepciones
+         {
+             RealmController.Instance.IsCreated();
+         }
+        /* if (await RealmController.Instance.Login("test@test", "12345666") != "") //agregar excepciones
         {
             RealmController.Instance.IsCreated();
-        }
+        } */
     }
 
     void Update()

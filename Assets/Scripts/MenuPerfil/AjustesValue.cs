@@ -10,15 +10,35 @@ public class AjustesValue : MonoBehaviour
     public TMP_Text valueText;
     public Toggle toggleElement;
 
+    public Button saveButton;
     private float prevSliderValue;
     private void Start()
     {
+        Prefs prefs = RealmController.Instance.GetPrefs();
+        Debug.Log("Volumen Pref: "+ prefs.Volumen);
+        if (prefs.Volumen==0)
+        {   
+            Debug.Log("Volumen 0");
+            
+            Debug.Log("Valor del Togle unu actual: " + toggleElement.isOn);
+            toggleElement.isOn = true;
+            Debug.Log("Valor del Togle unu cambiado: " + toggleElement.isOn);
+            valueText.text = prefs.Volumen.ToString();
+            prevSliderValue=100;
+        }
+        else
+        {
+            toggleElement.isOn = false;
+            prevSliderValue=slider.value;
+            valueText.text = prevSliderValue.ToString();
+        }
+        slider.value = prefs.Volumen;
+        saveButton.gameObject.SetActive(false);
         // Puedes acceder al valor inicial del Slider así:
-        float prevSliderValue = slider.value;
-        valueText.text = prevSliderValue.ToString();
+        //float prevSliderValue = slider.value;
         //Debug.Log("Valor inicial del Slider: " + prevSliderValue);
 
-        bool isToggled = toggleElement.isOn;
+        //bool isToggled = toggleElement.isOn;
         //Debug.Log("Estado inicial del Toggle: " + isToggled);
     }
 
@@ -26,6 +46,15 @@ public class AjustesValue : MonoBehaviour
     {
         // Esta función se llama cuando cambia el valor del Slider
         float currentSliderValue = slider.value;
+        if (currentSliderValue==0)
+        {   
+            
+            toggleElement.isOn = true;
+        }
+        else
+        {
+            toggleElement.isOn = false;
+        }
         valueText.text = currentSliderValue.ToString();
         //Debug.Log("Valor del Slider actual: " + currentSliderValue);
         if (toggleElement.isOn==false)
@@ -62,6 +91,13 @@ public class AjustesValue : MonoBehaviour
             // El Toggle está desactivado
             // Realiza acciones cuando el Toggle está apagado
         }
+    }
+
+    public void SaveVolumenValue()
+    {
+
+        RealmController.Instance.UpdateVolume((int)slider.value);
+        //Debug.Log("Volumen guardado: "+ prefs.Volumen);
     }
 }
 

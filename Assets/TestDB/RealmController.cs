@@ -95,9 +95,8 @@ public class RealmController : MonoBehaviour
             InfoC = _pref.InfoC,
             InfoD = _pref.InfoD,
             InfoE = _pref.InfoE,
-            InfoSim = _pref.InfoSim
+            InfoSim = _pref.InfoSim,
             Volumen = _pref.Volumen,
-            Logros = _pref.Logros
         };
     }
     else
@@ -106,7 +105,29 @@ public class RealmController : MonoBehaviour
         Debug.LogError("No se encontró ningún documento Prefs en la base de datos.");
         return null;
     }
-}
+    }
+
+    public Achievements GetAchievements()
+    {
+        var _ach = _realm.All<Achievements>().FirstOrDefault();
+
+        if (_ach != null)
+        {
+            return new Achievements
+            {
+                Id = _ach.Id,
+                Pap = _ach.Pap,
+                Sim_01 = _ach.Sim_01,
+                Sim_02 = _ach.Sim_02,
+            };
+        }
+        else
+        {
+            // Manejar el caso en el que no se encuentra ningún documento
+            Debug.LogError("No se encontró ningún documento Achievements en la base de datos.");
+            return null;
+        }
+    }
 
 
     public Prefs CreatePrefs()
@@ -116,6 +137,15 @@ public class RealmController : MonoBehaviour
             _realm.Add(_prefs);
         });
         return _prefs;
+    }
+
+    public Achievements CreateAchievements()
+    {
+        Achievements _ach = new Achievements();
+        _realm.Write(() => {
+            _realm.Add(_ach);
+        });
+        return _ach;
     }
 
     public void IsCreated()
@@ -128,6 +158,7 @@ public class RealmController : MonoBehaviour
             });
 
             Prefs _prefs = RealmController.Instance.CreatePrefs();
+            Achievements _ach = RealmController.Instance.CreateAchievements();
             SceneManager.LoadScene("SignupScene");
         }
         else
@@ -159,6 +190,22 @@ public class RealmController : MonoBehaviour
         _realm.Write(() => {
             _realm.Add(prefs, true); //this will update an existing user with the same id or create a new one if it doesn't exist
         });
+    }
+
+    public void UpdateAchievements(Achievements ach)
+    {
+        _realm.Write(() => {
+            _realm.Add(ach, true); //this will update an existing user with the same id or create a new one if it doesn't exist
+        });
+    }
+
+    public void UpdateAchievement(string name)
+    {
+        Achievements _ach = RealmController.Instance.GetAchievements();
+        if(name == "pap") _ach.Pap = true;
+        if(name == "sim_01") _ach.Sim_01 = true;
+        if(name == "sim_02") _ach.Sim_02 = true;
+        RealmController.Instance.UpdateAchievements(_ach);
     }
 
 
@@ -193,15 +240,6 @@ public class RealmController : MonoBehaviour
         RealmController.Instance.UpdatePref(_prefs);
         Debug.Log("PREFS: actualizadas");
     }
-
-    public void UpdateAchievement(string achievement)
-    {
-        Prefs _prefs = RealmController.Instance.GetPrefs();
-        _prefs.Logros.Append(achievement);
-        RealmController.Instance.UpdatePref(_prefs);
-        Debug.Log("PREFS: actualizadas");
-    }
-
 
     public History[] GetHistory(){
         var _history = _realm.All<History>();
