@@ -14,6 +14,7 @@ public class DialogueManagerPAP : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject choicesPanel;
     [SerializeField] private GameObject logroPanel;
+    [SerializeField] private GameObject logroPanel2;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerName;
     // [SerializeField] private TMP_Text finalScore;
@@ -161,8 +162,32 @@ public class DialogueManagerPAP : MonoBehaviour
 
                 case ACHIEVEMENT_TAG:
 
-                    StartCoroutine(ShowAlertCanvas(logroPanel));
-                    //RealmController.Instance.UpdateAchievement("pap");
+                    switch (tagValue)
+                    {
+                        case "A":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            break;
+
+                        case "B":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            break;
+
+                        case "C":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            break;
+
+                        case "D":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            break;
+
+                        case "LogroPAP":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            StartCoroutine(ShowAlertCanvas(logroPanel2));
+                            //RealmController.Instance.UpdateAchievement("pap");
+                            break;
+                    }
+                    
+                    
                     break;
 
                 default:

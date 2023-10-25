@@ -1,8 +1,8 @@
 ->start
 
 === start ===
-Ahora, aprenderas el paso E de los primeros auxilios psicológicos. Selecciona el botón "Continuar" para comenzar la lección. #title:<u color=\#FF0000>Paso <color="red">E</color> - Psico<color="red">E</color>ducacion
-El paso E de Psicoeducación trata de orientar a la persona sobre qué hacer luego de ocurrida una crisis; como también de otorgar herramientas de autoayuda y reforzar auto regulación emocional.#achievement:LogroPAP
+Ahora, aprenderas el paso E de los primeros auxilios psicológicos. Selecciona el botón "Continuar" para comenzar la lección. #title:<u color=\#FF0000>Paso <color="red">E</color> - Psico<color="red">E</color>ducacion #achievement:LogroPAP
+El paso E de Psicoeducación trata de orientar a la persona sobre qué hacer luego de ocurrida una crisis; como también de otorgar herramientas de autoayuda y reforzar auto regulación emocional.
 Para esto es necesario estar informado y tener “psicoeducación” adicional de los ejemplos que se muestran en estas simulaciones, por lo que te invitamos a revisar material de apoyo que puedes encontrar en nuestro sitio web.
 ->first_quest
 
@@ -27,7 +27,7 @@ Es importante reforzar el cómo hoy logró regularse, recordando los pasos por s
     * [“Es normal que en momentos de crisis puedas experimentar algunas sensaciones de las que experimentaste hoy, en otro momento, esto es absolutamente normal, y es importante que puedas recordar que te hizo sentir mejor hoy”]
     * [Ahora que te encuentras más en calma, quisiera comentarte que tengo la sensación que puede que te hayan quedado pendientes algunas cosas que conversar ¿te gustaría que conversáramos más sobre eso?]
 
--El proceso de Psicoeducación es una etapa de finalización del proceso de acompañamiento, el generar preguntas de apertura facilita el contacto y foco nuevamente en las situaciones estresores, creciendo el riesgo de volver agudizarse lasintomatología de crisis. Es importante, recordar que el foco del acompañamiento está puesto en el bienestar de la persona en crisis y en favorecer su tranquilidad y calma. #title:Recuerda que
+-El proceso de Psicoeducación es una etapa de finalización del proceso de acompañamiento, el generar preguntas de apertura facilita el contacto y foco nuevamente en las situaciones estresores, creciendo el riesgo de volver agudizarse lasintomatología de crisis. Es importante, recordar que el foco del acompañamiento está puesto en el bienestar de la persona en crisis y en favorecer su tranquilidad y calma. #title:Recuerda que#achievement:LogroPAP
 ->finish
 
 === finish ===
