@@ -224,6 +224,11 @@ public class RealmController : MonoBehaviour
     public int CountFalse(){
         Prefs _prefs = RealmController.Instance.GetPrefs();
         int count = 0;
+        if(_prefs.InfoB == false) count++;
+        if(_prefs.InfoC == false) count++;
+        if(_prefs.InfoD == false) count++;
+        if(_prefs.InfoE == false) count++;
+        if(_prefs.InfoSim == false) count++;
         if(_prefs.Pap == false) count++;
         if(_prefs.Sim_01 == false) count++;
         if(_prefs.Sim_02 == false) count++;
