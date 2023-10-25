@@ -7,6 +7,7 @@ using Realms.Sync.Exceptions;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 using System.Linq;
+using System;
 
 
 public class RealmController : MonoBehaviour
@@ -206,7 +207,7 @@ public class RealmController : MonoBehaviour
         Achievements[] _achis = GetAchievements();
         foreach (var _ach in _achis)
         {
-            Achievement _aux = new Achievement();
+            Achievements _aux = new Achievements();
             if(_ach.Id == id){
                 _aux.Id = _ach.Id;
                 _aux.Name = _ach.Name;
@@ -242,7 +243,16 @@ public class RealmController : MonoBehaviour
         Debug.Log("PREFS: actualizadas");
     }
 
-    // public int CountFalse(); TODO:
+    public int CountFalse()
+    {
+        Achievements[] _achis = RealmController.Instance.GetAchievements();
+        int count = 0;
+        foreach (var _ach in _achis)
+        {
+            if (_ach.State) count++;
+        }
+        return count;
+    }
 
     public void UpdateVolume(int volume)
     {

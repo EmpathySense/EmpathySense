@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.13
-  m_fontSizeBase: 40.13
+  m_fontSize: 33.5
+  m_fontSizeBase: 33.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -303,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51.6, y: -0.6}
+  m_AnchoredPosition: {x: -51.6, y: 1.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8296524724579414834
@@ -326,8 +326,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 185.4, y: 58}
-  m_Spacing: {x: -47.27, y: -18.4}
+  m_CellSize: {x: 185.4, y: 67.37}
+  m_Spacing: {x: -47.27, y: -26}
   m_Constraint: 1
   m_ConstraintCount: 1
 --- !u!1 &4283297397281451677
@@ -548,11 +548,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Completaste el paso A
+  m_text: Completa el paso C del PAP
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: afc8299d5d5bbd440a0616c8ecbc7217, type: 2}
-  m_sharedMaterial: {fileID: 21340371490990018, guid: afc8299d5d5bbd440a0616c8ecbc7217,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04b63ac8dc01932469132d04e47c9bd3, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 04b63ac8dc01932469132d04e47c9bd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -576,8 +575,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 22.8
+  m_fontSizeBase: 22.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -612,7 +611,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -243.8467, w: 0}
+  m_margin: {x: 0, y: 0, z: -232.01468, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
