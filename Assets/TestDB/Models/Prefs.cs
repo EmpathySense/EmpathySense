@@ -36,15 +36,6 @@ public class Prefs : RealmObject
     [MapTo("volume")]
     public int Volumen { get; set; }
 
-    [MapTo("pap")]
-    public bool Pap { get; set; }
-
-    [MapTo("sim_01")]
-    public bool Sim_01 { get; set; }
-
-    [MapTo("sim_02")]
-    public bool Sim_02 { get; set; }
-
     public Prefs()
     {
         this.Id = ObjectId.GenerateNewId().ToString();
@@ -56,9 +47,6 @@ public class Prefs : RealmObject
         this.InfoE = true;
         this.InfoSim =true;
         this.Volumen = 100;
-        this.Pap = false;
-        this.Sim_01 = false;
-        this.Sim_02 = false;
 
     }
 

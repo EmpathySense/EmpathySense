@@ -97,9 +97,6 @@ public class RealmController : MonoBehaviour
             InfoE = _pref.InfoE,
             InfoSim = _pref.InfoSim,
             Volumen = _pref.Volumen,
-            Pap = _pref.Pap,
-            Sim_01 = _pref.Sim_01,
-            Sim_02 = _pref.Sim_02, 
         };
     }
     else
@@ -121,7 +118,7 @@ public class RealmController : MonoBehaviour
         int i = 0;
         foreach (var _a in _ach)
         {
-            _newAch[i] = new Achievements(_a.Id, _a.Name, _a.Description, _a.Date);
+            _newAch[i] = new Achievements(_a.Id, _a.Name, _a.Description, _a.Date, _a.State);
             i++;
         }
         return _newAch;
@@ -138,6 +135,7 @@ public class RealmController : MonoBehaviour
 
     public Achievements CreateAchievements(string _id, string _name, string _description)
     {
+        Debug.Log("SE mete pa acá");
         Achievements _ach = new Achievements(_id, _name, _description);
         _realm.Write(() => {
             _realm.Add(_ach);
@@ -155,11 +153,20 @@ public class RealmController : MonoBehaviour
             });
 
             Prefs _prefs = RealmController.Instance.CreatePrefs();
+            RealmController.Instance.CreateAchievements("PAP-1-", "Un paso a la vez", "Completa el paso A del PAP");
+            RealmController.Instance.CreateAchievements("PAP-2-", "Un paso a la vez", "Completa el paso B del PAP");
+            RealmController.Instance.CreateAchievements("PAP-3-", "Un paso a la vez", "Completa el paso C del PAP");
+            RealmController.Instance.CreateAchievements("PAP-4-", "Un paso a la vez", "Completa el paso D del PAP");
+            RealmController.Instance.CreateAchievements("PAP-5-", "Un paso a la vez", "Completa el paso E del PAP");
+            RealmController.Instance.CreateAchievements("PAP-", "Un paso a la vez", "Completa todos los pasos del PAP");
+            RealmController.Instance.CreateAchievements("SimA-", "Simulación", "Completa la simulación 'lugar público'");
+            RealmController.Instance.CreateAchievements("SimA-100-", "Simulación", "Completa la simulación 'lugar público' con un 100% de aciertos");
+            RealmController.Instance.CreateAchievements("SimB-", "Simulación", "Completa la simulación 'lugar cerrado'");
+            RealmController.Instance.CreateAchievements("SimB-100-", "Simulación", "Completa la simulación 'lugar cerrado' con un 100% de aciertos");
             SceneManager.LoadScene("SignupScene");
         }
         else
         {   
-
             Prefs _prefs = GetPrefs();
             
             if (_prefs.InfoI)
@@ -195,6 +202,23 @@ public class RealmController : MonoBehaviour
         });
     }
 
+    public void UpdateLogros(string id){
+        Achievements[] _achis = GetAchievements();
+        foreach (var _ach in _achis)
+        {
+            Achievement _aux = new Achievement();
+            if(_ach.Id == id){
+                _aux.Id = _ach.Id;
+                _aux.Name = _ach.Name;
+                _aux.Description = _ach.Description;
+                _aux.Date = DateTimeOffset.Now;
+                _aux.State = true;
+            }
+            UpdateAchievements(_aux);
+        }
+
+    }
+
       public History CreateHistory( int a, int b, int c, int d, int e, int a2, int b2, int c2, int d2, int e2, int porcentaje, string scene, string feedback)
     {
         History _history = new History(a, b, c, d, e, a2, b2, c2, d2, e2, porcentaje, scene, feedback);
@@ -214,26 +238,11 @@ public class RealmController : MonoBehaviour
         if(name == "d") _prefs.InfoD = false;
         if(name == "e") _prefs.InfoE = false;
         if(name == "s") _prefs.InfoSim = false;
-        if(name == "pap") _prefs.Pap = true;
-        if(name == "sim_01") _prefs.Sim_01 = true;
-        if(name == "sim_02") _prefs.Sim_02 = true;
         RealmController.Instance.UpdatePref(_prefs);
         Debug.Log("PREFS: actualizadas");
     }
 
-    public int CountFalse(){
-        Prefs _prefs = RealmController.Instance.GetPrefs();
-        int count = 0;
-        if(_prefs.InfoB == false) count++;
-        if(_prefs.InfoC == false) count++;
-        if(_prefs.InfoD == false) count++;
-        if(_prefs.InfoE == false) count++;
-        if(_prefs.InfoSim == false) count++;
-        if(_prefs.Pap == false) count++;
-        if(_prefs.Sim_01 == false) count++;
-        if(_prefs.Sim_02 == false) count++;
-        return count;
-    }
+    // public int CountFalse(); TODO:
 
     public void UpdateVolume(int volume)
     {

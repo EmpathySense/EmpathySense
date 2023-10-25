@@ -21,21 +21,27 @@ public class Achievements : RealmObject
     [MapTo("date")]
     public DateTimeOffset Date { get; set; }
 
+    [MapTo("state")]
+    public bool State { get; set; }
+
     public Achievements() { }
+
     public Achievements(string _id, string _name, string _description)
     {
         this.Id = _id;
         this.Name = _name;
         this.Description = _description;
         this.Date = DateTimeOffset.Now;
+        this.State = false;
     }
 
-    public Achievements(string _id, string _name, string _description, DateTimeOffset _date)
+    public Achievements(string _id, string _name, string _description, DateTimeOffset _date, bool _state)
     {
         this.Id = _id;
         this.Name = _name;
         this.Description = _description;
         this.Date = _date;
+        this.State = _state;
     }
 
 
