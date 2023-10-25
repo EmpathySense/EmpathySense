@@ -12,21 +12,31 @@ public class Achievements : RealmObject
     [MapTo("_id")]
     public string Id { get; set; }
 
-    [MapTo("pap")]
-    public bool Pap { get; set; }
+    [MapTo("name")]
+    public string Name { get; set; }
 
-    [MapTo("sim_01")]
-    public bool Sim_01 { get; set; }
+    [MapTo("description")]
+    public string Description { get; set; }
 
-    [MapTo("sim_02")]
-    public bool Sim_02 { get; set; }
+    [MapTo("date")]
+    public DateTimeOffset Date { get; set; }
 
-    public Achievements()
+    public Achievements() { }
+    public Achievements(string _id, string _name, string _description)
     {
-        this.Id = ObjectId.GenerateNewId().ToString();
-        this.Pap = false;
-        this.Sim_01 = false;
-        this.Sim_02 = false;
+        this.Id = _id;
+        this.Name = _name;
+        this.Description = _description;
+        this.Date = DateTimeOffset.Now;
     }
+
+    public Achievements(string _id, string _name, string _description, DateTimeOffset _date)
+    {
+        this.Id = _id;
+        this.Name = _name;
+        this.Description = _description;
+        this.Date = _date;
+    }
+
 
 }
