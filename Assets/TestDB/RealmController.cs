@@ -97,6 +97,9 @@ public class RealmController : MonoBehaviour
             InfoE = _pref.InfoE,
             InfoSim = _pref.InfoSim,
             Volumen = _pref.Volumen,
+            Pap = _pref.Pap,
+            Sim_01 = _pref.Sim_01,
+            Sim_02 = _pref.Sim_02, 
         };
     }
     else
@@ -107,28 +110,22 @@ public class RealmController : MonoBehaviour
     }
     }
 
-    public Achievements GetAchievements()
-    {
-        var _ach = _realm.All<Achievements>().FirstOrDefault();
-
-        if (_ach != null)
+    public Achievements[] GetAchievements(){
+        var _ach = _realm.All<Achievements>();
+        int j = 0;
+        foreach (var _count in _ach)
         {
-            return new Achievements
-            {
-                Id = _ach.Id,
-                Pap = _ach.Pap,
-                Sim_01 = _ach.Sim_01,
-                Sim_02 = _ach.Sim_02,
-            };
+            j++;
         }
-        else
+        Achievements[] _newAch = new Achievements[j];
+        int i = 0;
+        foreach (var _a in _ach)
         {
-            // Manejar el caso en el que no se encuentra ningún documento
-            Debug.LogError("No se encontró ningún documento Achievements en la base de datos.");
-            return null;
+            _newAch[i] = new Achievements(_a.Id, _a.Name, _a.Description, _a.Date);
+            i++;
         }
+        return _newAch;
     }
-
 
     public Prefs CreatePrefs()
     {
@@ -139,9 +136,9 @@ public class RealmController : MonoBehaviour
         return _prefs;
     }
 
-    public Achievements CreateAchievements()
+    public Achievements CreateAchievements(string _id, string _name, string _description)
     {
-        Achievements _ach = new Achievements();
+        Achievements _ach = new Achievements(_id, _name, _description);
         _realm.Write(() => {
             _realm.Add(_ach);
         });
@@ -158,7 +155,6 @@ public class RealmController : MonoBehaviour
             });
 
             Prefs _prefs = RealmController.Instance.CreatePrefs();
-            Achievements _ach = RealmController.Instance.CreateAchievements();
             SceneManager.LoadScene("SignupScene");
         }
         else
@@ -199,16 +195,6 @@ public class RealmController : MonoBehaviour
         });
     }
 
-    public void UpdateAchievement(string name)
-    {
-        Achievements _ach = RealmController.Instance.GetAchievements();
-        if(name == "pap") _ach.Pap = true;
-        if(name == "sim_01") _ach.Sim_01 = true;
-        if(name == "sim_02") _ach.Sim_02 = true;
-        RealmController.Instance.UpdateAchievements(_ach);
-    }
-
-
       public History CreateHistory( int a, int b, int c, int d, int e, int a2, int b2, int c2, int d2, int e2, int porcentaje, string scene, string feedback)
     {
         History _history = new History(a, b, c, d, e, a2, b2, c2, d2, e2, porcentaje, scene, feedback);
@@ -217,7 +203,6 @@ public class RealmController : MonoBehaviour
         });
         return _history;
     }
-
 
     public void UpdatePrefs(string name)
     {
@@ -229,8 +214,20 @@ public class RealmController : MonoBehaviour
         if(name == "d") _prefs.InfoD = false;
         if(name == "e") _prefs.InfoE = false;
         if(name == "s") _prefs.InfoSim = false;
+        if(name == "pap") _prefs.Pap = true;
+        if(name == "sim_01") _prefs.Sim_01 = true;
+        if(name == "sim_02") _prefs.Sim_02 = true;
         RealmController.Instance.UpdatePref(_prefs);
         Debug.Log("PREFS: actualizadas");
+    }
+
+    public int CountFalse(){
+        Prefs _prefs = RealmController.Instance.GetPrefs();
+        int count = 0;
+        if(_prefs.Pap == false) count++;
+        if(_prefs.Sim_01 == false) count++;
+        if(_prefs.Sim_02 == false) count++;
+        return count;
     }
 
     public void UpdateVolume(int volume)
