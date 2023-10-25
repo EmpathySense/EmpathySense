@@ -361,5 +361,5 @@ Igual si quisieras en algún momento abordar el tema con otra profundidad sé qu
     	~raise(intentoSectionE)
 	->ten_choice
 -Gracias lo tendré en consideración#title:Ignacio
-#EndDialogue:End
+#EndDialogue:End #achievement:Sim-01
 ->END

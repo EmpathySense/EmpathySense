@@ -554,5 +554,5 @@ Comprendo, es que nunca me había pasado algo así. #title:Jorge
 Estoy muy agradecido por tu apoyo hoy, fue importante y sobretodo me ayudó a ordenar mis pensamientos, me siento más calmado ahora. #title:Jorge
 Qué bueno me alegro mucho que te sienta más en calma ¿Te sientes preparado para volver adentro? #title:Tú
 Iré a buscar un vaso de agua y luego me iré a sentar, para ordenar mis tareas. Gracias nuevamente fue un apoyo muy importante #title:Jorge
-#EndDialogue:End
+#EndDialogue:End #achievement:Sim-02
 -> END

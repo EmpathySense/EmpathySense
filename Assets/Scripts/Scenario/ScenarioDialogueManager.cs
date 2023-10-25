@@ -14,6 +14,7 @@ public class ScenarioDialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject choicesPanel;
     [SerializeField] private GameObject logroPanel;
+    [SerializeField] private GameObject logroPanel2;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerName;
     // [SerializeField] private TMP_Text finalScore;
@@ -47,6 +48,7 @@ public class ScenarioDialogueManager : MonoBehaviour
 
     private const string SPEAKER_TAG = "title";
     private const string AUDIO_TAG = "audio";
+    private const string ACHIEVEMENT_TAG = "achievement";
     private const string ANIMATION_TRIGGER_TAG = "animation";
     private const string SWITCH_DIALOGUE_TAG = "dialog";
     private const string END_DIALOGUE_TAG = "EndDialogue";
@@ -270,6 +272,13 @@ public class ScenarioDialogueManager : MonoBehaviour
 
                     break;
 
+                case ACHIEVEMENT_TAG:
+
+                    StartCoroutine(ShowAlertCanvas(logroPanel2));
+                    RealmController.Instance.UpdateLogros("SimA-");
+
+                    break;
+
                 case AUDIO_TAG:
                     // AudioManager.Instance.Play(tagValue);
                     AudioClip clip = Resources.Load<AudioClip>("AudioFeedback/AudioScene1/" + tagValue);
@@ -330,7 +339,7 @@ public class ScenarioDialogueManager : MonoBehaviour
         if (porcentaje == 100)
         {
             StartCoroutine(ShowAlertCanvas(logroPanel));
-            //RealmController.Instance.UpdateAchievement("sim_01");
+            RealmController.Instance.UpdateLogros("SimA-100-");
         }
 
 

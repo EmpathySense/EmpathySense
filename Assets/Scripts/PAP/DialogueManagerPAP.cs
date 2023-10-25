@@ -166,24 +166,29 @@ public class DialogueManagerPAP : MonoBehaviour
                     {
                         case "A":
                             StartCoroutine(ShowAlertCanvas(logroPanel));
+                            RealmController.Instance.UpdateLogros("PAP-1-");
                             break;
 
                         case "B":
                             StartCoroutine(ShowAlertCanvas(logroPanel));
+                            RealmController.Instance.UpdateLogros("PAP-2-");
                             break;
 
                         case "C":
                             StartCoroutine(ShowAlertCanvas(logroPanel));
+                            RealmController.Instance.UpdateLogros("PAP-3-");
                             break;
 
                         case "D":
                             StartCoroutine(ShowAlertCanvas(logroPanel));
+                            RealmController.Instance.UpdateLogros("PAP-4-");
                             break;
 
                         case "LogroPAP":
                             StartCoroutine(ShowAlertCanvas(logroPanel));
                             StartCoroutine(ShowAlertCanvas(logroPanel2));
-                            //RealmController.Instance.UpdateAchievement("pap");
+                            RealmController.Instance.UpdateLogros("PAP-5-");
+                            RealmController.Instance.UpdateLogros("PAP-");
                             break;
                     }
                     
