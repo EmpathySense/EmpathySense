@@ -24,10 +24,39 @@ public class ReadInputs : MonoBehaviour
 
         Users userUpdate = new Users();
         userUpdate.UserId= userActual.UserId;
-        userUpdate.FirstName = inputName.text;
-        userUpdate.LastName = inputLastName.text;
-        userUpdate.Organization = inputOrganization.text;
-        userUpdate.Role = inputRole.text;
+        if(inputName.text == "")
+        {
+            userUpdate.FirstName = userActual.FirstName;
+        }
+        else
+        {
+            userUpdate.FirstName = inputName.text;
+        }
+        if(inputLastName.text == "")
+        {
+            userUpdate.LastName = userActual.LastName;
+        }
+        else
+        {
+            userUpdate.LastName = inputLastName.text;
+        }
+        if(inputOrganization.text == "")
+        {
+            userUpdate.Organization = userActual.Organization;
+        }
+        else
+        {
+            userUpdate.Organization = inputOrganization.text;
+        }
+        if(inputRole.text == "")
+        {
+            userUpdate.Role = userActual.Role;
+        }
+        else
+        {
+            userUpdate.Role = inputRole.text;
+        }
+
         userUpdate.Age = userActual.Age;
         userUpdate.CreationDate = userActual.CreationDate;
 

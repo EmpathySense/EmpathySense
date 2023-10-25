@@ -19,10 +19,15 @@ public class EditarPerfil : MonoBehaviour
     public TMP_Text organizacionText;
     public TMP_Text rolText;
 
+    public Button buttonAccept;
+
+    public GameObject notificacionCanvas;
+
 
     
     void Start()
     {
+        buttonAccept.onClick.AddListener(()=>StartCoroutine(ShowAlertCanvas(notificacionCanvas))); 
         if (RealmController.Instance != null)
         {
             user = RealmController.Instance.GetUser();
@@ -49,8 +54,27 @@ public class EditarPerfil : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateTextEdit()
     {
-        
+            user = RealmController.Instance.GetUser();
+            string name= user.FirstName + " "+ user.LastName;
+            namePrincipalPanel.text=name;
+            //Debug.Log("Nombre: "+ user.FirstName);
+            nombreText.text="Nombre: "+user.FirstName;
+            apellidoText.text="Apellido: "+user.LastName;
+            edadText.text="Edad: "+user.Age;
+            organizacionText.text="Organización: "+user.Organization;
+            rolText.text="Rol: "+user.Role;
     }
+
+    IEnumerator ShowAlertCanvas(GameObject canvas)
+    {
+        canvas.SetActive(true); // Activa el canvas
+
+        yield return new WaitForSeconds(2f); // Espera durante 2 segundos
+
+        canvas.SetActive(false); // Desactiva el canvas
+    }
+
+
 }
