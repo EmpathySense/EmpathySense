@@ -14,11 +14,16 @@ public class ReadVolumenPref : MonoBehaviour
     {
         Prefs prefs = RealmController.Instance.GetPrefs();
         float volumen = prefs.Volumen/100.00f;
+        audioSource.volume=volumen;
+
+        
+        if (audioSourceScene!=null)
+        {
         float volumenScene = prefs.Volumen/100.00f;
+        audioSourceScene.volume=volumenScene;
+        }
         //Debug.Log("Volumen Pref: "+ prefs.Volumen);
         //Debug.Log("Volumen Pref: "+ volumen);
-        audioSource.volume=volumen;
-        audioSourceScene.volume=volumenScene;
 
     }
 
@@ -27,9 +32,13 @@ public class ReadVolumenPref : MonoBehaviour
     {   
 
         float volumen = SliderVolumen.value/100.00f;
-        float volumenScene = SliderVolumen.value/100.00f;
-        Debug.Log("Volumen Pref Update: "+ volumen);
         audioSource.volume=volumen;
+
+        if (audioSourceScene!=null)
+        {
+        float volumenScene = SliderVolumen.value/100.00f;
         audioSourceScene.volume=volumenScene;
+        }
+        Debug.Log("Volumen Pref Update: "+ volumen);
     }
 }
