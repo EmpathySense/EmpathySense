@@ -31,5 +31,5 @@ Al inicio, se puede acompañar a la persona en la respiración para ayudarla a e
     * [Porque implica mirar el celular o el reloj para cronometrar y eso puede distraer]
     * [Porque podría encontrarse el reloj en mal estado]
 
--En las crisis de pánico, las respiraciones se vuelven cortas y superficiales. Es importante que el ejercicio de respirar de manera consciente sea una actividad placentera para la persona, por lo cual, la duración de los tiempos debe ajustarse a la persona afectada facilitando la comodidad y que no tenga la sensación de quedarse sin aire. #title:Recuerda que
+-En las crisis de pánico, las respiraciones se vuelven cortas y superficiales. Es importante que el ejercicio de respirar de manera consciente sea una actividad placentera para la persona, por lo cual, la duración de los tiempos debe ajustarse a la persona afectada facilitando la comodidad y que no tenga la sensación de quedarse sin aire. #title:Recuerda que #achievement:B
 ->END
