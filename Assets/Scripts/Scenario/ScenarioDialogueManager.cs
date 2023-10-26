@@ -275,7 +275,7 @@ public class ScenarioDialogueManager : MonoBehaviour
                 case ACHIEVEMENT_TAG:
 
                     StartCoroutine(ShowAlertCanvas(logroPanel2));
-                    RealmController.Instance.UpdateLogros("SimA-");
+                    //RealmController.Instance.UpdateLogros("SimA-");
 
                     break;
 
@@ -339,7 +339,7 @@ public class ScenarioDialogueManager : MonoBehaviour
         if (porcentaje == 100)
         {
             StartCoroutine(ShowAlertCanvas(logroPanel));
-            RealmController.Instance.UpdateLogros("SimA-100-");
+            //RealmController.Instance.UpdateLogros("SimA-100-");
         }
 
 

@@ -282,7 +282,7 @@ public class Scenario2DialogueManager : MonoBehaviour
                 case ACHIEVEMENT_TAG:
 
                     StartCoroutine(ShowAlertCanvas(logroPanel2));
-                    RealmController.Instance.UpdateLogros("SimB-");
+                    //RealmController.Instance.UpdateLogros("SimB-");
 
                     break;
 
@@ -368,7 +368,7 @@ public class Scenario2DialogueManager : MonoBehaviour
         if (porcentaje == 100)
         {
             StartCoroutine(ShowAlertCanvas(logroPanel));
-            RealmController.Instance.UpdateLogros("SimB-100-");
+            //RealmController.Instance.UpdateLogros("SimB-100-");
         }
 
         guiaText.text = "Felicidades, has completado la simulación. A continuación se mostrarán tus resultados";
