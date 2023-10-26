@@ -27,6 +27,9 @@ public class Users : RealmObject
     [MapTo("creation_date")]
     public DateTimeOffset CreationDate { get; set; }
 
+    //[MapTo("_partition")]
+    //public string Correo { get; set; }
+
     public Users() { }
 
     public Users(string userId)
@@ -38,6 +41,7 @@ public class Users : RealmObject
         this.Role = "N/A";
         this.Organization = "N/A";
         this.CreationDate = DateTimeOffset.Now;
+        //this.Correo = "N/A";
     }
 
 }
