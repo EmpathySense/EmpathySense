@@ -36,17 +36,28 @@ public class LogrosInterfazManager : MonoBehaviour
      {   
         Prefs userPrefs = RealmController.Instance.GetPrefs();
          
+        GridLayoutGroup gridLayoutGroup = containerLogros.GetComponent<GridLayoutGroup>();
         int totalLogrosDesbloqueados = RealmController.Instance.CountFalse();
         float percentageLogros = (float)totalLogrosDesbloqueados/10*100;
         if (totalLogrosDesbloqueados==0)
         {
             fillSlider.SetActive(false);
-            contentLogrosDesbloqueados.SetActive(false);   
+            containerLogrosDesbloqueados.SetActive(false);   
+            gridLayoutGroup.padding.top = -7;
+            //ChangeHeightandPosition(340);
         }
         else if(totalLogrosDesbloqueados==10)
         {
-            contentLogrosBloqueados.SetActive(false);
-            ChangeHeightandPosition(NewHeight(totalLogrosDesbloqueados));
+            containerLogrosBloqueados.SetActive(false);
+            //ChangeHeightandPosition(340);
+        }
+        else
+        {   
+            Vector2 newCellSize = new Vector2(100f,(float) (21.2*totalLogrosDesbloqueados-3));
+            gridLayoutGroup.cellSize = newCellSize;
+            ChangeHeightandPosition(340+(10-totalLogrosDesbloqueados));
+            GridLayoutGroup gridLayoutGroupBlo = containerLogrosBloqueados.transform.Find("GroupLogrosBloqueados").GetComponent<GridLayoutGroup>();
+            gridLayoutGroupBlo.padding.top = -49+10*totalLogrosDesbloqueados;
         }
         
         Debug.Log("Total Logros Desbloqueados: "+ totalLogrosDesbloqueados);
@@ -92,11 +103,8 @@ public class LogrosInterfazManager : MonoBehaviour
                 GameObject logro = Instantiate(prefabLogro);
                 logro.transform.SetParent(groupTrasformBlo,false);
             }
-        
-
-
-    }    
-}
+        }  
+    }
 float NewHeight (float len_history)
     {
         return 32*len_history+2;

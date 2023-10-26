@@ -319,7 +319,7 @@ public class HistorialManager : MonoBehaviour
 
     float NewHeight (float len_history)
     {
-        return 32*len_history+2;
+        return 40*len_history;
     } 
 
     void ChangeHeightandPosition (float Height)

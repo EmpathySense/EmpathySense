@@ -11,9 +11,11 @@ public class AjustesValue : MonoBehaviour
     public Toggle toggleElement;
 
     public Button saveButton;
+    public GameObject notificacionCanvas;
     private float prevSliderValue;
     private void Start()
-    {
+    {   
+        saveButton.onClick.AddListener(()=>StartCoroutine(ShowAlertCanvas(notificacionCanvas))); 
         Prefs prefs = RealmController.Instance.GetPrefs();
         Debug.Log("Volumen Pref: "+ prefs.Volumen);
         if (prefs.Volumen==0)
@@ -28,7 +30,7 @@ public class AjustesValue : MonoBehaviour
         }
         else
         {
-            toggleElement.isOn = false;
+            //toggleElement.isOn = false;
             prevSliderValue=slider.value;
             valueText.text = prevSliderValue.ToString();
         }
@@ -98,6 +100,15 @@ public class AjustesValue : MonoBehaviour
 
         RealmController.Instance.UpdateVolume((int)slider.value);
         //Debug.Log("Volumen guardado: "+ prefs.Volumen);
+    }
+
+    IEnumerator ShowAlertCanvas(GameObject canvas)
+    {
+        canvas.SetActive(true); // Activa el canvas
+
+        yield return new WaitForSeconds(2f); // Espera durante 2 segundos
+
+        canvas.SetActive(false); // Desactiva el canvas
     }
 }
 
