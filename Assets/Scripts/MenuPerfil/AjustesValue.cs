@@ -17,14 +17,14 @@ public class AjustesValue : MonoBehaviour
     {   
         saveButton.onClick.AddListener(()=>StartCoroutine(ShowAlertCanvas(notificacionCanvas))); 
         Prefs prefs = RealmController.Instance.GetPrefs();
-        Debug.Log("Volumen Pref: "+ prefs.Volumen);
+        Debug.Log("Volumen Pref Slide: "+ prefs.Volumen);
         if (prefs.Volumen==0)
         {   
-            Debug.Log("Volumen 0");
+            //Debug.Log("Volumen 0");
             
-            Debug.Log("Valor del Togle unu actual: " + toggleElement.isOn);
+            //Debug.Log("Valor del Togle unu actual: " + toggleElement.isOn);
             toggleElement.isOn = true;
-            Debug.Log("Valor del Togle unu cambiado: " + toggleElement.isOn);
+            //Debug.Log("Valor del Togle unu cambiado: " + toggleElement.isOn);
             valueText.text = prefs.Volumen.ToString();
             prevSliderValue=100;
         }

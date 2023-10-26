@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Linq;
+using System.Globalization;
+
 
 
 public class LogrosInterfazManager : MonoBehaviour
@@ -60,8 +62,8 @@ public class LogrosInterfazManager : MonoBehaviour
             gridLayoutGroupBlo.padding.top = -49+10*totalLogrosDesbloqueados;
         }
         
-        Debug.Log("Total Logros Desbloqueados: "+ totalLogrosDesbloqueados);
-        Debug.Log("Porcentaje Logros Desbloqueados: "+ (int)(percentageLogros+0.5));
+        //Debug.Log("Total Logros Desbloqueados: "+ totalLogrosDesbloqueados);
+        //Debug.Log("Porcentaje Logros Desbloqueados: "+ (int)(percentageLogros+0.5));
         sliderLogros.value = totalLogrosDesbloqueados;
         textTotalLogros.text = totalLogrosDesbloqueados.ToString()+ " de 10 Logros Conseguidos";
         textPercentageLogros.text = "("+(int)(percentageLogros+0.5)+"%)";
@@ -82,6 +84,7 @@ public class LogrosInterfazManager : MonoBehaviour
             TMP_Text textDescription = prefabLogro.transform.Find("Text_Description_Group/Description_text").GetComponent<TMP_Text>();
 
             textName.text = item.Name;
+            //Debug.Log("Nombre: "+item.Name);
             textDescription.text = item.Description;
 
             //Image y Date
@@ -89,17 +92,22 @@ public class LogrosInterfazManager : MonoBehaviour
             TMP_Text textDate = prefabLogro.transform.Find("Fecha_text").GetComponent<TMP_Text>();
             Sprite spriteImage = Resources.Load<Sprite>("Fotos/Logros/"+item.Id+item.State);
             imageLogro.sprite = spriteImage;
+
             if(item.State == true)
             {   
                 string day=item.Date.Day.ToString();
-                string month=item.Date.Month.ToString("MMMM");
+                //string month=item.Date.Month.ToString("MMMM");
                 string year=item.Date.Year.ToString();
-                textDate.text = "Se desbloqueó el "+day+" de "+month+" de "+year;
+                CultureInfo cultura = CultureInfo.CurrentCulture; // Obtiene la cultura actual para el formato de fechas
+                string nombreMes = cultura.DateTimeFormat.GetMonthName(item.Date.Month);
+                //Debug.Log("Nombre Mes: "+nombreMes);
+                textDate.text = "Se desbloqueó el "+day+" de "+nombreMes+" de "+year;
                 GameObject logro = Instantiate(prefabLogro);
                 logro.transform.SetParent(groupTrasformDes,false);
             }
             else
-            {
+            {   
+                textDate.text = "";
                 GameObject logro = Instantiate(prefabLogro);
                 logro.transform.SetParent(groupTrasformBlo,false);
             }
