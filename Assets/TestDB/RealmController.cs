@@ -155,15 +155,15 @@ public class RealmController : MonoBehaviour
 
             Prefs _prefs = RealmController.Instance.CreatePrefs();
             RealmController.Instance.CreateAchievements("PAP-1-", "Un paso a la vez", "Completa el paso A del PAP");
-            RealmController.Instance.CreateAchievements("PAP-2-", "Un paso a la vez", "Completa el paso B del PAP");
-            RealmController.Instance.CreateAchievements("PAP-3-", "Un paso a la vez", "Completa el paso C del PAP");
-            RealmController.Instance.CreateAchievements("PAP-4-", "Un paso a la vez", "Completa el paso D del PAP");
-            RealmController.Instance.CreateAchievements("PAP-5-", "Un paso a la vez", "Completa el paso E del PAP");
-            RealmController.Instance.CreateAchievements("PAP-", "Un paso a la vez", "Completa todos los pasos del PAP");
-            RealmController.Instance.CreateAchievements("SimA-", "Simulación", "Completa la simulación 'lugar público'");
-            RealmController.Instance.CreateAchievements("SimA-100-", "Simulación", "Completa la simulación 'lugar público' con un 100% de aciertos");
-            RealmController.Instance.CreateAchievements("SimB-", "Simulación", "Completa la simulación 'lugar cerrado'");
-            RealmController.Instance.CreateAchievements("SimB-100-", "Simulación", "Completa la simulación 'lugar cerrado' con un 100% de aciertos");
+            RealmController.Instance.CreateAchievements("PAP-2-", "Respirando juntos", "Completa el paso B del PAP");
+            RealmController.Instance.CreateAchievements("PAP-3-", "Clasificador compasivo", "Completa el paso C del PAP");
+            RealmController.Instance.CreateAchievements("PAP-4-", "Facilitador de conexiones", "Completa el paso D del PAP");
+            RealmController.Instance.CreateAchievements("PAP-5-", "Consejero de resiliencia", "Completa el paso E del PAP");
+            RealmController.Instance.CreateAchievements("PAP-", "A practicar!", "Desbloquea la sección 'Simular Técnicas'");
+            RealmController.Instance.CreateAchievements("SimA-", "Siempre hay una primera vez", "Completa la simulación 'Lugar Público'");
+            RealmController.Instance.CreateAchievements("SimA-100-", "Consejero comprensivo", "Completa la simulación 'Lugar Público' con un 100% de aciertos");
+            RealmController.Instance.CreateAchievements("SimB-", "Contenedor principiante", "Completa la simulación 'Lugar Cerrado'");
+            RealmController.Instance.CreateAchievements("SimB-100-", "Oído empático", "Completa la simulación 'Lugar Cerrado' con un 100% de aciertos");
             SceneManager.LoadScene("SignupScene");
         }
         else
