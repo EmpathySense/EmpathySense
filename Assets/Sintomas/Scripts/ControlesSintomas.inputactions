@@ -28,7 +28,7 @@
                 {
                     "name": "",
                     "id": "03797a8c-f286-4891-a6ee-c74a7202f457",
-                    "path": "<XRController>{LeftHand}/menuButton",
+                    "path": "<ViveController>{LeftHand}/menu",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -39,7 +39,7 @@
                 {
                     "name": "",
                     "id": "937940ca-5810-4a9e-8ca6-77b891d471a6",
-                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "path": "<ViveController>{LeftHand}/gripPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

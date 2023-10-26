@@ -1,7 +1,7 @@
 ->start
 
 === start ===
-Ahora, aprenderas el paso E de los primeros auxilios psicológicos. Selecciona el botón "Continuar" para comenzar la lección. #title:<u color=\#FF0000>Paso <color="red">E</color> - Psico<color="red">E</color>ducacion #achievement:LogroPAP
+Ahora, aprenderas el paso E de los primeros auxilios psicológicos. Selecciona el botón "Continuar" para comenzar la lección. #title:<u color=\#FF0000>Paso <color="red">E</color> - Psico<color="red">E</color>ducacion
 El paso E de Psicoeducación trata de orientar a la persona sobre qué hacer luego de ocurrida una crisis; como también de otorgar herramientas de autoayuda y reforzar auto regulación emocional.
 Para esto es necesario estar informado y tener “psicoeducación” adicional de los ejemplos que se muestran en estas simulaciones, por lo que te invitamos a revisar material de apoyo que puedes encontrar en nuestro sitio web.
 ->first_quest
