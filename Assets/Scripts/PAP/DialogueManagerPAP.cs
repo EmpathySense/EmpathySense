@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
@@ -12,6 +13,8 @@ public class DialogueManagerPAP : MonoBehaviour
     [SerializeField] private Animator businessWomanAnimator;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject choicesPanel;
+    [SerializeField] private GameObject logroPanel;
+    [SerializeField] private GameObject logroPanel2;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text speakerName;
     // [SerializeField] private TMP_Text finalScore;
@@ -25,6 +28,7 @@ public class DialogueManagerPAP : MonoBehaviour
 
     private const string SPEAKER_TAG = "title";
     private const string ANIMATION_TRIGGER_TAG = "animation";
+    private const string ACHIEVEMENT_TAG = "achievement";
     private const string HIGHLIGHT_TAG = "highlight";
 
 
@@ -154,7 +158,42 @@ public class DialogueManagerPAP : MonoBehaviour
 
                 case HIGHLIGHT_TAG:
 
-                    // TODO: HANDLE HIGHLIGHT
+                // TODO: HANDLE HIGHLIGHT
+
+                case ACHIEVEMENT_TAG:
+
+                    switch (tagValue)
+                    {
+                        case "A":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            //RealmController.Instance.UpdateLogros("PAP-1-");
+                            break;
+
+                        case "B":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            //RealmController.Instance.UpdateLogros("PAP-2-");
+                            break;
+
+                        case "C":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            //RealmController.Instance.UpdateLogros("PAP-3-");
+                            break;
+
+                        case "D":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            //RealmController.Instance.UpdateLogros("PAP-4-");
+                            break;
+
+                        case "LogroPAP":
+                            StartCoroutine(ShowAlertCanvas(logroPanel));
+                            StartCoroutine(ShowAlertCanvas(logroPanel2));
+                            //RealmController.Instance.UpdateLogros("PAP-5-");
+                            //RealmController.Instance.UpdateLogros("PAP-");
+                            break;
+                    }
+                    
+                    
+                    break;
 
                 default:
                     Debug.LogWarning("No se esta manejando el tag: " + tagValue);
@@ -170,6 +209,18 @@ public class DialogueManagerPAP : MonoBehaviour
         continueButton.SetActive(true);
         choicesPanel.SetActive(false);
         ContinueDialogueMode();
+    }
+
+
+    IEnumerator ShowAlertCanvas(GameObject canvas)
+    {
+
+        canvas.SetActive(true); // Activa el canvas
+        Debug.Log("Suma correctas y errores");
+
+        yield return new WaitForSeconds(5f); // Espera durante 2 segundos
+
+        canvas.SetActive(false); // Desactiva el canvas
     }
 
     private void ExitDialogueMode()

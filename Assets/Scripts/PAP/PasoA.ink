@@ -43,7 +43,7 @@ Como últimas consideraciones no compare ni cuente su historia, evite juzgar y m
     * [Porque puede generar incomodidad, haciendo que la persona se dé cuenta que no es lo suficientemente positiva]
     * [Porque frases de este tipo no necesariamente entregan calma y corren el riesgo de minimizar el dolor de la otra persona.]
     
--Es importante tener paciencia y tolerar el ritmo que necesita la persona en crisis al momento de desarrollar su relato y no precipitarnos a decir algo inapropiado sólo para acelerar el que la situación se resuelva rápido. Es vital que la persona sepa que comprendemos su sufrimiento y que entendemos que se está sintiendo mal. #title:Recuerda que
+-Es importante tener paciencia y tolerar el ritmo que necesita la persona en crisis al momento de desarrollar su relato y no precipitarnos a decir algo inapropiado sólo para acelerar el que la situación se resuelva rápido. Es vital que la persona sepa que comprendemos su sufrimiento y que entendemos que se está sintiendo mal. #title:Recuerda que #achievement:A
 ->finish
 
 

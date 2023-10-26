@@ -360,6 +360,6 @@ Igual si quisieras en algún momento abordar el tema con otra profundidad sé qu
 	Recuerda no entregar un mensaje que pueda generar angustia hacia el futuro y no dar consejos no solicitados#dialog:normal #audio:feedback1_28
     	~raise(intentoSectionE)
 	->ten_choice
--Gracias lo tendré en consideración#title:Ignacio
-#EndDialogue:End
+-Gracias lo tendré en consideración#title:Ignacio #achievement:Sim-01
+#EndDialogue:End 
 ->END
