@@ -12,21 +12,21 @@ public class HardReinicio : MonoBehaviour
     void Start()
     {   
         /*
-        // Obtener una referencia a la acción del botón de salida desde el archivo de inputs
+        // Obtener una referencia a la acciï¿½n del botï¿½n de salida desde el archivo de inputs
         exitButtonAction = new InputAction("HardReset/SalirHard");
         exitButtonAction.Enable();
 
-        // Asignar el método ExitButtonPressed al evento OnPerformed de la acción del botón
+        // Asignar el mï¿½todo ExitButtonPressed al evento OnPerformed de la acciï¿½n del botï¿½n
         exitButtonAction.performed += ExitButtonPressed;
         */
     }
 
-    void ExitButtonPressed(InputAction.CallbackContext context)
+    public void ExitButtonPressed(InputAction.CallbackContext context)
     {
         
         if (context.performed)
         {
-            SceneManager.LoadScene("MenúPrincipal");
+            SceneManager.LoadScene("MenÃºPrincipal");
 
             
             //Debug.Log(PlayerPrefs.GetInt("MalaExp"));
