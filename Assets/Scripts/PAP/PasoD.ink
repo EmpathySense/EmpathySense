@@ -34,5 +34,5 @@ Hay algunas frases que le pueden ayudar a incitar la comunicación con este cír
 ->finish
 
 === finish ===
-Hay cosas que son poco recomendadas de hacer, como contactar usted a las personas cercanas, ya que esto pasa a llevar su autonomía y capacidad de decisión. #animation:TrNegar #title:<u color=\#FF0000>Paso <color="red">D</color> - <color="red">D</color>erivación a redes de apoyo
+Hay cosas que son poco recomendadas de hacer, como contactar usted a las personas cercanas, ya que esto pasa a llevar su autonomía y capacidad de decisión. #animation:TrNegar #title:<u color=\#FF0000>Paso <color="red">D</color> - <color="red">D</color>erivación a redes de apoyo #achievement:D
 ->END
