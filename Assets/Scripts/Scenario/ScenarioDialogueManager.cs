@@ -283,6 +283,8 @@ public class ScenarioDialogueManager : MonoBehaviour
                     // AudioManager.Instance.Play(tagValue);
                     AudioClip clip = Resources.Load<AudioClip>("AudioFeedback/AudioScene1/" + tagValue);
                     //reproducir audio clip
+                    Debug.Log("hola");
+                    audioSource.Stop();
                     audioSource.PlayOneShot(clip);
                     break;
 
