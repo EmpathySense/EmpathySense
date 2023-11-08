@@ -7,7 +7,7 @@ Para esto es necesario estar informado y tener “psicoeducación” adicional d
 ->first_quest
 
 === first_quest ===
-¿Qué facilita la Psicoeducación como cierre del acompañamiento en crisis?
+¿Qué facilita la Psicoeducación como cierre del acompañamiento en crisis? #title:Pregunta 1
     * [Que la persona que vivió la crisis sepa acompañar a otras personas cuando viven un proceso similar]
     * [Que la persona pueda identificar aquello que le ayudo a regularse en la situación de crisis, reforzando las estrategias empleadas en caso de volver a experimentar sensaciones similares posteriormente]
     * [Normalizar que los procesos de salud mental pueden afectar a todas las personas]
@@ -22,7 +22,7 @@ Es importante reforzar el cómo hoy logró regularse, recordando los pasos por s
 ->second_quest
 
 === second_quest ===
-¿Qué comentario o pregunta no sería apropiado de mencionar a la persona en crisis, durante la etapa de Psicoeducación?
+¿Qué comentario o pregunta no sería apropiado de mencionar a la persona en crisis, durante la etapa de Psicoeducación? #title:Pregunta 2
     * [“Si bien lo que ha experimentado hoy puede a ver sido muy agotador, hoy ha logrado regularse a pesar de haber experimentado una crisis”]
     * [“Es normal que en momentos de crisis puedas experimentar algunas sensaciones de las que experimentaste hoy, en otro momento, esto es absolutamente normal, y es importante que puedas recordar que te hizo sentir mejor hoy”]
     * [Ahora que te encuentras más en calma, quisiera comentarte que tengo la sensación que puede que te hayan quedado pendientes algunas cosas que conversar ¿te gustaría que conversáramos más sobre eso?]
