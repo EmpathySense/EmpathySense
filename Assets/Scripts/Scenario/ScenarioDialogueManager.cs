@@ -469,9 +469,12 @@ public class ScenarioDialogueManager : MonoBehaviour
             shouldDeactivateGuide = false;
         }
         guia.SetActive(true);
+        guiaContinueButton.SetActive(false);
         guiaText.text = "¿Estas ahí? Recuerda que estás tratando de ayudar a una persona en crisis de pánico";
 
         yield return new WaitForSeconds(5.0f);
+
+        guiaContinueButton.SetActive(true);
 
         if (shouldDeactivateGuide)
         {

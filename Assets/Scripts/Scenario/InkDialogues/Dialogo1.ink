@@ -70,11 +70,11 @@ Ni me imagino como irán a reaccionar cuando se enteren que me está yendo mal e
 ->second_choice
 
 === second_choice ===
-    * Deberías conversarlo con ellos, de más que te van a entender 
+    * Deberías conversarlo con ellos, de más que te van a entender
         Dices eso porque no los conoces, ellos jamás me van a escuchar, si intentara hablarles sobre eso creerían que les estoy faltando el respeto o algo #title:Ignacio #dialog:guide
         Recuerda que tu labor no es dar una solución sino acompañar a la persona en encontrar su propia estabilidad. #dialog:normal #audio:feedback1_03
 	    ~raise(intentoSectionA)
-        ->second_choice
+	    ->second_choice
     * Y dentro de lo que me contaste ¿Piensas que ellos no entienden que estás ocupado cuando estudias?
         ~raise(scoreSectionA)
 	    ~raise(intentoSectionA)
@@ -83,7 +83,7 @@ Ni me imagino como irán a reaccionar cuando se enteren que me está yendo mal e
         (En un tono sarcástico) Vaya, que bueno que tus papás sean capaces de darte un poco de espacio para que puedas hacer tus cosas. Tu vida probablemente es mucho mejor que la mía.  #title:Ignacio
         Disculpa, no quería ofenderte. #title:Tú
         (Suspira) Si, si... claro, entiendo #title:Ignacio #dialog:guide
-	    Recuerda que lo importante aquí es el relato de la otra persona, es importante no protagonizar. #dialog:normal #audio:feedback1_04
+        Recuerda que lo importante aquí es el relato de la otra persona, es importante no protagonizar. #dialog:normal #audio:feedback1_04
         ~raise(intentoSectionA)
         ->second_choice
         
