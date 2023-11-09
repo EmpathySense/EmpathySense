@@ -8,7 +8,7 @@ También facilitar la conexión con los servicios públicos de apoyo. Para reali
 ->first_quest
 
 === first_quest ===
-¿Cuál sería una forma correcta de facilitar la derivación a redes? #title:Pregunta 1
+¿Cuál sería una forma correcta de facilitar la derivación a redes? #title: <u color=\#FF0000>\-Pregunta 1\-</u color> Selecciona la opción correcta
     * [Ahora voy a llamar a su familia para comentarle lo que le ha sucedido]
     * [¿Sabe alguien cercano que usted se encuentra pasando por esta situación emocional? Por ejemplo, ¿algún familiar?]
     * [Vamos a llamar de inmediato a la profesional a cargo del programa para que venga a contactarle]
@@ -23,7 +23,7 @@ Hay algunas frases que le pueden ayudar a incitar la comunicación con este cír
 ->second_quest
 
 === second_quest ===
-¿Qué es importante de conocer previamente antes de facilitar el acompañamiento a una persona en crisis? #title:Pregunta 2
+¿Qué es importante de conocer previamente antes de facilitar el acompañamiento a una persona en crisis? #title: <u color=\#FF0000>\-Pregunta 2\-</u color> Selecciona la opción correcta
     * [Datos de la familia de la persona en crisis]
     * [Diagnósticos previos de la persona en crisis]
     * [La oferta de servicios de apoyo social/salud disponibles en el lugar donde se encuentra (líneas telefónicas, servicios gratuitos, ingreso a salud mental etc.)]

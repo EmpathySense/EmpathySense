@@ -12,7 +12,7 @@ Notar que los “tiempos” no son segundos, estos son de duración variable y d
 ->first_quest
 
 === first_quest ===
-¿Por qué es importante realizar el ejercicio de respiración luego de presentar esta alternativa y explicárselo a la persona? #title:Pregunta 1
+¿Por qué es importante realizar el ejercicio de respiración luego de presentar esta alternativa y explicárselo a la persona? #title: <u color=\#FF0000>\-Pregunta 1\-</u color> Selecciona la opción correcta
     * [Para que la persona no interrumpa el ejercicio de respiración con preguntas, afectando eldesarrollo de la actividad]
     * [Para que quien facilita el ejercicio de respiración se pueda concentrar]
     * [Para que la persona pueda anticipar lo que harán a continuación y reducir la ansiedad que le puede generar probar algo nuevo]
@@ -26,7 +26,7 @@ Al inicio, se puede acompañar a la persona en la respiración para ayudarla a e
 ->second_quest
 
 === second_quest ===
-¿Por qué los ejercicios de respiración no deben ser cronometrados según el segundero del reloj? #title:Pregunta 2
+¿Por qué los ejercicios de respiración no deben ser cronometrados según el segundero del reloj? #title: <u color=\#FF0000>\-Pregunta 2\-</u color> Selecciona la opción correcta
     * [Porque los tiempos se deben acomodar al estado de agitación de la persona, evitando generar más incomodidad]
     * [Porque implica mirar el celular o el reloj para cronometrar y eso puede distraer]
     * [Porque podría encontrarse el reloj en mal estado]

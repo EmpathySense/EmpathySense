@@ -7,7 +7,7 @@ Esto es importante debido a que en una situación de crisis suele producirse una
 ->first_quest
 
 === first_quest ===
-¿Por qué es importante que sea la persona afectada quien identifique sus necesidades y prioridades? #title:Pregunta 1
+¿Por qué es importante que sea la persona afectada quien identifique sus necesidades y prioridades? #title: <u color=\#FF0000>\-Pregunta 1\-</u color> Selecciona la opción correcta
     * [Debido a que la persona tiene recursos personales que, al utilizarlos a su favor, fomentan la sensación de competencia personal y autonomía.]
     * [Porque puede sentir que no la dejas hablar y no la escuchas]
     * [Porque esto le sirve para darse cuenta de que se encuentra en una crisis y que pronto estará mejor]
@@ -21,7 +21,7 @@ Permite que sea la persona que jerarquice sus necesidades. Evita hacerlo desde t
 ->second_quest
 
 === second_quest ===
-¿Por qué es importante el ayudar en la priorización de sus necesidades? #title:Pregunta 2
+¿Por qué es importante el ayudar en la priorización de sus necesidades? #title: <u color=\#FF0000>\-Pregunta 2\-</u color> Selecciona la opción correcta
     * [Porque de esta manera la persona que se encuentra pasando una crisis podrá revisar todos los problemas que tiene a la vez.]
     * [Porque así tenemos información más clara y detallada sobre lo que generó la crisis.]
     * [Porque de esta manera la persona puede re organizar su proceso personal, identificando lo que es una prioridad inmediata y lo que puede esperar.]
