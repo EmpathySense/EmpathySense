@@ -73,7 +73,7 @@ VAR mistakes = 0
 /* PASO A  */
 
  
- === five_choice === 
+=== five_choice === 
  ¿Qué debería responder? #title:Tú
     * Jorge, veo que no estás pasándolo muy bien[] ahora, entonces si te sientes cómodo y quieres comentarte algo o desahogarte yo tengo la disposición de escucharte.
         ~ raise(scoreSectionA)
@@ -94,7 +94,7 @@ VAR mistakes = 0
 ->six_choice
 
 
- === six_choice === 
+=== six_choice === 
  ¿Qué debería responder? #title:Tú
     * ¿Por qué crees que no eres valorado?#dialog:guide
         Recuerda evitar preguntas que puedan generar más angustia.#dialog:normal #audio:feedback2_12
@@ -114,7 +114,7 @@ VAR mistakes = 0
 ->seven_choice
 
 
- === seven_choice ===
+=== seven_choice ===
  ¿Qué debería responder? #title:Tú
     * Comprendo lo que me cuentas, te refieres a sentirte con sobrecarga laboral
         ~ raise(scoreSectionA)
@@ -134,7 +134,7 @@ VAR mistakes = 0
 - Hasta sueño con el trabajo, luego por la mañana despierto para llenarme de café y seguir trabajando. #title:Jorge
 ->eight_choice
 
- === eight_choice ===
+=== eight_choice ===
  ¿Qué debería responder? #title:Tú
     * ¿Dijiste que soñabas incluso con el trabajo?
         ~ raise(scoreSectionA)
@@ -158,7 +158,7 @@ VAR mistakes = 0
 ->nine_choice
 
 
- === nine_choice ===
+=== nine_choice ===
  ¿Qué debería responder? #title:Tú
     * ¿Dices que te sientes excluido?
         ~ raise(scoreSectionA)
@@ -181,7 +181,7 @@ VAR mistakes = 0
 /* PASO B  */
 
 
- === ten_choice ===
+=== ten_choice ===
  ¿Qué debería responder? #title:Tú
     * Si me dices las cosas que te preocupan, podemos ordenarlas e ir mejorando la situación.#dialog:guide
         Recuerda no acelerar el proceso. Esta respuesta podría ser más cercana al tercer paso#dialog:normal #audio:feedback2_21
@@ -201,7 +201,7 @@ VAR mistakes = 0
 ->eleven_choice
 
 
- === eleven_choice ===
+=== eleven_choice ===
  ¿Qué debería responder? #title:Tú
     * Tienes que hacer lo que yo hago, mírame bien #dialog:guide
         Recuerda no entrar en un rol directivo#dialog:normal #audio:feedback2_22
@@ -221,7 +221,7 @@ VAR mistakes = 0
 ->twelve_choice
 
 
- === twelve_choice ===
+=== twelve_choice ===
  ¿Qué debería responder? #title:Tú
     * Quizás has escuchado lo de respirar consciente y profundo.[] En realidad, sirve bastante, mira te voy a explicar cómo podemos hacerlo  
         ~ raise(scoreSectionB)
