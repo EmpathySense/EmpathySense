@@ -19,7 +19,7 @@
                 {
                     "name": "",
                     "id": "bbdf2bb8-f635-41a2-bd72-944a351729b3",
-                    "path": "<XRSimulatedController>/menuButton",
+                    "path": "<OculusTouchController>{LeftHand}/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
