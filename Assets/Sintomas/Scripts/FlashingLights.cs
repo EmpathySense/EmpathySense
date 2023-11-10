@@ -28,8 +28,8 @@ public class FlashingLights : MonoBehaviour
     {
         float nuevoBrillo = Mathf.Lerp(brilloMinimo, brilloMaximo, (Mathf.Sin(Time.time * velocidadCambio) + 1f) / 2f);
         float nuevoBrillo2 = Mathf.Lerp(brilloMaximo, brilloMinimo, (Mathf.Sin(Time.time * velocidadCambio) + 1f) / 2f);
-        Debug.Log(nuevoBrillo);
-        Debug.Log(nuevoBrillo2);
+        // Debug.Log(nuevoBrillo);
+        // Debug.Log(nuevoBrillo2);
         // Iterar sobre cada objeto Lens Flare y cambiar el valor de Brightness
         //acceder al componente LensFlare y cambiar el valor de Brightness
         StreetLight.GetComponent<LensFlare>().brightness = nuevoBrillo;
