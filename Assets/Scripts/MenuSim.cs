@@ -11,6 +11,7 @@ public class MenuSim : MonoBehaviour
     public GameObject wristUI;
     public Button[] botonesSim;
     public AudioSource audioFondo;
+    public AudioSource audioGuia;
     public bool activeWristUI = true;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class MenuSim : MonoBehaviour
             activeWristUI = true;
             SetInteractableState(false);
             audioFondo.Pause();
+            audioGuia.Pause();
             Time.timeScale = 0;
 
         }
@@ -48,6 +50,7 @@ public class MenuSim : MonoBehaviour
         activeWristUI = false;
         SetInteractableState(true);
         audioFondo.UnPause();
+        audioGuia.UnPause();
         Time.timeScale = 1;
     }
 

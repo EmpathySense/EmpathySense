@@ -283,6 +283,8 @@ public class ScenarioDialogueManager : MonoBehaviour
                     // AudioManager.Instance.Play(tagValue);
                     AudioClip clip = Resources.Load<AudioClip>("AudioFeedback/AudioScene1/" + tagValue);
                     //reproducir audio clip
+                    Debug.Log("hola");
+                    audioSource.Stop();
                     audioSource.PlayOneShot(clip);
                     break;
 
@@ -467,9 +469,12 @@ public class ScenarioDialogueManager : MonoBehaviour
             shouldDeactivateGuide = false;
         }
         guia.SetActive(true);
+        guiaContinueButton.SetActive(false);
         guiaText.text = "¿Estas ahí? Recuerda que estás tratando de ayudar a una persona en crisis de pánico";
 
         yield return new WaitForSeconds(5.0f);
+
+        guiaContinueButton.SetActive(true);
 
         if (shouldDeactivateGuide)
         {
