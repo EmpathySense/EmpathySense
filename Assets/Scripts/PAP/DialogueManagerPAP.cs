@@ -165,30 +165,50 @@ public class DialogueManagerPAP : MonoBehaviour
                     switch (tagValue)
                     {
                         case "A":
-                            StartCoroutine(ShowAlertCanvas(logroPanel));
-                            RealmController.Instance.UpdateLogros("PAP-1-");
+                            Achievements _ach = RealmController.Instance.AchievementsById("PAP-1-");
+                            if (_ach.State == false)
+                            {
+                                StartCoroutine(ShowAlertCanvas(logroPanel));
+                                RealmController.Instance.UpdateLogros("PAP-1-");
+                            }
                             break;
 
                         case "B":
-                            StartCoroutine(ShowAlertCanvas(logroPanel));
-                            RealmController.Instance.UpdateLogros("PAP-2-");
+                            Achievements _ach2 = RealmController.Instance.AchievementsById("PAP-2-");
+                            if (_ach2.State == false)
+                            {
+                                StartCoroutine(ShowAlertCanvas(logroPanel));
+                                RealmController.Instance.UpdateLogros("PAP-2-");
+                            }
                             break;
 
                         case "C":
-                            StartCoroutine(ShowAlertCanvas(logroPanel));
-                            RealmController.Instance.UpdateLogros("PAP-3-");
+                            Achievements _ach3 = RealmController.Instance.AchievementsById("PAP-3-");
+                            if (_ach3.State == false)
+                            {
+                                StartCoroutine(ShowAlertCanvas(logroPanel));
+                                RealmController.Instance.UpdateLogros("PAP-3-");
+                            }
                             break;
 
                         case "D":
-                            StartCoroutine(ShowAlertCanvas(logroPanel));
-                            RealmController.Instance.UpdateLogros("PAP-4-");
+                            Achievements _ach4 = RealmController.Instance.AchievementsById("PAP-4-");
+                            if (_ach4.State == false)
+                            {
+                                StartCoroutine(ShowAlertCanvas(logroPanel));
+                                RealmController.Instance.UpdateLogros("PAP-4-");
+                            }
                             break;
 
                         case "LogroPAP":
-                            StartCoroutine(ShowAlertCanvas(logroPanel));
-                            StartCoroutine(ShowAlertCanvas(logroPanel2));
-                            RealmController.Instance.UpdateLogros("PAP-5-");
-                            RealmController.Instance.UpdateLogros("PAP-");
+                            Achievements _ach5 = RealmController.Instance.AchievementsById("PAP-5-");
+                            if (_ach5.State == false)
+                            {
+                                StartCoroutine(ShowAlertCanvas(logroPanel));
+                                StartCoroutine(ShowAlertCanvas(logroPanel2));
+                                RealmController.Instance.UpdateLogros("PAP-5-");
+                                RealmController.Instance.UpdateLogros("PAP-");
+                            }
                             break;
                     }
                     

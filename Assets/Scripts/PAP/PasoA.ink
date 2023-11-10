@@ -11,7 +11,7 @@ Buenas prácticas para lograr esto son: Parafrasear para sostener la atención y
 ->first_quest
 
 === first_quest ===
-¿Por qué debes evitar mirar el celular o relajo mientras escuchas?
+¿Por qué debes evitar mirar el celular o relajo mientras escuchas? #title: <u color=\#FF0000>\-Pregunta 1\-</u color> Selecciona la opción correcta
     * [Porque la persona que experimenta la crisis se puede distraer de su relato]
     * [Porque le puede generar ansiedad]
     * [Porque la persona que experimenta la crisis puede sentir que no le escuchas y que no es importante su relato]
@@ -25,7 +25,7 @@ Hay malas prácticas que se deben evitar porque pueden hacer que la persona se s
 ->second_quest
 
 === second_quest ===
-¿Por qué no es correcto aconsejar cuando escuchas a la otra persona?
+¿Por qué no es correcto aconsejar cuando escuchas a la otra persona? #title: <u color=\#FF0000>\-Pregunta 2\-</u color> Selecciona la opción correcta
     * [Porque expones tu historia personal y esto te podría dejar vulnerable]
     * [Porque aconsejar te sitúa en una superioridad moral y autoreferencia, sobre como la otra persona resuelve sus procesos, además de cambiar el foco de quien necesita ser escuchado.]
     * [Porque podría no ser un buen consejo o tal vez, ser muy inferior para todo lo que significa la situación]
@@ -38,7 +38,7 @@ Como últimas consideraciones no compare ni cuente su historia, evite juzgar y m
 ->third_quest
 
 === third_quest ===
-¿Por qué al momento de escuchar se debe evitar las frases motivadoras tales como “Vas a salir de esto”, “el tiempo lo cura todo”
+¿Por qué al momento de escuchar se debe evitar las frases motivadoras tales como “Vas a salir de esto”, “el tiempo lo cura todo” #title: <u color=\#FF0000>\-Pregunta 3\-</u color> Selecciona la opción correcta
     * [Porque cada persona puede entender distinto el significado de las frases]
     * [Porque puede generar incomodidad, haciendo que la persona se dé cuenta que no es lo suficientemente positiva]
     * [Porque frases de este tipo no necesariamente entregan calma y corren el riesgo de minimizar el dolor de la otra persona.]

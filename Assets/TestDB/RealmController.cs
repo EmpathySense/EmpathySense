@@ -286,4 +286,13 @@ public class RealmController : MonoBehaviour
         }
         return _history;
     }
+
+    public Achievements AchievementsById(string id){
+        Achievements _ach = _realm.Find<Achievements>(id);
+        if (_ach == null)
+        {
+            return null;
+        }
+        return _ach;
+    }
 }
