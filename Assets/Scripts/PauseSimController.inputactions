@@ -19,7 +19,7 @@
                 {
                     "name": "",
                     "id": "bbdf2bb8-f635-41a2-bd72-944a351729b3",
-                    "path": "<ViveController>{LeftHand}/menu",
+                    "path": "<XRSimulatedController>/menuButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
